@@ -50,6 +50,7 @@ namespace OrganiseIt {
 	private:
 	bool czyWidoczny = true;
 	bool czyWidocznyPlusBox = false;
+	bool czyPrzypiety = false;
 	bool dragging;
 	Point offset;
 	private: System::Windows::Forms::Panel^  panel1;
@@ -378,10 +379,21 @@ namespace OrganiseIt {
 	private: System::Void minimize_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->WindowState = FormWindowState::Minimized;
 	}
-	//maksymalizuj
+	//maksymalizuj = przypnij
 	private: System::Void maximize_Click(System::Object^  sender, System::EventArgs^  e) {
 		//nothing
+		if (czyPrzypiety) {
+			TopMost = false;
+			czyPrzypiety = false;
+			MessageBox::Show("Okno zosta³o odpiête.", "Organise It!", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
+		else {
+			TopMost = true;
+			czyPrzypiety = true;
+			MessageBox::Show("Okno zosta³o przypiête i od teraz bêdzie na wierzchu ;)", "Organise It!", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
 	}
+
 	//zamknij
 	private: System::Void zamknij_Click(System::Object^  sender, System::EventArgs^  e) {
 		Application::Exit();

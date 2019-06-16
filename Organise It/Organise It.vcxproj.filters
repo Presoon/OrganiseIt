@@ -38,18 +38,4 @@
       <Filter>Pliki zasobów</Filter>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\..\GrafikaProjektowa\Dodaj nową etykietęhov.png">
-      <Filter>Pliki zasobów</Filter>
-    </Image>
-    <Image Include="..\..\GrafikaProjektowa\Dodaj nowe wydarzeniehov.png">
-      <Filter>Pliki zasobów</Filter>
-    </Image>
-    <Image Include="..\..\GrafikaProjektowa\Dodaj nowe zadaniehov.png">
-      <Filter>Pliki zasobów</Filter>
-    </Image>
-    <Image Include="Image1.png">
-      <Filter>Pliki zasobów</Filter>
-    </Image>
-  </ItemGroup>
 </Project>
