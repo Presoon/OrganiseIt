@@ -21,6 +21,9 @@
     <ClCompile Include="NowyEventForm.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
+    <ClCompile Include="Program.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="OkienkoMain.h">
@@ -29,5 +32,24 @@
     <ClInclude Include="NowyEventForm.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="OkienkoMain.resx">
+      <Filter>Pliki zasobów</Filter>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\GrafikaProjektowa\Dodaj nową etykietęhov.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="..\..\GrafikaProjektowa\Dodaj nowe wydarzeniehov.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="..\..\GrafikaProjektowa\Dodaj nowe zadaniehov.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="Image1.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
   </ItemGroup>
 </Project>

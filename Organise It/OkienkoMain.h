@@ -1,4 +1,5 @@
 #pragma once
+#include "NowyEventForm.h"
 
 namespace OrganiseIt {
 
@@ -51,6 +52,18 @@ namespace OrganiseIt {
 	bool czyWidocznyPlusBox = false;
 	bool dragging;
 	Point offset;
+	private: System::Windows::Forms::Panel^  panel1;
+	private: System::Windows::Forms::PictureBox^  newEtykieta;
+
+	private: System::Windows::Forms::PictureBox^  newWydarzenie;
+
+	private: System::Windows::Forms::PictureBox^  newZadanie;
+	private: System::Windows::Forms::ImageList^  imagelistZadanie;
+	private: System::Windows::Forms::ImageList^  imagelistWydarzenie;
+	private: System::Windows::Forms::ImageList^  imagelistEtykieta;
+
+	private: System::ComponentModel::IContainer^  components;
+
 
 	protected:
 
@@ -60,7 +73,7 @@ namespace OrganiseIt {
 		/// <summary>
 		/// Wymagana zmienna projektanta.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -69,6 +82,7 @@ namespace OrganiseIt {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(OkienkoMain::typeid));
 			this->leftsidebar = (gcnew System::Windows::Forms::Panel());
 			this->logoButton = (gcnew System::Windows::Forms::PictureBox());
@@ -81,6 +95,13 @@ namespace OrganiseIt {
 			this->belkanapis = (gcnew System::Windows::Forms::PictureBox());
 			this->plusbuttonimg = (gcnew System::Windows::Forms::PictureBox());
 			this->plusboximg = (gcnew System::Windows::Forms::Panel());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->newEtykieta = (gcnew System::Windows::Forms::PictureBox());
+			this->newWydarzenie = (gcnew System::Windows::Forms::PictureBox());
+			this->newZadanie = (gcnew System::Windows::Forms::PictureBox());
+			this->imagelistZadanie = (gcnew System::Windows::Forms::ImageList(this->components));
+			this->imagelistWydarzenie = (gcnew System::Windows::Forms::ImageList(this->components));
+			this->imagelistEtykieta = (gcnew System::Windows::Forms::ImageList(this->components));
 			this->leftsidebar->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->logoButton))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->menuButton))->BeginInit();
@@ -91,6 +112,11 @@ namespace OrganiseIt {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->minimize))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->belkanapis))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->plusbuttonimg))->BeginInit();
+			this->plusboximg->SuspendLayout();
+			this->panel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newEtykieta))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newWydarzenie))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newZadanie))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// leftsidebar
@@ -224,11 +250,79 @@ namespace OrganiseIt {
 			this->plusboximg->BackColor = System::Drawing::Color::Transparent;
 			this->plusboximg->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"plusboximg.BackgroundImage")));
 			this->plusboximg->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->plusboximg->Controls->Add(this->panel1);
 			this->plusboximg->Location = System::Drawing::Point(1017, 498);
 			this->plusboximg->Name = L"plusboximg";
 			this->plusboximg->Size = System::Drawing::Size(323, 188);
 			this->plusboximg->TabIndex = 3;
 			this->plusboximg->Visible = false;
+			// 
+			// panel1
+			// 
+			this->panel1->Controls->Add(this->newEtykieta);
+			this->panel1->Controls->Add(this->newWydarzenie);
+			this->panel1->Controls->Add(this->newZadanie);
+			this->panel1->Location = System::Drawing::Point(3, 44);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(317, 140);
+			this->panel1->TabIndex = 0;
+			// 
+			// newEtykieta
+			// 
+			this->newEtykieta->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"newEtykieta.Image")));
+			this->newEtykieta->Location = System::Drawing::Point(5, 95);
+			this->newEtykieta->Name = L"newEtykieta";
+			this->newEtykieta->Size = System::Drawing::Size(238, 32);
+			this->newEtykieta->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
+			this->newEtykieta->TabIndex = 2;
+			this->newEtykieta->TabStop = false;
+			this->newEtykieta->Click += gcnew System::EventHandler(this, &OkienkoMain::newEtykieta_Click);
+			this->newEtykieta->MouseLeave += gcnew System::EventHandler(this, &OkienkoMain::newEtykieta_MouseLeave);
+			this->newEtykieta->MouseHover += gcnew System::EventHandler(this, &OkienkoMain::newEtykieta_MouseHover);
+			// 
+			// newWydarzenie
+			// 
+			this->newWydarzenie->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"newWydarzenie.Image")));
+			this->newWydarzenie->Location = System::Drawing::Point(5, 55);
+			this->newWydarzenie->Name = L"newWydarzenie";
+			this->newWydarzenie->Size = System::Drawing::Size(267, 32);
+			this->newWydarzenie->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
+			this->newWydarzenie->TabIndex = 1;
+			this->newWydarzenie->TabStop = false;
+			this->newWydarzenie->Click += gcnew System::EventHandler(this, &OkienkoMain::newWydarzenie_Click);
+			this->newWydarzenie->MouseLeave += gcnew System::EventHandler(this, &OkienkoMain::newWydarzenie_MouseLeave);
+			this->newWydarzenie->MouseHover += gcnew System::EventHandler(this, &OkienkoMain::newWydarzenie_MouseHover);
+			// 
+			// newZadanie
+			// 
+			this->newZadanie->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"newZadanie.Image")));
+			this->newZadanie->Location = System::Drawing::Point(5, 15);
+			this->newZadanie->Name = L"newZadanie";
+			this->newZadanie->Size = System::Drawing::Size(228, 32);
+			this->newZadanie->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
+			this->newZadanie->TabIndex = 0;
+			this->newZadanie->TabStop = false;
+			this->newZadanie->Click += gcnew System::EventHandler(this, &OkienkoMain::newZadanie_Click);
+			this->newZadanie->MouseLeave += gcnew System::EventHandler(this, &OkienkoMain::newZadanie_MouseLeave);
+			this->newZadanie->MouseHover += gcnew System::EventHandler(this, &OkienkoMain::newZadanie_MouseHover);
+			// 
+			// imagelistZadanie
+			// 
+			this->imagelistZadanie->ImageStream = (cli::safe_cast<System::Windows::Forms::ImageListStreamer^>(resources->GetObject(L"imagelistZadanie.ImageStream")));
+			this->imagelistZadanie->TransparentColor = System::Drawing::Color::Transparent;
+			this->imagelistZadanie->Images->SetKeyName(0, L"Dodaj nowe zadaniehov.png");
+			// 
+			// imagelistWydarzenie
+			// 
+			this->imagelistWydarzenie->ImageStream = (cli::safe_cast<System::Windows::Forms::ImageListStreamer^>(resources->GetObject(L"imagelistWydarzenie.ImageStream")));
+			this->imagelistWydarzenie->TransparentColor = System::Drawing::Color::Transparent;
+			this->imagelistWydarzenie->Images->SetKeyName(0, L"Dodaj nowe wydarzeniehov.png");
+			// 
+			// imagelistEtykieta
+			// 
+			this->imagelistEtykieta->ImageStream = (cli::safe_cast<System::Windows::Forms::ImageListStreamer^>(resources->GetObject(L"imagelistEtykieta.ImageStream")));
+			this->imagelistEtykieta->TransparentColor = System::Drawing::Color::Transparent;
+			this->imagelistEtykieta->Images->SetKeyName(0, L"Dodaj now¹ etykietêhov.png");
 			// 
 			// OkienkoMain
 			// 
@@ -255,6 +349,11 @@ namespace OrganiseIt {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->minimize))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->belkanapis))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->plusbuttonimg))->EndInit();
+			this->plusboximg->ResumeLayout(false);
+			this->panel1->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newEtykieta))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newWydarzenie))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newZadanie))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -319,11 +418,55 @@ namespace OrganiseIt {
 			czyWidoczny = true;
 		}
 	}
+	//zakoñczenie programu przyciskiem w leftsidebar
 	private: System::Void wylogujButton_Click(System::Object^  sender, System::EventArgs^  e) {
 		if (MessageBox::Show("Czy aby na pewno chcesz zakoñczyæ program?", "Organise It!", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == Windows::Forms::DialogResult::Yes) {
 			Application::Exit();
 		}
 	}
-
+	
+	//hover zmiany w plusboxie + nowe okna
+		//noweZadanie
+			private: System::Void newZadanie_MouseHover(System::Object^  sender, System::EventArgs^  e) {
+				newZadanie->Image = imagelistZadanie->Images[0];
+			}
+			private: System::Void newZadanie_MouseLeave(System::Object^  sender, System::EventArgs^  e) {
+				System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(OkienkoMain::typeid));
+				newZadanie->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"newZadanie.Image")));
+			}
+			private: System::Void newZadanie_Click(System::Object^  sender, System::EventArgs^  e) {
+				plusboximg->Visible = false;   //autoukrycie plusbox
+				czyWidocznyPlusBox = false;    //autoukrycie plusbox
+				NowyEventForm^ eventowa = gcnew NowyEventForm;
+				eventowa->Show();
+			}
+		//noweWydarzenie
+			private: System::Void newWydarzenie_MouseHover(System::Object^  sender, System::EventArgs^  e) {
+				newWydarzenie->Image = imagelistWydarzenie->Images[0];
+			}
+			private: System::Void newWydarzenie_MouseLeave(System::Object^  sender, System::EventArgs^  e) {
+				System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(OkienkoMain::typeid));
+				newWydarzenie->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"newWydarzenie.Image")));
+			}
+			private: System::Void newWydarzenie_Click(System::Object^  sender, System::EventArgs^  e) {
+				plusboximg->Visible = false;   //autoukrycie plusbox
+				czyWidocznyPlusBox = false;    //autoukrycie plusbox
+				NowyEventForm^ eventowa = gcnew NowyEventForm;
+				eventowa->Show();
+			}
+		//nowaEtykieta
+			private: System::Void newEtykieta_MouseHover(System::Object^  sender, System::EventArgs^  e) {
+				newEtykieta->Image = imagelistEtykieta->Images[0];
+			}
+			private: System::Void newEtykieta_MouseLeave(System::Object^  sender, System::EventArgs^  e) {
+				System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(OkienkoMain::typeid));
+				newEtykieta->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"newEtykieta.Image")));
+			}
+			private: System::Void newEtykieta_Click(System::Object^  sender, System::EventArgs^  e) {
+				plusboximg->Visible = false;   //autoukrycie plusbox
+				czyWidocznyPlusBox = false;    //autoukrycie plusbox
+				NowyEventForm^ eventowa = gcnew NowyEventForm;
+				eventowa->Show();
+			}
 };
 }

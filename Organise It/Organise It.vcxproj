@@ -105,6 +105,8 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>main</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -135,6 +137,7 @@
   <ItemGroup>
     <ClCompile Include="NowyEventForm.cpp" />
     <ClCompile Include="OkienkoMain.cpp" />
+    <ClCompile Include="Program.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="NowyEventForm.h">
@@ -148,6 +151,12 @@
     <EmbeddedResource Include="OkienkoMain.resx">
       <DependentUpon>OkienkoMain.h</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\GrafikaProjektowa\Dodaj nowe wydarzeniehov.png" />
+    <Image Include="..\..\GrafikaProjektowa\Dodaj nowe zadaniehov.png" />
+    <Image Include="..\..\GrafikaProjektowa\Dodaj nową etykietęhov.png" />
+    <Image Include="Image1.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
