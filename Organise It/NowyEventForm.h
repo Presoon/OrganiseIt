@@ -44,10 +44,26 @@ namespace OrganiseIt {
 		bool czyWidocznyPlusBox = false;
 		bool dragging;
 		Point offset;
-	private: System::Windows::Forms::Label^  label1;
-	private: System::Windows::Forms::Label^  label2;
-	private: System::Windows::Forms::Label^  label3;
+
+
+
 	private: System::Windows::Forms::PictureBox^  pictureBox1;
+	private: System::Windows::Forms::TextBox^  nazwaEvent;
+	private: System::Windows::Forms::TextBox^  opisEvent;
+	private: System::Windows::Forms::RadioButton^  poniedzialekbtn;
+	private: System::Windows::Forms::RadioButton^  wtorekbtn;
+	private: System::Windows::Forms::RadioButton^  srodabtn;
+	private: System::Windows::Forms::RadioButton^  czwartekbtn;
+	private: System::Windows::Forms::RadioButton^  piatekbtn;
+	private: System::Windows::Forms::ComboBox^  etykietabtn;
+
+
+
+
+
+
+
+
 
 	protected:
 
@@ -66,18 +82,23 @@ namespace OrganiseIt {
 		{
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(NowyEventForm::typeid));
 			this->belkabox = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->zamknij = (gcnew System::Windows::Forms::PictureBox());
 			this->dodajBtn = (gcnew System::Windows::Forms::PictureBox());
 			this->anulujBtn = (gcnew System::Windows::Forms::PictureBox());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->nazwaEvent = (gcnew System::Windows::Forms::TextBox());
+			this->opisEvent = (gcnew System::Windows::Forms::TextBox());
+			this->poniedzialekbtn = (gcnew System::Windows::Forms::RadioButton());
+			this->wtorekbtn = (gcnew System::Windows::Forms::RadioButton());
+			this->srodabtn = (gcnew System::Windows::Forms::RadioButton());
+			this->czwartekbtn = (gcnew System::Windows::Forms::RadioButton());
+			this->piatekbtn = (gcnew System::Windows::Forms::RadioButton());
+			this->etykietabtn = (gcnew System::Windows::Forms::ComboBox());
 			this->belkabox->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->zamknij))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dodajBtn))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->anulujBtn))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// belkabox
@@ -93,6 +114,17 @@ namespace OrganiseIt {
 			this->belkabox->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &NowyEventForm::belkabox_MouseDown);
 			this->belkabox->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &NowyEventForm::belkabox_MouseMove);
 			this->belkabox->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &NowyEventForm::belkabox_MouseUp);
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(12, 12);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(301, 12);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::AutoSize;
+			this->pictureBox1->TabIndex = 6;
+			this->pictureBox1->TabStop = false;
 			// 
 			// zamknij
 			// 
@@ -130,52 +162,123 @@ namespace OrganiseIt {
 			this->anulujBtn->TabStop = false;
 			this->anulujBtn->Click += gcnew System::EventHandler(this, &NowyEventForm::anulujBtn_Click);
 			// 
-			// label1
+			// nazwaEvent
 			// 
-			this->label1->AutoSize = true;
-			this->label1->BackColor = System::Drawing::Color::Transparent;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->nazwaEvent->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(84)), static_cast<System::Int32>(static_cast<System::Byte>(111)),
+				static_cast<System::Int32>(static_cast<System::Byte>(245)));
+			this->nazwaEvent->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->nazwaEvent->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->label1->Location = System::Drawing::Point(131, 51);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(206, 240);
-			this->label1->TabIndex = 3;
-			this->label1->Text = resources->GetString(L"label1.Text");
+			this->nazwaEvent->ForeColor = System::Drawing::Color::White;
+			this->nazwaEvent->Location = System::Drawing::Point(232, 66);
+			this->nazwaEvent->MaxLength = 100;
+			this->nazwaEvent->Name = L"nazwaEvent";
+			this->nazwaEvent->Size = System::Drawing::Size(185, 19);
+			this->nazwaEvent->TabIndex = 3;
 			// 
-			// label2
+			// opisEvent
 			// 
-			this->label2->AutoSize = true;
-			this->label2->BackColor = System::Drawing::Color::Transparent;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->opisEvent->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(84)), static_cast<System::Int32>(static_cast<System::Byte>(111)),
+				static_cast<System::Int32>(static_cast<System::Byte>(245)));
+			this->opisEvent->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->opisEvent->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->label2->Location = System::Drawing::Point(45, 150);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(78, 25);
-			this->label2->TabIndex = 4;
-			this->label2->Text = L"Martin";
+			this->opisEvent->ForeColor = System::Drawing::Color::White;
+			this->opisEvent->Location = System::Drawing::Point(232, 127);
+			this->opisEvent->Name = L"opisEvent";
+			this->opisEvent->Size = System::Drawing::Size(185, 19);
+			this->opisEvent->TabIndex = 4;
 			// 
-			// label3
+			// poniedzialekbtn
 			// 
-			this->label3->AutoSize = true;
-			this->label3->BackColor = System::Drawing::Color::Transparent;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->poniedzialekbtn->AutoSize = true;
+			this->poniedzialekbtn->BackColor = System::Drawing::Color::Transparent;
+			this->poniedzialekbtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->label3->Location = System::Drawing::Point(339, 150);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(106, 25);
-			this->label3->TabIndex = 5;
-			this->label3->Text = L"Saturday";
+			this->poniedzialekbtn->ForeColor = System::Drawing::Color::White;
+			this->poniedzialekbtn->Location = System::Drawing::Point(230, 178);
+			this->poniedzialekbtn->Name = L"poniedzialekbtn";
+			this->poniedzialekbtn->Size = System::Drawing::Size(108, 19);
+			this->poniedzialekbtn->TabIndex = 5;
+			this->poniedzialekbtn->TabStop = true;
+			this->poniedzialekbtn->Text = L"Poniedzia³ek";
+			this->poniedzialekbtn->UseVisualStyleBackColor = false;
 			// 
-			// pictureBox1
+			// wtorekbtn
 			// 
-			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(12, 12);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(301, 12);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::AutoSize;
-			this->pictureBox1->TabIndex = 6;
-			this->pictureBox1->TabStop = false;
+			this->wtorekbtn->AutoSize = true;
+			this->wtorekbtn->BackColor = System::Drawing::Color::Transparent;
+			this->wtorekbtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->wtorekbtn->ForeColor = System::Drawing::Color::White;
+			this->wtorekbtn->Location = System::Drawing::Point(344, 178);
+			this->wtorekbtn->Name = L"wtorekbtn";
+			this->wtorekbtn->Size = System::Drawing::Size(69, 19);
+			this->wtorekbtn->TabIndex = 6;
+			this->wtorekbtn->TabStop = true;
+			this->wtorekbtn->Text = L"Wtorek";
+			this->wtorekbtn->UseVisualStyleBackColor = false;
+			// 
+			// srodabtn
+			// 
+			this->srodabtn->AutoSize = true;
+			this->srodabtn->BackColor = System::Drawing::Color::Transparent;
+			this->srodabtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->srodabtn->ForeColor = System::Drawing::Color::White;
+			this->srodabtn->Location = System::Drawing::Point(230, 203);
+			this->srodabtn->Name = L"srodabtn";
+			this->srodabtn->Size = System::Drawing::Size(63, 19);
+			this->srodabtn->TabIndex = 7;
+			this->srodabtn->TabStop = true;
+			this->srodabtn->Text = L"Œroda";
+			this->srodabtn->UseVisualStyleBackColor = false;
+			// 
+			// czwartekbtn
+			// 
+			this->czwartekbtn->AutoSize = true;
+			this->czwartekbtn->BackColor = System::Drawing::Color::Transparent;
+			this->czwartekbtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->czwartekbtn->ForeColor = System::Drawing::Color::White;
+			this->czwartekbtn->Location = System::Drawing::Point(299, 203);
+			this->czwartekbtn->Name = L"czwartekbtn";
+			this->czwartekbtn->Size = System::Drawing::Size(83, 19);
+			this->czwartekbtn->TabIndex = 8;
+			this->czwartekbtn->TabStop = true;
+			this->czwartekbtn->Text = L"Czwartek";
+			this->czwartekbtn->UseVisualStyleBackColor = false;
+			// 
+			// piatekbtn
+			// 
+			this->piatekbtn->AutoSize = true;
+			this->piatekbtn->BackColor = System::Drawing::Color::Transparent;
+			this->piatekbtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->piatekbtn->ForeColor = System::Drawing::Color::White;
+			this->piatekbtn->Location = System::Drawing::Point(388, 203);
+			this->piatekbtn->Name = L"piatekbtn";
+			this->piatekbtn->Size = System::Drawing::Size(65, 19);
+			this->piatekbtn->TabIndex = 9;
+			this->piatekbtn->TabStop = true;
+			this->piatekbtn->Text = L"Pi¹tek";
+			this->piatekbtn->UseVisualStyleBackColor = false;
+			// 
+			// etykietabtn
+			// 
+			this->etykietabtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(85)), static_cast<System::Int32>(static_cast<System::Byte>(111)),
+				static_cast<System::Int32>(static_cast<System::Byte>(245)));
+			this->etykietabtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->etykietabtn->ForeColor = System::Drawing::Color::White;
+			this->etykietabtn->FormattingEnabled = true;
+			this->etykietabtn->Items->AddRange(gcnew cli::array< System::Object^  >(6) {
+				L"Brak", L"Czerwony", L"¯ó³ty", L"Zielony", L"Niebieski",
+					L"Czarny"
+			});
+			this->etykietabtn->Location = System::Drawing::Point(230, 248);
+			this->etykietabtn->Name = L"etykietabtn";
+			this->etykietabtn->Size = System::Drawing::Size(133, 21);
+			this->etykietabtn->TabIndex = 10;
 			// 
 			// NowyEventForm
 			// 
@@ -184,9 +287,14 @@ namespace OrganiseIt {
 			this->BackColor = System::Drawing::SystemColors::Highlight;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(488, 369);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
+			this->Controls->Add(this->etykietabtn);
+			this->Controls->Add(this->piatekbtn);
+			this->Controls->Add(this->czwartekbtn);
+			this->Controls->Add(this->srodabtn);
+			this->Controls->Add(this->wtorekbtn);
+			this->Controls->Add(this->poniedzialekbtn);
+			this->Controls->Add(this->opisEvent);
+			this->Controls->Add(this->nazwaEvent);
 			this->Controls->Add(this->anulujBtn);
 			this->Controls->Add(this->dodajBtn);
 			this->Controls->Add(this->belkabox);
@@ -197,10 +305,10 @@ namespace OrganiseIt {
 			this->Text = L"NowyEventForm";
 			this->belkabox->ResumeLayout(false);
 			this->belkabox->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->zamknij))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dodajBtn))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->anulujBtn))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -232,6 +340,8 @@ namespace OrganiseIt {
 		this->dragging = false;
 	}
 	//------------------------------
+
+
 
 
 };
