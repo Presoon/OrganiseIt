@@ -21,3 +21,5 @@ int main(array<System::String ^> ^args) {
 	Application::Run();
 	return 0;
 }
+
+// WIELKIE SIECIOWE POZDRO DLA KAMILA SZPAKA
