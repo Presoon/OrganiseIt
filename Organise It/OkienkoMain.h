@@ -36,12 +36,12 @@ namespace OrganiseIt {
 		}
 	private: System::Windows::Forms::Panel^  leftsidebar;
 	private: System::Windows::Forms::Panel^  belkabox;
+	private: System::Windows::Forms::Panel^  plusboximg;
 	private: System::Windows::Forms::PictureBox^  wylogujButton;
 	private: System::Windows::Forms::PictureBox^  menuButton;
 	private: System::Windows::Forms::PictureBox^  logoButton;
 	private: System::Windows::Forms::PictureBox^  belkanapis;
 	private: System::Windows::Forms::PictureBox^  plusbuttonimg;
-	private: System::Windows::Forms::Panel^  plusboximg;
 	private: System::Windows::Forms::PictureBox^  minimize;
 	private: System::Windows::Forms::PictureBox^  zamknij;
 	private: System::Windows::Forms::PictureBox^  maximize;
@@ -140,6 +140,7 @@ namespace OrganiseIt {
 			this->wylogujButton->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
 			this->wylogujButton->TabIndex = 3;
 			this->wylogujButton->TabStop = false;
+			this->wylogujButton->Click += gcnew System::EventHandler(this, &OkienkoMain::wylogujButton_Click);
 			// 
 			// belkabox
 			// 
@@ -318,5 +319,11 @@ namespace OrganiseIt {
 			czyWidoczny = true;
 		}
 	}
+	private: System::Void wylogujButton_Click(System::Object^  sender, System::EventArgs^  e) {
+		if (MessageBox::Show("Czy aby na pewno chcesz zakoñczyæ program?", "Organise It!", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == Windows::Forms::DialogResult::Yes) {
+			Application::Exit();
+		}
+	}
+
 };
 }
