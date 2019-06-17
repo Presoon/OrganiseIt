@@ -1,5 +1,7 @@
 #pragma once
 #include "NowyEventForm.h"
+#include <fstream>
+#include <iostream>
 
 namespace OrganiseIt {
 
@@ -23,6 +25,11 @@ namespace OrganiseIt {
 			//TODO: W tym miejscu dodaj kod konstruktora
 			//
 		}
+		array<String^>^ wyd_id = gcnew array<String^>(20);
+		array<String^>^ wyd_nazwa = gcnew array<String^>(20);
+		array<String^>^ wyd_opis = gcnew array<String^>(20);
+		array<String^>^ wyd_dzien = gcnew array<String^>(20);
+		array<String^>^ wyd_etykieta = gcnew array<String^>(20);
 
 	protected:
 		/// <summary>
@@ -46,6 +53,17 @@ namespace OrganiseIt {
 	private: System::Windows::Forms::PictureBox^  minimize;
 	private: System::Windows::Forms::PictureBox^  zamknij;
 	private: System::Windows::Forms::PictureBox^  maximize;
+	private: System::Windows::Forms::Panel^  panel1;
+	private: System::Windows::Forms::PictureBox^  newEtykieta;
+	private: System::Windows::Forms::PictureBox^  newWydarzenie;
+	private: System::Windows::Forms::PictureBox^  newZadanie;
+	private: System::Windows::Forms::ImageList^  imagelistZadanie;
+	private: System::Windows::Forms::ImageList^  imagelistWydarzenie;
+	private: System::Windows::Forms::ImageList^  imagelistEtykieta;
+	private: System::Windows::Forms::PictureBox^  ImportBazyBtn;
+	private: System::ComponentModel::IContainer^  components;
+
+
 
 	private:
 	bool czyWidoczny = true;
@@ -53,22 +71,8 @@ namespace OrganiseIt {
 	bool czyPrzypiety = false;
 	bool dragging;
 	Point offset;
-	private: System::Windows::Forms::Panel^  panel1;
-	private: System::Windows::Forms::PictureBox^  newEtykieta;
-
-	private: System::Windows::Forms::PictureBox^  newWydarzenie;
-
-	private: System::Windows::Forms::PictureBox^  newZadanie;
-	private: System::Windows::Forms::ImageList^  imagelistZadanie;
-	private: System::Windows::Forms::ImageList^  imagelistWydarzenie;
-	private: System::Windows::Forms::ImageList^  imagelistEtykieta;
-
-	private: System::ComponentModel::IContainer^  components;
 
 
-	protected:
-
-	protected:
 
 	private:
 		/// <summary>
@@ -103,6 +107,7 @@ namespace OrganiseIt {
 			this->imagelistZadanie = (gcnew System::Windows::Forms::ImageList(this->components));
 			this->imagelistWydarzenie = (gcnew System::Windows::Forms::ImageList(this->components));
 			this->imagelistEtykieta = (gcnew System::Windows::Forms::ImageList(this->components));
+			this->ImportBazyBtn = (gcnew System::Windows::Forms::PictureBox());
 			this->leftsidebar->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->logoButton))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->menuButton))->BeginInit();
@@ -118,12 +123,14 @@ namespace OrganiseIt {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newEtykieta))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newWydarzenie))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newZadanie))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ImportBazyBtn))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// leftsidebar
 			// 
 			this->leftsidebar->BackColor = System::Drawing::Color::Transparent;
 			this->leftsidebar->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"leftsidebar.BackgroundImage")));
+			this->leftsidebar->Controls->Add(this->ImportBazyBtn);
 			this->leftsidebar->Controls->Add(this->logoButton);
 			this->leftsidebar->Controls->Add(this->menuButton);
 			this->leftsidebar->Controls->Add(this->wylogujButton);
@@ -325,6 +332,16 @@ namespace OrganiseIt {
 			this->imagelistEtykieta->TransparentColor = System::Drawing::Color::Transparent;
 			this->imagelistEtykieta->Images->SetKeyName(0, L"Dodaj now¹ etykietêhov.png");
 			// 
+			// ImportBazyBtn
+			// 
+			this->ImportBazyBtn->BackColor = System::Drawing::Color::Maroon;
+			this->ImportBazyBtn->Location = System::Drawing::Point(59, 147);
+			this->ImportBazyBtn->Name = L"ImportBazyBtn";
+			this->ImportBazyBtn->Size = System::Drawing::Size(100, 54);
+			this->ImportBazyBtn->TabIndex = 4;
+			this->ImportBazyBtn->TabStop = false;
+			this->ImportBazyBtn->Click += gcnew System::EventHandler(this, &OkienkoMain::ImportBazyBtn_Click);
+			// 
 			// OkienkoMain
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -355,6 +372,7 @@ namespace OrganiseIt {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newEtykieta))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newWydarzenie))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newZadanie))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ImportBazyBtn))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -479,6 +497,69 @@ namespace OrganiseIt {
 				czyWidocznyPlusBox = false;    //autoukrycie plusbox
 				NowyEventForm^ eventowa = gcnew NowyEventForm;
 				eventowa->Show();
+			}
+			
+			//import bazy danych
+			private: System::Void ImportBazyBtn_Click(System::Object^  sender, System::EventArgs^  e) {
+				IO::Stream^ myStream;
+				OpenFileDialog^ openFileDialog1 = gcnew OpenFileDialog;
+				String^ wiersz;
+				openFileDialog1->InitialDirectory = "c:\\";
+				openFileDialog1->Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+				openFileDialog1->FilterIndex = 2;
+				openFileDialog1->RestoreDirectory = true;
+				int numerwyd = 0;
+				int nr_linii = 1;
+
+				if (openFileDialog1->ShowDialog() == Windows::Forms::DialogResult::OK) {
+
+					if ((myStream = openFileDialog1->OpenFile()) != nullptr) {
+						IO::StreamReader^ plik = gcnew IO::StreamReader(myStream, System::Text::Encoding::Default);
+						while ((wiersz = plik->ReadLine()) != nullptr) {
+							//wiersz = plik->ReadLine();
+							Console::Write(wiersz + "\n");
+
+							switch (nr_linii % 5) {
+							case 1: {
+								wyd_id[numerwyd] = wiersz;
+								nr_linii += 1;
+								break;
+								}
+							case 2: {
+								wyd_nazwa[numerwyd] = wiersz;
+								nr_linii++;
+								break;
+							}
+							case 3: {
+								wyd_opis[numerwyd] = wiersz;
+								nr_linii++;
+								break;
+							}
+							case 4: {
+								wyd_dzien[numerwyd] = wiersz;
+								nr_linii++;
+								break;
+							}
+							case 0: {
+								wyd_etykieta[numerwyd] = wiersz;
+								nr_linii++;
+								numerwyd++;
+								break;
+							}
+							}//koniec switcha
+
+						}//petla czytaj¹ca plik
+
+						
+					}//if okna otwieraj¹cego plik
+
+					Console::Write("\nWYD ID: " + wyd_id[0] + "\nWYD_NAZWA: " +
+						wyd_nazwa[0] + "\nWYD_OPIS: " +
+						wyd_opis[0] + "\nWYD_DZIEN: " +
+						wyd_dzien[0] + "\nWYD_ETYKIETA: " +
+						wyd_etykieta[0] + "\n");
+
+				}
 			}
 };
 }

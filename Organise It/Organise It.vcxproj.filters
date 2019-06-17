@@ -37,5 +37,16 @@
     <EmbeddedResource Include="OkienkoMain.resx">
       <Filter>Pliki zasobów</Filter>
     </EmbeddedResource>
+    <EmbeddedResource Include="NowyEventForm.resx">
+      <Filter>Pliki zasobów</Filter>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="bazaWydarzen.txt">
+      <Filter>Pliki zasobów</Filter>
+    </Text>
+    <Text Include="iloscWydarzen.txt">
+      <Filter>Pliki zasobów</Filter>
+    </Text>
   </ItemGroup>
 </Project>
