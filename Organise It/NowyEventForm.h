@@ -35,10 +35,11 @@ namespace OrganiseIt {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Panel^  belkabox;
-	private: System::Windows::Forms::PictureBox^  zamknij;
-	private: System::Windows::Forms::PictureBox^  dodajBtn;
-	private: System::Windows::Forms::PictureBox^  anulujBtn;
+	public:
+	System::Windows::Forms::Panel^  belkabox;
+	System::Windows::Forms::PictureBox^  zamknij;
+    System::Windows::Forms::PictureBox^  dodajBtn;
+	System::Windows::Forms::PictureBox^  anulujBtn;
 	private:
 		bool czyWidoczny = true;
 		bool czyWidocznyPlusBox = false;
@@ -46,17 +47,19 @@ namespace OrganiseIt {
 		Point offset;
 
 
-
-	private: System::Windows::Forms::PictureBox^  pictureBox1;
-	private: System::Windows::Forms::TextBox^  nazwaEvent;
-	private: System::Windows::Forms::TextBox^  opisEvent;
-	private: System::Windows::Forms::RadioButton^  poniedzialekbtn;
-	private: System::Windows::Forms::RadioButton^  wtorekbtn;
-	private: System::Windows::Forms::RadioButton^  srodabtn;
-	private: System::Windows::Forms::RadioButton^  czwartekbtn;
-	private: System::Windows::Forms::RadioButton^  piatekbtn;
-	private: System::Windows::Forms::ComboBox^  etykietabtn;
-	private: System::Windows::Forms::ComboBox^  godzinabtn;
+	public:
+	 System::Windows::Forms::PictureBox^  pictureBox1;
+	 System::Windows::Forms::TextBox^  nazwaEvent;
+	 System::Windows::Forms::TextBox^  opisEvent;
+	 System::Windows::Forms::RadioButton^  poniedzialekbtn;
+	 System::Windows::Forms::RadioButton^  wtorekbtn;
+	 System::Windows::Forms::RadioButton^  srodabtn;
+	 System::Windows::Forms::RadioButton^  czwartekbtn;
+	 System::Windows::Forms::RadioButton^  piatekbtn;
+	 System::Windows::Forms::ComboBox^  etykietabtn;
+	 System::Windows::Forms::ComboBox^  godzinabtn;
+	 System::Windows::Forms::ImageList^  backgroungEvent;
+	 System::ComponentModel::IContainer^  components;
 
 
 
@@ -71,7 +74,7 @@ namespace OrganiseIt {
 		/// <summary>
 		/// Wymagana zmienna projektanta.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -80,6 +83,7 @@ namespace OrganiseIt {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(NowyEventForm::typeid));
 			this->belkabox = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
@@ -95,6 +99,7 @@ namespace OrganiseIt {
 			this->piatekbtn = (gcnew System::Windows::Forms::RadioButton());
 			this->etykietabtn = (gcnew System::Windows::Forms::ComboBox());
 			this->godzinabtn = (gcnew System::Windows::Forms::ComboBox());
+			this->backgroungEvent = (gcnew System::Windows::Forms::ImageList(this->components));
 			this->belkabox->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->zamknij))->BeginInit();
@@ -299,6 +304,12 @@ namespace OrganiseIt {
 			this->godzinabtn->Name = L"godzinabtn";
 			this->godzinabtn->Size = System::Drawing::Size(147, 21);
 			this->godzinabtn->TabIndex = 11;
+			// 
+			// backgroungEvent
+			// 
+			this->backgroungEvent->ColorDepth = System::Windows::Forms::ColorDepth::Depth32Bit;
+			this->backgroungEvent->ImageSize = System::Drawing::Size(16, 16);
+			this->backgroungEvent->TransparentColor = System::Drawing::Color::Transparent;
 			// 
 			// NowyEventForm
 			// 

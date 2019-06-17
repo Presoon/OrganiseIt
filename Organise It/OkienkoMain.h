@@ -29,7 +29,22 @@ namespace OrganiseIt {
 		array<String^>^ wyd_nazwa = gcnew array<String^>(20);
 		array<String^>^ wyd_opis = gcnew array<String^>(20);
 		array<String^>^ wyd_dzien = gcnew array<String^>(20);
+		array<String^>^ wyd_godzina = gcnew array<String^>(20);
 		array<String^>^ wyd_etykieta = gcnew array<String^>(20);
+		array<Panel^>^ panel = gcnew array<Panel^>(5);//wydarzenia
+		int numerwyd = 0;
+		int nr_linii = 1;
+
+
+	private: System::Windows::Forms::PictureBox^  importujimg;
+	private: System::Windows::Forms::PictureBox^  listazadan_btn;
+	private: System::Windows::Forms::PictureBox^  terminarz_btn;
+	private: System::Windows::Forms::PictureBox^  oAutorachButton;
+	private: System::Windows::Forms::PictureBox^  ExportBazyZadanBtn;
+	private: System::Windows::Forms::PictureBox^  ExportBazyWydarzenBtn;
+	private: System::Windows::Forms::PictureBox^  exportujimg;
+	private: System::Windows::Forms::PictureBox^  ImportBazyZadanBtn;
+			 
 
 	protected:
 		/// <summary>
@@ -60,7 +75,8 @@ namespace OrganiseIt {
 	private: System::Windows::Forms::ImageList^  imagelistZadanie;
 	private: System::Windows::Forms::ImageList^  imagelistWydarzenie;
 	private: System::Windows::Forms::ImageList^  imagelistEtykieta;
-	private: System::Windows::Forms::PictureBox^  ImportBazyBtn;
+	private: System::Windows::Forms::PictureBox^  ImportBazyWydarzenBtn;
+
 	private: System::ComponentModel::IContainer^  components;
 
 
@@ -90,6 +106,15 @@ namespace OrganiseIt {
 			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(OkienkoMain::typeid));
 			this->leftsidebar = (gcnew System::Windows::Forms::Panel());
+			this->oAutorachButton = (gcnew System::Windows::Forms::PictureBox());
+			this->ExportBazyZadanBtn = (gcnew System::Windows::Forms::PictureBox());
+			this->ExportBazyWydarzenBtn = (gcnew System::Windows::Forms::PictureBox());
+			this->exportujimg = (gcnew System::Windows::Forms::PictureBox());
+			this->ImportBazyZadanBtn = (gcnew System::Windows::Forms::PictureBox());
+			this->importujimg = (gcnew System::Windows::Forms::PictureBox());
+			this->listazadan_btn = (gcnew System::Windows::Forms::PictureBox());
+			this->terminarz_btn = (gcnew System::Windows::Forms::PictureBox());
+			this->ImportBazyWydarzenBtn = (gcnew System::Windows::Forms::PictureBox());
 			this->logoButton = (gcnew System::Windows::Forms::PictureBox());
 			this->menuButton = (gcnew System::Windows::Forms::PictureBox());
 			this->wylogujButton = (gcnew System::Windows::Forms::PictureBox());
@@ -107,8 +132,16 @@ namespace OrganiseIt {
 			this->imagelistZadanie = (gcnew System::Windows::Forms::ImageList(this->components));
 			this->imagelistWydarzenie = (gcnew System::Windows::Forms::ImageList(this->components));
 			this->imagelistEtykieta = (gcnew System::Windows::Forms::ImageList(this->components));
-			this->ImportBazyBtn = (gcnew System::Windows::Forms::PictureBox());
 			this->leftsidebar->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->oAutorachButton))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ExportBazyZadanBtn))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ExportBazyWydarzenBtn))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->exportujimg))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ImportBazyZadanBtn))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->importujimg))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->listazadan_btn))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->terminarz_btn))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ImportBazyWydarzenBtn))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->logoButton))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->menuButton))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->wylogujButton))->BeginInit();
@@ -123,14 +156,21 @@ namespace OrganiseIt {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newEtykieta))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newWydarzenie))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newZadanie))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ImportBazyBtn))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// leftsidebar
 			// 
 			this->leftsidebar->BackColor = System::Drawing::Color::Transparent;
 			this->leftsidebar->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"leftsidebar.BackgroundImage")));
-			this->leftsidebar->Controls->Add(this->ImportBazyBtn);
+			this->leftsidebar->Controls->Add(this->oAutorachButton);
+			this->leftsidebar->Controls->Add(this->ExportBazyZadanBtn);
+			this->leftsidebar->Controls->Add(this->ExportBazyWydarzenBtn);
+			this->leftsidebar->Controls->Add(this->exportujimg);
+			this->leftsidebar->Controls->Add(this->ImportBazyZadanBtn);
+			this->leftsidebar->Controls->Add(this->importujimg);
+			this->leftsidebar->Controls->Add(this->listazadan_btn);
+			this->leftsidebar->Controls->Add(this->terminarz_btn);
+			this->leftsidebar->Controls->Add(this->ImportBazyWydarzenBtn);
 			this->leftsidebar->Controls->Add(this->logoButton);
 			this->leftsidebar->Controls->Add(this->menuButton);
 			this->leftsidebar->Controls->Add(this->wylogujButton);
@@ -139,6 +179,105 @@ namespace OrganiseIt {
 			this->leftsidebar->Size = System::Drawing::Size(239, 731);
 			this->leftsidebar->TabIndex = 0;
 			this->leftsidebar->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &OkienkoMain::leftsidebar_Paint);
+			// 
+			// oAutorachButton
+			// 
+			this->oAutorachButton->BackColor = System::Drawing::Color::Transparent;
+			this->oAutorachButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"oAutorachButton.Image")));
+			this->oAutorachButton->Location = System::Drawing::Point(27, 581);
+			this->oAutorachButton->Name = L"oAutorachButton";
+			this->oAutorachButton->Size = System::Drawing::Size(180, 55);
+			this->oAutorachButton->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
+			this->oAutorachButton->TabIndex = 12;
+			this->oAutorachButton->TabStop = false;
+			this->oAutorachButton->Click += gcnew System::EventHandler(this, &OkienkoMain::oAutorachButton_Click);
+			// 
+			// ExportBazyZadanBtn
+			// 
+			this->ExportBazyZadanBtn->BackColor = System::Drawing::Color::Transparent;
+			this->ExportBazyZadanBtn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ExportBazyZadanBtn.Image")));
+			this->ExportBazyZadanBtn->Location = System::Drawing::Point(45, 473);
+			this->ExportBazyZadanBtn->Name = L"ExportBazyZadanBtn";
+			this->ExportBazyZadanBtn->Size = System::Drawing::Size(117, 23);
+			this->ExportBazyZadanBtn->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
+			this->ExportBazyZadanBtn->TabIndex = 11;
+			this->ExportBazyZadanBtn->TabStop = false;
+			this->ExportBazyZadanBtn->Click += gcnew System::EventHandler(this, &OkienkoMain::ExportBazyZadanBtn_Click);
+			// 
+			// ExportBazyWydarzenBtn
+			// 
+			this->ExportBazyWydarzenBtn->BackColor = System::Drawing::Color::Transparent;
+			this->ExportBazyWydarzenBtn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ExportBazyWydarzenBtn.Image")));
+			this->ExportBazyWydarzenBtn->Location = System::Drawing::Point(46, 442);
+			this->ExportBazyWydarzenBtn->Name = L"ExportBazyWydarzenBtn";
+			this->ExportBazyWydarzenBtn->Size = System::Drawing::Size(149, 23);
+			this->ExportBazyWydarzenBtn->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
+			this->ExportBazyWydarzenBtn->TabIndex = 10;
+			this->ExportBazyWydarzenBtn->TabStop = false;
+			this->ExportBazyWydarzenBtn->Click += gcnew System::EventHandler(this, &OkienkoMain::ExportBazyWydarzenBtn_Click);
+			// 
+			// exportujimg
+			// 
+			this->exportujimg->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"exportujimg.Image")));
+			this->exportujimg->Location = System::Drawing::Point(27, 415);
+			this->exportujimg->Name = L"exportujimg";
+			this->exportujimg->Size = System::Drawing::Size(106, 18);
+			this->exportujimg->SizeMode = System::Windows::Forms::PictureBoxSizeMode::AutoSize;
+			this->exportujimg->TabIndex = 9;
+			this->exportujimg->TabStop = false;
+			// 
+			// ImportBazyZadanBtn
+			// 
+			this->ImportBazyZadanBtn->BackColor = System::Drawing::Color::Transparent;
+			this->ImportBazyZadanBtn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ImportBazyZadanBtn.Image")));
+			this->ImportBazyZadanBtn->Location = System::Drawing::Point(45, 373);
+			this->ImportBazyZadanBtn->Name = L"ImportBazyZadanBtn";
+			this->ImportBazyZadanBtn->Size = System::Drawing::Size(117, 23);
+			this->ImportBazyZadanBtn->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
+			this->ImportBazyZadanBtn->TabIndex = 8;
+			this->ImportBazyZadanBtn->TabStop = false;
+			// 
+			// importujimg
+			// 
+			this->importujimg->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"importujimg.Image")));
+			this->importujimg->Location = System::Drawing::Point(27, 315);
+			this->importujimg->Name = L"importujimg";
+			this->importujimg->Size = System::Drawing::Size(106, 18);
+			this->importujimg->SizeMode = System::Windows::Forms::PictureBoxSizeMode::AutoSize;
+			this->importujimg->TabIndex = 7;
+			this->importujimg->TabStop = false;
+			// 
+			// listazadan_btn
+			// 
+			this->listazadan_btn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"listazadan_btn.Image")));
+			this->listazadan_btn->Location = System::Drawing::Point(22, 190);
+			this->listazadan_btn->Name = L"listazadan_btn";
+			this->listazadan_btn->Size = System::Drawing::Size(194, 56);
+			this->listazadan_btn->SizeMode = System::Windows::Forms::PictureBoxSizeMode::AutoSize;
+			this->listazadan_btn->TabIndex = 6;
+			this->listazadan_btn->TabStop = false;
+			// 
+			// terminarz_btn
+			// 
+			this->terminarz_btn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"terminarz_btn.Image")));
+			this->terminarz_btn->Location = System::Drawing::Point(22, 115);
+			this->terminarz_btn->Name = L"terminarz_btn";
+			this->terminarz_btn->Size = System::Drawing::Size(194, 56);
+			this->terminarz_btn->SizeMode = System::Windows::Forms::PictureBoxSizeMode::AutoSize;
+			this->terminarz_btn->TabIndex = 5;
+			this->terminarz_btn->TabStop = false;
+			// 
+			// ImportBazyWydarzenBtn
+			// 
+			this->ImportBazyWydarzenBtn->BackColor = System::Drawing::Color::Transparent;
+			this->ImportBazyWydarzenBtn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ImportBazyWydarzenBtn.Image")));
+			this->ImportBazyWydarzenBtn->Location = System::Drawing::Point(46, 342);
+			this->ImportBazyWydarzenBtn->Name = L"ImportBazyWydarzenBtn";
+			this->ImportBazyWydarzenBtn->Size = System::Drawing::Size(149, 23);
+			this->ImportBazyWydarzenBtn->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
+			this->ImportBazyWydarzenBtn->TabIndex = 4;
+			this->ImportBazyWydarzenBtn->TabStop = false;
+			this->ImportBazyWydarzenBtn->Click += gcnew System::EventHandler(this, &OkienkoMain::ImportBazyBtn_Click);
 			// 
 			// logoButton
 			// 
@@ -332,16 +471,6 @@ namespace OrganiseIt {
 			this->imagelistEtykieta->TransparentColor = System::Drawing::Color::Transparent;
 			this->imagelistEtykieta->Images->SetKeyName(0, L"Dodaj now¹ etykietêhov.png");
 			// 
-			// ImportBazyBtn
-			// 
-			this->ImportBazyBtn->BackColor = System::Drawing::Color::Maroon;
-			this->ImportBazyBtn->Location = System::Drawing::Point(59, 147);
-			this->ImportBazyBtn->Name = L"ImportBazyBtn";
-			this->ImportBazyBtn->Size = System::Drawing::Size(100, 54);
-			this->ImportBazyBtn->TabIndex = 4;
-			this->ImportBazyBtn->TabStop = false;
-			this->ImportBazyBtn->Click += gcnew System::EventHandler(this, &OkienkoMain::ImportBazyBtn_Click);
-			// 
 			// OkienkoMain
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -358,6 +487,16 @@ namespace OrganiseIt {
 			this->Text = L"OrganiseIt";
 			this->Load += gcnew System::EventHandler(this, &OkienkoMain::OkienkoMain_Load);
 			this->leftsidebar->ResumeLayout(false);
+			this->leftsidebar->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->oAutorachButton))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ExportBazyZadanBtn))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ExportBazyWydarzenBtn))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->exportujimg))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ImportBazyZadanBtn))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->importujimg))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->listazadan_btn))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->terminarz_btn))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ImportBazyWydarzenBtn))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->logoButton))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->menuButton))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->wylogujButton))->EndInit();
@@ -372,12 +511,14 @@ namespace OrganiseIt {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newEtykieta))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newWydarzenie))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newZadanie))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ImportBazyBtn))->EndInit();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
 	private: System::Void OkienkoMain_Load(System::Object^  sender, System::EventArgs^  e) {
+
+
+
 	}
 	private: System::Void leftsidebar_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
 	}
@@ -499,8 +640,9 @@ namespace OrganiseIt {
 				eventowa->Show();
 			}
 			
-			//import bazy danych
-			private: System::Void ImportBazyBtn_Click(System::Object^  sender, System::EventArgs^  e) {
+			public: System::Int32 Importzpliku(int numerek) {
+
+
 				IO::Stream^ myStream;
 				OpenFileDialog^ openFileDialog1 = gcnew OpenFileDialog;
 				String^ wiersz;
@@ -508,9 +650,6 @@ namespace OrganiseIt {
 				openFileDialog1->Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
 				openFileDialog1->FilterIndex = 2;
 				openFileDialog1->RestoreDirectory = true;
-				int numerwyd = 0;
-				int nr_linii = 1;
-
 				if (openFileDialog1->ShowDialog() == Windows::Forms::DialogResult::OK) {
 
 					if ((myStream = openFileDialog1->OpenFile()) != nullptr) {
@@ -519,47 +658,143 @@ namespace OrganiseIt {
 							//wiersz = plik->ReadLine();
 							Console::Write(wiersz + "\n");
 
-							switch (nr_linii % 5) {
+							switch (nr_linii % 6) {
 							case 1: {
-								wyd_id[numerwyd] = wiersz;
+								wyd_id[numerek] = wiersz;
 								nr_linii += 1;
 								break;
-								}
+							}
 							case 2: {
-								wyd_nazwa[numerwyd] = wiersz;
+								wyd_nazwa[numerek] = wiersz;
 								nr_linii++;
 								break;
 							}
 							case 3: {
-								wyd_opis[numerwyd] = wiersz;
+								wyd_opis[numerek] = wiersz;
 								nr_linii++;
 								break;
 							}
 							case 4: {
-								wyd_dzien[numerwyd] = wiersz;
+								wyd_dzien[numerek] = wiersz;
+								nr_linii++;
+								break;
+							}
+							case 5: {
+								wyd_godzina[numerek] = wiersz;
 								nr_linii++;
 								break;
 							}
 							case 0: {
-								wyd_etykieta[numerwyd] = wiersz;
+								wyd_etykieta[numerek] = wiersz;
 								nr_linii++;
-								numerwyd++;
+								numerek++;
 								break;
 							}
 							}//koniec switcha
 
 						}//petla czytaj¹ca plik
 
-						
-					}//if okna otwieraj¹cego plik
 
-					Console::Write("\nWYD ID: " + wyd_id[0] + "\nWYD_NAZWA: " +
-						wyd_nazwa[0] + "\nWYD_OPIS: " +
-						wyd_opis[0] + "\nWYD_DZIEN: " +
-						wyd_dzien[0] + "\nWYD_ETYKIETA: " +
-						wyd_etykieta[0] + "\n");
+					}//if okna otwieraj¹cego plik
+					int^ numerlini = gcnew int;
+					numerlini = nr_linii;
+					//pêtla debuguj¹ca import z pliku
+					for (int i = 0; i <= numerek - 1; i++)
+					{
+						Console::Write("\nWYD ID: " + wyd_id[i] + "\nWYD_NAZWA: " +
+							wyd_nazwa[i] + "\nWYD_OPIS: " +
+							wyd_opis[i] + "\nWYD_DZIEN: " +
+							wyd_dzien[i] + "\nWYD_GODZINA: " +
+							wyd_godzina[i] + "\nWYD_ETYKIETA: " +
+							wyd_etykieta[i] + "\n");
+					}
+
+
+				}
+				return numerek;
+			}
+
+
+			public: System::Void Zapisdopliku() {
+				IO::Stream^ myStream;
+				SaveFileDialog^ saveFileDialog1 = gcnew SaveFileDialog;
+				String^ wiersz;
+				saveFileDialog1->InitialDirectory = "c:\\";
+				saveFileDialog1->Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+				saveFileDialog1->FilterIndex = 2;
+				saveFileDialog1->RestoreDirectory = true;
+
+				if (saveFileDialog1->ShowDialog() == Windows::Forms::DialogResult::OK) {
+
+					if ((myStream = saveFileDialog1->OpenFile()) != nullptr) {
+						IO::StreamWriter^ plik = gcnew IO::StreamWriter(myStream);
+						for (int i=0;i<=numerwyd;i++){
+							plik->WriteLine(wyd_id[i]);
+							plik->WriteLine(wyd_nazwa[i]);
+							plik->WriteLine(wyd_opis[i]);
+							plik->WriteLine(wyd_dzien[i]);
+							plik->WriteLine(wyd_godzina[i]); 
+							plik->WriteLine(wyd_etykieta[i]);
+
+						
+						}//petla czytaj¹ca plik
+						plik->Close();
+
+					}//if okna otwieraj¹cego plik
+					myStream->Close();
 
 				}
 			}
+
+			//import bazy danych
+			public: System::Void ImportBazyBtn_Click(System::Object^  sender, System::EventArgs^  e) {
+				numerwyd = Importzpliku(numerwyd);
+			}
+
+			//dynamicznie tworzone okno oAutorze
+			private: System::Void oAutorachButton_Click(System::Object^  sender, System::EventArgs^  e) {
+				NowyEventForm^ oAutorach = gcnew NowyEventForm;
+				oAutorach->Show();
+				oAutorach->BackgroundImage;
+				oAutorach->dodajBtn->Visible = false;
+				oAutorach->anulujBtn->Visible = false;
+				System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(OkienkoMain::typeid));
+				oAutorach->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+				oAutorach->nazwaEvent->Visible = false;
+				oAutorach->opisEvent->Visible = false;
+				oAutorach->poniedzialekbtn->Visible = false;
+				oAutorach->wtorekbtn->Visible = false;
+				oAutorach->srodabtn->Visible = false;
+				oAutorach->czwartekbtn->Visible = false;
+				oAutorach->piatekbtn->Visible = false;
+				oAutorach->godzinabtn->Visible = false;
+				oAutorach->etykietabtn->Visible = false; 
+				oAutorach->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"belkanapis.Image")));
+			}
+
+			//export wydarzen do pliku
+			private: System::Void ExportBazyWydarzenBtn_Click(System::Object^  sender, System::EventArgs^  e) {
+				Zapisdopliku();
+			}
+			//testowe towrzenie paneli
+			private: System::Void ExportBazyZadanBtn_Click(System::Object^  sender, System::EventArgs^  e) {
+				//utoworzenie panelu z danymi
+				Console::Write("\nZrobione" + numerwyd);
+
+				for (int j = 0; j < numerwyd; j++)
+				{
+					Console::Write("\nZrobione");
+					panel[j]->Name = L"panel1" + j;
+					panel[j]->Size = System::Drawing::Size(194, 56);
+					panel[j]->Location = System::Drawing::Point(251, 39);
+					panel[j]->BackColor = System::Drawing::Color::White;
+					panel[j]->Visible = true;
+					this->Controls->Add(panel[j]);
+					Console::Write("\nZrobione");
+				}
+			}
+
+
+
 };
 }
