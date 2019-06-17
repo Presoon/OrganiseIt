@@ -56,6 +56,7 @@ namespace OrganiseIt {
 	private: System::Windows::Forms::RadioButton^  czwartekbtn;
 	private: System::Windows::Forms::RadioButton^  piatekbtn;
 	private: System::Windows::Forms::ComboBox^  etykietabtn;
+	private: System::Windows::Forms::ComboBox^  godzinabtn;
 
 
 
@@ -93,6 +94,7 @@ namespace OrganiseIt {
 			this->czwartekbtn = (gcnew System::Windows::Forms::RadioButton());
 			this->piatekbtn = (gcnew System::Windows::Forms::RadioButton());
 			this->etykietabtn = (gcnew System::Windows::Forms::ComboBox());
+			this->godzinabtn = (gcnew System::Windows::Forms::ComboBox());
 			this->belkabox->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->zamknij))->BeginInit();
@@ -142,7 +144,7 @@ namespace OrganiseIt {
 			// 
 			this->dodajBtn->BackColor = System::Drawing::Color::Transparent;
 			this->dodajBtn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"dodajBtn.Image")));
-			this->dodajBtn->Location = System::Drawing::Point(289, 301);
+			this->dodajBtn->Location = System::Drawing::Point(261, 301);
 			this->dodajBtn->Name = L"dodajBtn";
 			this->dodajBtn->Size = System::Drawing::Size(176, 48);
 			this->dodajBtn->SizeMode = System::Windows::Forms::PictureBoxSizeMode::AutoSize;
@@ -153,7 +155,7 @@ namespace OrganiseIt {
 			// 
 			this->anulujBtn->BackColor = System::Drawing::Color::Transparent;
 			this->anulujBtn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"anulujBtn.Image")));
-			this->anulujBtn->Location = System::Drawing::Point(94, 301);
+			this->anulujBtn->Location = System::Drawing::Point(53, 301);
 			this->anulujBtn->Name = L"anulujBtn";
 			this->anulujBtn->Size = System::Drawing::Size(176, 48);
 			this->anulujBtn->SizeMode = System::Windows::Forms::PictureBoxSizeMode::AutoSize;
@@ -169,7 +171,7 @@ namespace OrganiseIt {
 			this->nazwaEvent->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
 			this->nazwaEvent->ForeColor = System::Drawing::Color::White;
-			this->nazwaEvent->Location = System::Drawing::Point(232, 66);
+			this->nazwaEvent->Location = System::Drawing::Point(230, 57);
 			this->nazwaEvent->MaxLength = 100;
 			this->nazwaEvent->Name = L"nazwaEvent";
 			this->nazwaEvent->Size = System::Drawing::Size(185, 19);
@@ -183,7 +185,7 @@ namespace OrganiseIt {
 			this->opisEvent->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
 			this->opisEvent->ForeColor = System::Drawing::Color::White;
-			this->opisEvent->Location = System::Drawing::Point(232, 127);
+			this->opisEvent->Location = System::Drawing::Point(232, 112);
 			this->opisEvent->Name = L"opisEvent";
 			this->opisEvent->Size = System::Drawing::Size(185, 19);
 			this->opisEvent->TabIndex = 4;
@@ -195,7 +197,7 @@ namespace OrganiseIt {
 			this->poniedzialekbtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
 			this->poniedzialekbtn->ForeColor = System::Drawing::Color::White;
-			this->poniedzialekbtn->Location = System::Drawing::Point(230, 178);
+			this->poniedzialekbtn->Location = System::Drawing::Point(229, 154);
 			this->poniedzialekbtn->Name = L"poniedzialekbtn";
 			this->poniedzialekbtn->Size = System::Drawing::Size(108, 19);
 			this->poniedzialekbtn->TabIndex = 5;
@@ -210,7 +212,7 @@ namespace OrganiseIt {
 			this->wtorekbtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
 			this->wtorekbtn->ForeColor = System::Drawing::Color::White;
-			this->wtorekbtn->Location = System::Drawing::Point(344, 178);
+			this->wtorekbtn->Location = System::Drawing::Point(344, 156);
 			this->wtorekbtn->Name = L"wtorekbtn";
 			this->wtorekbtn->Size = System::Drawing::Size(69, 19);
 			this->wtorekbtn->TabIndex = 6;
@@ -225,7 +227,7 @@ namespace OrganiseIt {
 			this->srodabtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
 			this->srodabtn->ForeColor = System::Drawing::Color::White;
-			this->srodabtn->Location = System::Drawing::Point(230, 203);
+			this->srodabtn->Location = System::Drawing::Point(229, 176);
 			this->srodabtn->Name = L"srodabtn";
 			this->srodabtn->Size = System::Drawing::Size(63, 19);
 			this->srodabtn->TabIndex = 7;
@@ -240,7 +242,7 @@ namespace OrganiseIt {
 			this->czwartekbtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
 			this->czwartekbtn->ForeColor = System::Drawing::Color::White;
-			this->czwartekbtn->Location = System::Drawing::Point(299, 203);
+			this->czwartekbtn->Location = System::Drawing::Point(294, 176);
 			this->czwartekbtn->Name = L"czwartekbtn";
 			this->czwartekbtn->Size = System::Drawing::Size(83, 19);
 			this->czwartekbtn->TabIndex = 8;
@@ -255,7 +257,7 @@ namespace OrganiseIt {
 			this->piatekbtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
 			this->piatekbtn->ForeColor = System::Drawing::Color::White;
-			this->piatekbtn->Location = System::Drawing::Point(388, 203);
+			this->piatekbtn->Location = System::Drawing::Point(380, 176);
 			this->piatekbtn->Name = L"piatekbtn";
 			this->piatekbtn->Size = System::Drawing::Size(65, 19);
 			this->piatekbtn->TabIndex = 9;
@@ -274,10 +276,29 @@ namespace OrganiseIt {
 				L"Brak", L"Czerwony", L"¯ó³ty", L"Zielony", L"Niebieski",
 					L"Czarny"
 			});
-			this->etykietabtn->Location = System::Drawing::Point(230, 248);
+			this->etykietabtn->Location = System::Drawing::Point(229, 262);
 			this->etykietabtn->Name = L"etykietabtn";
-			this->etykietabtn->Size = System::Drawing::Size(133, 21);
+			this->etykietabtn->Size = System::Drawing::Size(147, 21);
 			this->etykietabtn->TabIndex = 10;
+			// 
+			// godzinabtn
+			// 
+			this->godzinabtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(85)), static_cast<System::Int32>(static_cast<System::Byte>(111)),
+				static_cast<System::Int32>(static_cast<System::Byte>(245)));
+			this->godzinabtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->godzinabtn->ForeColor = System::Drawing::Color::White;
+			this->godzinabtn->FormattingEnabled = true;
+			this->godzinabtn->Items->AddRange(gcnew cli::array< System::Object^  >(48) {
+				L"0:00", L"0:30", L"1:00", L"1:30", L"2:00", L"2:30",
+					L"3:00", L"3:30", L"4:00", L"4:30", L"5:00", L"5:30", L"6:00", L"6:30", L"7:00", L"7:30", L"8:00", L"8:30", L"9:00", L"9:30",
+					L"10:00", L"10:30", L"11:00", L"11:30", L"12:00", L"12:30", L"13:00", L"13:30", L"14:00", L"14:30", L"15:00", L"15:30", L"16:00",
+					L"16:30", L"17:00", L"17:30", L"18:00", L"18:30", L"19:00", L"19:30", L"20:00", L"20:30", L"21:00", L"21:30", L"22:00", L"22:30",
+					L"23:00", L"23:30"
+			});
+			this->godzinabtn->Location = System::Drawing::Point(229, 216);
+			this->godzinabtn->Name = L"godzinabtn";
+			this->godzinabtn->Size = System::Drawing::Size(147, 21);
+			this->godzinabtn->TabIndex = 11;
 			// 
 			// NowyEventForm
 			// 
@@ -286,6 +307,7 @@ namespace OrganiseIt {
 			this->BackColor = System::Drawing::SystemColors::Highlight;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(488, 369);
+			this->Controls->Add(this->godzinabtn);
 			this->Controls->Add(this->etykietabtn);
 			this->Controls->Add(this->piatekbtn);
 			this->Controls->Add(this->czwartekbtn);
