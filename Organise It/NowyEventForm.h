@@ -23,7 +23,7 @@ namespace OrganiseIt {
 			//TODO: W tym miejscu dodaj kod konstruktora
 			//
 		}
-
+		bool isDodajClicked = true;
 	protected:
 		/// <summary>
 		/// Wyczyœæ wszystkie u¿ywane zasoby.
@@ -59,8 +59,10 @@ namespace OrganiseIt {
 	 System::Windows::Forms::ComboBox^  etykietabtn;
 	 System::Windows::Forms::ComboBox^  godzinabtn;
 	 System::Windows::Forms::ImageList^  backgroungEvent;
-	 System::ComponentModel::IContainer^  components;
+	private: System::ComponentModel::IContainer^  components;
+	
 
+	
 
 
 
@@ -155,6 +157,7 @@ namespace OrganiseIt {
 			this->dodajBtn->SizeMode = System::Windows::Forms::PictureBoxSizeMode::AutoSize;
 			this->dodajBtn->TabIndex = 1;
 			this->dodajBtn->TabStop = false;
+			this->dodajBtn->Click += gcnew System::EventHandler(this, &NowyEventForm::dodajBtn_Click);
 			// 
 			// anulujBtn
 			// 
@@ -375,6 +378,10 @@ namespace OrganiseIt {
 
 
 
+	//przycisk Dodaj
+	public: System::Void dodajBtn_Click(System::Object^  sender, System::EventArgs^  e) {
+		this->isDodajClicked = true;
+	}
 
 };
 }

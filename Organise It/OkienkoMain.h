@@ -3,8 +3,9 @@
 #include <fstream>
 #include <iostream>
 
-namespace OrganiseIt {
 
+namespace OrganiseIt {
+	
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -78,7 +79,7 @@ namespace OrganiseIt {
 	private: System::Windows::Forms::PictureBox^  ImportBazyWydarzenBtn;
 
 	private: System::ComponentModel::IContainer^  components;
-
+	private: 
 
 
 	private:
@@ -610,6 +611,18 @@ namespace OrganiseIt {
 				czyWidocznyPlusBox = false;    //autoukrycie plusbox
 				NowyEventForm^ eventowa = gcnew NowyEventForm;
 				eventowa->Show();
+				//////////////////---b³¹d
+					if (eventowa->isDodajClicked) {
+						numerwyd++;
+						wyd_id[numerwyd] = Convert::ToString(numerwyd);
+						wyd_nazwa[numerwyd] = eventowa->nazwaEvent->Text;
+						wyd_opis[numerwyd] = eventowa->opisEvent->Text;
+						wyd_dzien[numerwyd] = eventowa->nazwaEvent->Text;
+						wyd_godzina[numerwyd] = eventowa->nazwaEvent->Text;
+						wyd_etykieta[numerwyd] = eventowa->nazwaEvent->Text;
+						eventowa->Close();
+					}
+				
 			}
 		//noweWydarzenie
 			private: System::Void newWydarzenie_MouseHover(System::Object^  sender, System::EventArgs^  e) {
@@ -624,6 +637,17 @@ namespace OrganiseIt {
 				czyWidocznyPlusBox = false;    //autoukrycie plusbox
 				NowyEventForm^ eventowa = gcnew NowyEventForm;
 				eventowa->Show();
+
+				if (eventowa->isDodajClicked) {
+					numerwyd++;
+					wyd_id[numerwyd] = Convert::ToString(numerwyd);
+					wyd_nazwa[numerwyd] = eventowa->nazwaEvent->Text;
+					wyd_opis[numerwyd] = eventowa->opisEvent->Text;
+					wyd_dzien[numerwyd] = eventowa->nazwaEvent->Text;
+					wyd_godzina[numerwyd] = eventowa->nazwaEvent->Text;
+					wyd_etykieta[numerwyd] = eventowa->nazwaEvent->Text;
+					eventowa->Close();
+				}
 			}
 		//nowaEtykieta
 			private: System::Void newEtykieta_MouseHover(System::Object^  sender, System::EventArgs^  e) {
@@ -638,6 +662,7 @@ namespace OrganiseIt {
 				czyWidocznyPlusBox = false;    //autoukrycie plusbox
 				NowyEventForm^ eventowa = gcnew NowyEventForm;
 				eventowa->Show();
+
 			}
 			
 			public: System::Int32 Importzpliku(int numerek) {
@@ -775,6 +800,7 @@ namespace OrganiseIt {
 			//export wydarzen do pliku
 			private: System::Void ExportBazyWydarzenBtn_Click(System::Object^  sender, System::EventArgs^  e) {
 				Zapisdopliku();
+
 			}
 			//testowe towrzenie paneli
 			private: System::Void ExportBazyZadanBtn_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -784,6 +810,7 @@ namespace OrganiseIt {
 				for (int j = 0; j < numerwyd; j++)
 				{
 					Console::Write("\nZrobione");
+					panel[j]->Show();
 					panel[j]->Name = L"panel1" + j;
 					panel[j]->Size = System::Drawing::Size(194, 56);
 					panel[j]->Location = System::Drawing::Point(251, 39);
@@ -793,8 +820,17 @@ namespace OrganiseIt {
 					Console::Write("\nZrobione");
 				}
 			}
+			public: System::Void DodajWydarzenie(String^ id, String^ nazwa, String^ opis, String^ dzien, String^ godzina, String^ etykieta) {
+				numerwyd++;
+				wyd_id[numerwyd] = id;
+				wyd_nazwa[numerwyd] = nazwa;
+				wyd_opis[numerwyd] = opis;
+				wyd_dzien[numerwyd] = dzien;
+				wyd_godzina[numerwyd] = godzina;
+				wyd_etykieta[numerwyd] = etykieta;
+				Console::Write("\nORGANISE IT! | Dodano wydarzenie");
+			}
 
-
-
+		
 };
 }
