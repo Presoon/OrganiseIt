@@ -60,17 +60,6 @@ namespace OrganiseIt {
 	 System::Windows::Forms::ComboBox^  godzinabtn;
 	 System::Windows::Forms::ImageList^  backgroungEvent;
 	private: System::ComponentModel::IContainer^  components;
-	
-
-	
-
-
-
-
-
-
-
-	protected:
 
 	private:
 		/// <summary>
@@ -356,7 +345,6 @@ namespace OrganiseIt {
 		this->Close();
 	}
 
-
 	//drag&drop okna
 	private: System::Void belkabox_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
 		this->dragging = false;
@@ -375,8 +363,6 @@ namespace OrganiseIt {
 		this->dragging = false;
 	}
 	//------------------------------
-
-
 
 	//przycisk Dodaj
 	public: System::Void dodajBtn_Click(System::Object^  sender, System::EventArgs^  e) {

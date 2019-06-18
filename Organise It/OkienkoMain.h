@@ -44,6 +44,19 @@ namespace OrganiseIt {
 	private: System::Windows::Forms::PictureBox^  ExportBazyZadanBtn;
 	private: System::Windows::Forms::PictureBox^  ExportBazyWydarzenBtn;
 	private: System::Windows::Forms::PictureBox^  exportujimg;
+	private: System::Windows::Forms::Panel^  TerminarzBox;
+	private: System::Windows::Forms::Panel^  PoniedzialekBox;
+	private: System::Windows::Forms::Panel^  WtorekBox;
+	private: System::Windows::Forms::Panel^  PiatekBox;
+
+	private: System::Windows::Forms::Panel^  CzwartekBox;
+	private: System::Windows::Forms::Panel^  SrodaBox;
+	private: System::Windows::Forms::Panel^  ListazadanBox;
+	private: System::Windows::Forms::Label^  label1;
+
+
+
+
 	private: System::Windows::Forms::PictureBox^  ImportBazyZadanBtn;
 			 
 
@@ -70,7 +83,7 @@ namespace OrganiseIt {
 	private: System::Windows::Forms::PictureBox^  zamknij;
 	private: System::Windows::Forms::PictureBox^  maximize;
 	private: System::Windows::Forms::Panel^  panel1;
-	private: System::Windows::Forms::PictureBox^  newEtykieta;
+
 	private: System::Windows::Forms::PictureBox^  newWydarzenie;
 	private: System::Windows::Forms::PictureBox^  newZadanie;
 	private: System::Windows::Forms::ImageList^  imagelistZadanie;
@@ -127,12 +140,19 @@ namespace OrganiseIt {
 			this->plusbuttonimg = (gcnew System::Windows::Forms::PictureBox());
 			this->plusboximg = (gcnew System::Windows::Forms::Panel());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->newEtykieta = (gcnew System::Windows::Forms::PictureBox());
 			this->newWydarzenie = (gcnew System::Windows::Forms::PictureBox());
 			this->newZadanie = (gcnew System::Windows::Forms::PictureBox());
 			this->imagelistZadanie = (gcnew System::Windows::Forms::ImageList(this->components));
 			this->imagelistWydarzenie = (gcnew System::Windows::Forms::ImageList(this->components));
 			this->imagelistEtykieta = (gcnew System::Windows::Forms::ImageList(this->components));
+			this->TerminarzBox = (gcnew System::Windows::Forms::Panel());
+			this->PiatekBox = (gcnew System::Windows::Forms::Panel());
+			this->CzwartekBox = (gcnew System::Windows::Forms::Panel());
+			this->SrodaBox = (gcnew System::Windows::Forms::Panel());
+			this->WtorekBox = (gcnew System::Windows::Forms::Panel());
+			this->PoniedzialekBox = (gcnew System::Windows::Forms::Panel());
+			this->ListazadanBox = (gcnew System::Windows::Forms::Panel());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->leftsidebar->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->oAutorachButton))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ExportBazyZadanBtn))->BeginInit();
@@ -154,9 +174,11 @@ namespace OrganiseIt {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->plusbuttonimg))->BeginInit();
 			this->plusboximg->SuspendLayout();
 			this->panel1->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newEtykieta))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newWydarzenie))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newZadanie))->BeginInit();
+			this->TerminarzBox->SuspendLayout();
+			this->PiatekBox->SuspendLayout();
+			this->ListazadanBox->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// leftsidebar
@@ -257,6 +279,7 @@ namespace OrganiseIt {
 			this->listazadan_btn->SizeMode = System::Windows::Forms::PictureBoxSizeMode::AutoSize;
 			this->listazadan_btn->TabIndex = 6;
 			this->listazadan_btn->TabStop = false;
+			this->listazadan_btn->Click += gcnew System::EventHandler(this, &OkienkoMain::listazadan_btn_Click);
 			// 
 			// terminarz_btn
 			// 
@@ -267,6 +290,7 @@ namespace OrganiseIt {
 			this->terminarz_btn->SizeMode = System::Windows::Forms::PictureBoxSizeMode::AutoSize;
 			this->terminarz_btn->TabIndex = 5;
 			this->terminarz_btn->TabStop = false;
+			this->terminarz_btn->Click += gcnew System::EventHandler(this, &OkienkoMain::terminarz_btn_Click);
 			// 
 			// ImportBazyWydarzenBtn
 			// 
@@ -385,7 +409,7 @@ namespace OrganiseIt {
 			// 
 			this->plusbuttonimg->BackColor = System::Drawing::Color::Transparent;
 			this->plusbuttonimg->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"plusbuttonimg.Image")));
-			this->plusbuttonimg->Location = System::Drawing::Point(1279, 688);
+			this->plusbuttonimg->Location = System::Drawing::Point(141, 654);
 			this->plusbuttonimg->Name = L"plusbuttonimg";
 			this->plusbuttonimg->Size = System::Drawing::Size(61, 58);
 			this->plusbuttonimg->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
@@ -399,34 +423,20 @@ namespace OrganiseIt {
 			this->plusboximg->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"plusboximg.BackgroundImage")));
 			this->plusboximg->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			this->plusboximg->Controls->Add(this->panel1);
-			this->plusboximg->Location = System::Drawing::Point(1017, 498);
+			this->plusboximg->Location = System::Drawing::Point(772, 465);
 			this->plusboximg->Name = L"plusboximg";
 			this->plusboximg->Size = System::Drawing::Size(323, 188);
-			this->plusboximg->TabIndex = 3;
+			this->plusboximg->TabIndex = 10;
 			this->plusboximg->Visible = false;
 			// 
 			// panel1
 			// 
-			this->panel1->Controls->Add(this->newEtykieta);
 			this->panel1->Controls->Add(this->newWydarzenie);
 			this->panel1->Controls->Add(this->newZadanie);
-			this->panel1->Location = System::Drawing::Point(3, 44);
+			this->panel1->Location = System::Drawing::Point(3, 45);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(317, 140);
 			this->panel1->TabIndex = 0;
-			// 
-			// newEtykieta
-			// 
-			this->newEtykieta->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"newEtykieta.Image")));
-			this->newEtykieta->Location = System::Drawing::Point(5, 95);
-			this->newEtykieta->Name = L"newEtykieta";
-			this->newEtykieta->Size = System::Drawing::Size(238, 32);
-			this->newEtykieta->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
-			this->newEtykieta->TabIndex = 2;
-			this->newEtykieta->TabStop = false;
-			this->newEtykieta->Click += gcnew System::EventHandler(this, &OkienkoMain::newEtykieta_Click);
-			this->newEtykieta->MouseLeave += gcnew System::EventHandler(this, &OkienkoMain::newEtykieta_MouseLeave);
-			this->newEtykieta->MouseHover += gcnew System::EventHandler(this, &OkienkoMain::newEtykieta_MouseHover);
 			// 
 			// newWydarzenie
 			// 
@@ -472,6 +482,85 @@ namespace OrganiseIt {
 			this->imagelistEtykieta->TransparentColor = System::Drawing::Color::Transparent;
 			this->imagelistEtykieta->Images->SetKeyName(0, L"Dodaj now¹ etykietêhov.png");
 			// 
+			// TerminarzBox
+			// 
+			this->TerminarzBox->BackColor = System::Drawing::Color::Transparent;
+			this->TerminarzBox->Controls->Add(this->plusboximg);
+			this->TerminarzBox->Controls->Add(this->PiatekBox);
+			this->TerminarzBox->Controls->Add(this->CzwartekBox);
+			this->TerminarzBox->Controls->Add(this->SrodaBox);
+			this->TerminarzBox->Controls->Add(this->WtorekBox);
+			this->TerminarzBox->Controls->Add(this->PoniedzialekBox);
+			this->TerminarzBox->Location = System::Drawing::Point(244, 37);
+			this->TerminarzBox->Name = L"TerminarzBox";
+			this->TerminarzBox->Size = System::Drawing::Size(1119, 728);
+			this->TerminarzBox->TabIndex = 0;
+			this->TerminarzBox->Visible = false;
+			// 
+			// PiatekBox
+			// 
+			this->PiatekBox->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"PiatekBox.BackgroundImage")));
+			this->PiatekBox->Controls->Add(this->plusbuttonimg);
+			this->PiatekBox->Location = System::Drawing::Point(893, 2);
+			this->PiatekBox->Name = L"PiatekBox";
+			this->PiatekBox->Size = System::Drawing::Size(215, 723);
+			this->PiatekBox->TabIndex = 3;
+			// 
+			// CzwartekBox
+			// 
+			this->CzwartekBox->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"CzwartekBox.BackgroundImage")));
+			this->CzwartekBox->Location = System::Drawing::Point(670, 2);
+			this->CzwartekBox->Name = L"CzwartekBox";
+			this->CzwartekBox->Size = System::Drawing::Size(215, 723);
+			this->CzwartekBox->TabIndex = 3;
+			// 
+			// SrodaBox
+			// 
+			this->SrodaBox->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"SrodaBox.BackgroundImage")));
+			this->SrodaBox->Location = System::Drawing::Point(448, 2);
+			this->SrodaBox->Name = L"SrodaBox";
+			this->SrodaBox->Size = System::Drawing::Size(215, 723);
+			this->SrodaBox->TabIndex = 3;
+			// 
+			// WtorekBox
+			// 
+			this->WtorekBox->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"WtorekBox.BackgroundImage")));
+			this->WtorekBox->Location = System::Drawing::Point(225, 2);
+			this->WtorekBox->Name = L"WtorekBox";
+			this->WtorekBox->Size = System::Drawing::Size(215, 723);
+			this->WtorekBox->TabIndex = 3;
+			// 
+			// PoniedzialekBox
+			// 
+			this->PoniedzialekBox->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"PoniedzialekBox.BackgroundImage")));
+			this->PoniedzialekBox->Location = System::Drawing::Point(2, 3);
+			this->PoniedzialekBox->Name = L"PoniedzialekBox";
+			this->PoniedzialekBox->Size = System::Drawing::Size(215, 723);
+			this->PoniedzialekBox->TabIndex = 3;
+			// 
+			// ListazadanBox
+			// 
+			this->ListazadanBox->BackColor = System::Drawing::SystemColors::MenuHighlight;
+			this->ListazadanBox->Controls->Add(this->label1);
+			this->ListazadanBox->Location = System::Drawing::Point(246, 36);
+			this->ListazadanBox->Name = L"ListazadanBox";
+			this->ListazadanBox->Size = System::Drawing::Size(1116, 730);
+			this->ListazadanBox->TabIndex = 2;
+			this->ListazadanBox->Visible = false;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Transparent;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Unispace", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label1->ForeColor = System::Drawing::SystemColors::Control;
+			this->label1->Location = System::Drawing::Point(420, 65);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(262, 23);
+			this->label1->TabIndex = 0;
+			this->label1->Text = L"Tu bêdzie lista zadañ";
+			// 
 			// OkienkoMain
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -479,8 +568,8 @@ namespace OrganiseIt {
 			this->BackColor = System::Drawing::SystemColors::Highlight;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1366, 768);
-			this->Controls->Add(this->plusboximg);
-			this->Controls->Add(this->plusbuttonimg);
+			this->Controls->Add(this->ListazadanBox);
+			this->Controls->Add(this->TerminarzBox);
 			this->Controls->Add(this->belkabox);
 			this->Controls->Add(this->leftsidebar);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
@@ -509,9 +598,12 @@ namespace OrganiseIt {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->plusbuttonimg))->EndInit();
 			this->plusboximg->ResumeLayout(false);
 			this->panel1->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newEtykieta))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newWydarzenie))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->newZadanie))->EndInit();
+			this->TerminarzBox->ResumeLayout(false);
+			this->PiatekBox->ResumeLayout(false);
+			this->ListazadanBox->ResumeLayout(false);
+			this->ListazadanBox->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
@@ -611,7 +703,7 @@ namespace OrganiseIt {
 				czyWidocznyPlusBox = false;    //autoukrycie plusbox
 				NowyEventForm^ eventowa = gcnew NowyEventForm;
 				eventowa->Show();
-				//////////////////---b³¹d
+				/*
 					if (eventowa->isDodajClicked) {
 						numerwyd++;
 						wyd_id[numerwyd] = Convert::ToString(numerwyd);
@@ -622,7 +714,7 @@ namespace OrganiseIt {
 						wyd_etykieta[numerwyd] = eventowa->nazwaEvent->Text;
 						eventowa->Close();
 					}
-				
+				*/
 			}
 		//noweWydarzenie
 			private: System::Void newWydarzenie_MouseHover(System::Object^  sender, System::EventArgs^  e) {
@@ -637,7 +729,7 @@ namespace OrganiseIt {
 				czyWidocznyPlusBox = false;    //autoukrycie plusbox
 				NowyEventForm^ eventowa = gcnew NowyEventForm;
 				eventowa->Show();
-
+				/*
 				if (eventowa->isDodajClicked) {
 					numerwyd++;
 					wyd_id[numerwyd] = Convert::ToString(numerwyd);
@@ -648,22 +740,10 @@ namespace OrganiseIt {
 					wyd_etykieta[numerwyd] = eventowa->nazwaEvent->Text;
 					eventowa->Close();
 				}
+				*/
 			}
-		//nowaEtykieta
-			private: System::Void newEtykieta_MouseHover(System::Object^  sender, System::EventArgs^  e) {
-				newEtykieta->Image = imagelistEtykieta->Images[0];
-			}
-			private: System::Void newEtykieta_MouseLeave(System::Object^  sender, System::EventArgs^  e) {
-				System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(OkienkoMain::typeid));
-				newEtykieta->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"newEtykieta.Image")));
-			}
-			private: System::Void newEtykieta_Click(System::Object^  sender, System::EventArgs^  e) {
-				plusboximg->Visible = false;   //autoukrycie plusbox
-				czyWidocznyPlusBox = false;    //autoukrycie plusbox
-				NowyEventForm^ eventowa = gcnew NowyEventForm;
-				eventowa->Show();
 
-			}
+
 			
 			public: System::Int32 Importzpliku(int numerek) {
 
@@ -820,6 +900,7 @@ namespace OrganiseIt {
 					Console::Write("\nZrobione");
 				}
 			}
+			//w³asna funkcja zwiekszajaca rozmiar bazy i dodajaca nowy event
 			public: System::Void DodajWydarzenie(String^ id, String^ nazwa, String^ opis, String^ dzien, String^ godzina, String^ etykieta) {
 				numerwyd++;
 				wyd_id[numerwyd] = id;
@@ -830,7 +911,43 @@ namespace OrganiseIt {
 				wyd_etykieta[numerwyd] = etykieta;
 				Console::Write("\nORGANISE IT! | Dodano wydarzenie");
 			}
-
+		public: bool czyTerminarzBoxVisible = false;
+				bool czyListazadanBoxVisible = false;
+		private: System::Void terminarz_btn_Click(System::Object^  sender, System::EventArgs^  e) {
+			if (!czyTerminarzBoxVisible && !czyListazadanBoxVisible) {
+				TerminarzBox->Visible = true;
+				czyTerminarzBoxVisible = true;
+			}
+			else if (!czyTerminarzBoxVisible && czyListazadanBoxVisible) {
+				TerminarzBox->Visible = true;
+				czyTerminarzBoxVisible = true;
+				czyListazadanBoxVisible = false;
+				ListazadanBox->Visible = false;
+			}
+			else {
+				TerminarzBox->Visible = false;
+				czyTerminarzBoxVisible = false;
+			}
 		
+		}
+		private: System::Void listazadan_btn_Click(System::Object^  sender, System::EventArgs^  e) {
+			if (!czyTerminarzBoxVisible && !czyListazadanBoxVisible) {
+				ListazadanBox->Visible = true;
+				czyListazadanBoxVisible = true;
+			}
+			else if (czyTerminarzBoxVisible && !czyListazadanBoxVisible) {
+				TerminarzBox->Visible = false;
+				czyTerminarzBoxVisible = false;
+				czyListazadanBoxVisible = true;
+				ListazadanBox->Visible = true;
+			}
+			else {
+				ListazadanBox->Visible = false;
+				czyListazadanBoxVisible = false;
+			}
+		
+		
+		}
+
 };
 }
