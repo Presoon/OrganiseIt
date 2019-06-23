@@ -16,6 +16,7 @@ namespace OrganiseIt {
 	/// <summary>
 	/// Podsumowanie informacji o OkienkoMain
 	/// </summary>
+
 	public ref class OkienkoMain : public System::Windows::Forms::Form
 	{
 	public:
@@ -3376,7 +3377,7 @@ namespace OrganiseIt {
 			this->Zadanie1->PerformLayout();
 			this->ResumeLayout(false);
 		}
-
+		////
 
 
 
@@ -3388,8 +3389,6 @@ namespace OrganiseIt {
 		ImportbazyzadanTEMP();
 		TworzeniepaneliLista();
 	}
-
-
 
 
 	//pokaz menu dodawania
