@@ -36,10 +36,10 @@ namespace OrganiseIt {
 			}
 		}
 	public:
-	System::Windows::Forms::Panel^  belkabox;
-	System::Windows::Forms::PictureBox^  zamknij;
-    System::Windows::Forms::PictureBox^  dodajBtn;
-	System::Windows::Forms::PictureBox^  anulujBtn;
+		System::Windows::Forms::Panel^  belkabox;
+		System::Windows::Forms::PictureBox^  zamknij;
+		System::Windows::Forms::PictureBox^  dodajBtn;
+		System::Windows::Forms::PictureBox^  anulujBtn;
 	private:
 		bool czyWidoczny = true;
 		bool czyWidocznyPlusBox = false;
@@ -47,18 +47,19 @@ namespace OrganiseIt {
 		Point offset;
 
 
+
 	public:
-	 System::Windows::Forms::PictureBox^  pictureBox1;
-	 System::Windows::Forms::TextBox^  nazwaEvent;
-	 System::Windows::Forms::TextBox^  opisEvent;
-	 System::Windows::Forms::RadioButton^  poniedzialekbtn;
-	 System::Windows::Forms::RadioButton^  wtorekbtn;
-	 System::Windows::Forms::RadioButton^  srodabtn;
-	 System::Windows::Forms::RadioButton^  czwartekbtn;
-	 System::Windows::Forms::RadioButton^  piatekbtn;
-	 System::Windows::Forms::ComboBox^  etykietabtn;
-	 System::Windows::Forms::ComboBox^  godzinabtn;
-	 System::Windows::Forms::ImageList^  backgroungEvent;
+		System::Windows::Forms::PictureBox^  pictureBox1;
+		System::Windows::Forms::TextBox^  nazwaEvent;
+		System::Windows::Forms::TextBox^  opisEvent;
+		System::Windows::Forms::RadioButton^  poniedzialekbtn;
+		System::Windows::Forms::RadioButton^  wtorekbtn;
+		System::Windows::Forms::RadioButton^  srodabtn;
+		System::Windows::Forms::RadioButton^  czwartekbtn;
+		System::Windows::Forms::RadioButton^  piatekbtn;
+		System::Windows::Forms::ComboBox^  etykietabtn;
+		System::Windows::Forms::ComboBox^  godzinabtn;
+		System::Windows::Forms::ImageList^  backgroungEvent;
 	private: System::ComponentModel::IContainer^  components;
 
 	private:
@@ -270,7 +271,7 @@ namespace OrganiseIt {
 			this->etykietabtn->ForeColor = System::Drawing::Color::White;
 			this->etykietabtn->FormattingEnabled = true;
 			this->etykietabtn->Items->AddRange(gcnew cli::array< System::Object^  >(6) {
-				L"Brak", L"Czerwony", L"¯ó³ty", L"Zielony", L"Niebieski",
+				L"Brak", L"Czerwony", L"Zolty", L"Zielony", L"Niebieski",
 					L"Czarny"
 			});
 			this->etykietabtn->Location = System::Drawing::Point(229, 262);
@@ -327,6 +328,7 @@ namespace OrganiseIt {
 			this->Padding = System::Windows::Forms::Padding(2);
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"NowyEventForm";
+			this->Load += gcnew System::EventHandler(this, &NowyEventForm::NowyEventForm_Load);
 			this->belkabox->ResumeLayout(false);
 			this->belkabox->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
@@ -345,7 +347,7 @@ namespace OrganiseIt {
 		this->Close();
 	}
 
-	//drag&drop okna
+			 //drag&drop okna
 	private: System::Void belkabox_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
 		this->dragging = false;
 	}
@@ -362,12 +364,48 @@ namespace OrganiseIt {
 	private: System::Void belkabox_MouseUp(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {
 		this->dragging = false;
 	}
-	//------------------------------
+			 //------------------------------
 
-	//przycisk Dodaj
+
+			 //przycisk Dodaj
 	public: System::Void dodajBtn_Click(System::Object^  sender, System::EventArgs^  e) {
-		this->isDodajClicked = true;
+		System::String^ nazwapliku = "EventDB_tmp";
+		IO::StreamWriter file2(nazwapliku, true);
+		file2.WriteLine("id_");
+		file2.WriteLine(nazwaEvent->Text);
+		file2.WriteLine(opisEvent->Text);
+		if (poniedzialekbtn->Checked) {
+			file2.WriteLine("Poniedzialek");
+		}
+		else if (wtorekbtn->Checked) {
+			file2.WriteLine("Wtorek");
+		}
+		else if (srodabtn->Checked) {
+			file2.WriteLine("Sroda");
+		}
+		else if (czwartekbtn->Checked) {
+			file2.WriteLine("Czwartek");
+		}
+		else if (piatekbtn->Checked) {
+			file2.WriteLine("Piatek");
+		}
+
+		if (godzinabtn->Text) {
+			file2.WriteLine(godzinabtn->Text);
+		}
+		if (etykietabtn->Text) {
+			file2.WriteLine(etykietabtn->Text);
+		}
+
+		file2.Close();
+		this->Close();
 	}
+		
+
+private: System::Void NowyEventForm_Load(System::Object^  sender, System::EventArgs^  e) {
+}
+
+
 
 };
 }

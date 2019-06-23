@@ -157,7 +157,6 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="bazaWydarzen.txt" />
-    <Text Include="iloscWydarzen.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

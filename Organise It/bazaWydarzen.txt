@@ -1,9 +1,3 @@
-AjDI
-Nazwa
-Opis
-Dzien
-Godzina
-Etykieta
 AjDI222
 Nazwa222
 Opis222
