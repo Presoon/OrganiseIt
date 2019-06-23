@@ -1,18 +1,48 @@
-AjDI222
-Nazwa222
-Opis222
-Dzien222
-Godzina222
-Etykieta222
-AjDI333
-Nazwa333
-Opis333
-Dzien333
-Godzina333
-Etykieta333
-AjDI444
-Nazwa444
-Opis444
-Dzien444
-Godzina444
-Etykieta444
+﻿id
+Spotkanie
+Centrum Warszawa
+Poniedzialek
+13:30
+Niebieski
+id
+Fryzjer
+ul. Zwyciestwa
+Wtorek
+13:30
+Czerwony
+id
+Zakupy
+Centrum Handlowe Forum
+Poniedzialek
+15:30
+Zielony
+id
+Wyjazd sluzbowy
+Warszawa Lotnisko
+Sroda
+8:30
+Niebieski
+id
+Spotkanie rodzinne
+Dom babuni ^.^
+Piatek
+16:30
+Czarny
+id
+Lekcje gitary
+Szkola Muzyczna Osiedle
+Czwartek
+10:30
+Zolty
+id
+Proba zespolu
+(zabrac caly sprzet)
+Sroda
+19:30
+Niebieski
+id
+Oddanie projektu
+Programowanie wydzial MS
+Poniedzialek
+10:30
+Czarny

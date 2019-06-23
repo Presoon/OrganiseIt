@@ -26,6 +26,8 @@ namespace OrganiseIt {
 			//TODO: W tym miejscu dodaj kod konstruktora
 			//
 		}
+
+		//baza wydarzen
 		array<String^>^ wyd_id = gcnew array<String^>(40);
 		array<String^>^ wyd_nazwa = gcnew array<String^>(40);
 		array<String^>^ wyd_opis = gcnew array<String^>(40);
@@ -33,12 +35,19 @@ namespace OrganiseIt {
 		array<String^>^ wyd_godzina = gcnew array<String^>(40);
 		array<String^>^ wyd_etykieta = gcnew array<String^>(40);
 
+		//baza listy
+		array<String^>^ ev_nazwa = gcnew array<String^>(40);
+		array<String^>^ ev_opis = gcnew array<String^>(40);
+		array<String^>^ ev_godzina = gcnew array<String^>(40);
+		array<String^>^ ev_etykieta = gcnew array<String^>(40);
+
 
 
 
 		int numerwyd = 0; //numer wszystkich wydarzen
-
+		int numerev = 0; //numer wszystkich zadan
 		int nr_linii = 1;
+		int nr_liniiev = 1;
 
 
 	private: System::Windows::Forms::PictureBox^  importujimg;
@@ -187,6 +196,66 @@ namespace OrganiseIt {
 	private: System::Windows::Forms::Label^  label5;
 	private: System::Windows::Forms::Label^  label6;
 private: System::Windows::Forms::PictureBox^  refresh_panels;
+private: System::Windows::Forms::Panel^  Zadanie12;
+private: System::Windows::Forms::Button^  button35;
+private: System::Windows::Forms::Label^  label103;
+private: System::Windows::Forms::Label^  label104;
+private: System::Windows::Forms::Label^  label105;
+private: System::Windows::Forms::Panel^  Zadanie11;
+private: System::Windows::Forms::Button^  button32;
+private: System::Windows::Forms::Label^  label94;
+private: System::Windows::Forms::Label^  label95;
+private: System::Windows::Forms::Label^  label96;
+private: System::Windows::Forms::Panel^  Zadanie8;
+private: System::Windows::Forms::Button^  button36;
+private: System::Windows::Forms::Label^  label106;
+private: System::Windows::Forms::Label^  label107;
+private: System::Windows::Forms::Label^  label108;
+private: System::Windows::Forms::Panel^  Zadanie4;
+private: System::Windows::Forms::Button^  button37;
+private: System::Windows::Forms::Label^  label109;
+private: System::Windows::Forms::Label^  label110;
+private: System::Windows::Forms::Label^  label111;
+private: System::Windows::Forms::Panel^  Zadanie7;
+private: System::Windows::Forms::Button^  button33;
+private: System::Windows::Forms::Label^  label97;
+private: System::Windows::Forms::Label^  label98;
+private: System::Windows::Forms::Label^  label99;
+private: System::Windows::Forms::Panel^  Zadanie10;
+private: System::Windows::Forms::Button^  button29;
+private: System::Windows::Forms::Label^  label85;
+private: System::Windows::Forms::Label^  label86;
+private: System::Windows::Forms::Label^  label87;
+private: System::Windows::Forms::Panel^  Zadanie3;
+private: System::Windows::Forms::Button^  button34;
+private: System::Windows::Forms::Label^  label100;
+private: System::Windows::Forms::Label^  label101;
+private: System::Windows::Forms::Label^  label102;
+private: System::Windows::Forms::Panel^  Zadanie9;
+private: System::Windows::Forms::Button^  button28;
+private: System::Windows::Forms::Label^  label82;
+private: System::Windows::Forms::Label^  label83;
+private: System::Windows::Forms::Label^  label84;
+private: System::Windows::Forms::Panel^  Zadanie6;
+private: System::Windows::Forms::Button^  button30;
+private: System::Windows::Forms::Label^  label88;
+private: System::Windows::Forms::Label^  label89;
+private: System::Windows::Forms::Label^  label90;
+private: System::Windows::Forms::Panel^  Zadanie2;
+private: System::Windows::Forms::Button^  button31;
+private: System::Windows::Forms::Label^  label91;
+private: System::Windows::Forms::Label^  label92;
+private: System::Windows::Forms::Label^  label93;
+private: System::Windows::Forms::Panel^  Zadanie5;
+private: System::Windows::Forms::Button^  button27;
+private: System::Windows::Forms::Label^  label79;
+private: System::Windows::Forms::Label^  label80;
+private: System::Windows::Forms::Label^  label81;
+private: System::Windows::Forms::Panel^  Zadanie1;
+private: System::Windows::Forms::Button^  button26;
+private: System::Windows::Forms::Label^  label76;
+private: System::Windows::Forms::Label^  label77;
+private: System::Windows::Forms::Label^  label78;
 
 
 
@@ -412,6 +481,66 @@ private: System::Windows::Forms::PictureBox^  refresh_panels;
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->TytulPon1 = (gcnew System::Windows::Forms::Label());
 			this->ListazadanBox = (gcnew System::Windows::Forms::Panel());
+			this->Zadanie12 = (gcnew System::Windows::Forms::Panel());
+			this->button35 = (gcnew System::Windows::Forms::Button());
+			this->label103 = (gcnew System::Windows::Forms::Label());
+			this->label104 = (gcnew System::Windows::Forms::Label());
+			this->label105 = (gcnew System::Windows::Forms::Label());
+			this->Zadanie11 = (gcnew System::Windows::Forms::Panel());
+			this->button32 = (gcnew System::Windows::Forms::Button());
+			this->label94 = (gcnew System::Windows::Forms::Label());
+			this->label95 = (gcnew System::Windows::Forms::Label());
+			this->label96 = (gcnew System::Windows::Forms::Label());
+			this->Zadanie8 = (gcnew System::Windows::Forms::Panel());
+			this->button36 = (gcnew System::Windows::Forms::Button());
+			this->label106 = (gcnew System::Windows::Forms::Label());
+			this->label107 = (gcnew System::Windows::Forms::Label());
+			this->label108 = (gcnew System::Windows::Forms::Label());
+			this->Zadanie4 = (gcnew System::Windows::Forms::Panel());
+			this->button37 = (gcnew System::Windows::Forms::Button());
+			this->label109 = (gcnew System::Windows::Forms::Label());
+			this->label110 = (gcnew System::Windows::Forms::Label());
+			this->label111 = (gcnew System::Windows::Forms::Label());
+			this->Zadanie7 = (gcnew System::Windows::Forms::Panel());
+			this->button33 = (gcnew System::Windows::Forms::Button());
+			this->label97 = (gcnew System::Windows::Forms::Label());
+			this->label98 = (gcnew System::Windows::Forms::Label());
+			this->label99 = (gcnew System::Windows::Forms::Label());
+			this->Zadanie10 = (gcnew System::Windows::Forms::Panel());
+			this->button29 = (gcnew System::Windows::Forms::Button());
+			this->label85 = (gcnew System::Windows::Forms::Label());
+			this->label86 = (gcnew System::Windows::Forms::Label());
+			this->label87 = (gcnew System::Windows::Forms::Label());
+			this->Zadanie3 = (gcnew System::Windows::Forms::Panel());
+			this->button34 = (gcnew System::Windows::Forms::Button());
+			this->label100 = (gcnew System::Windows::Forms::Label());
+			this->label101 = (gcnew System::Windows::Forms::Label());
+			this->label102 = (gcnew System::Windows::Forms::Label());
+			this->Zadanie9 = (gcnew System::Windows::Forms::Panel());
+			this->button28 = (gcnew System::Windows::Forms::Button());
+			this->label82 = (gcnew System::Windows::Forms::Label());
+			this->label83 = (gcnew System::Windows::Forms::Label());
+			this->label84 = (gcnew System::Windows::Forms::Label());
+			this->Zadanie6 = (gcnew System::Windows::Forms::Panel());
+			this->button30 = (gcnew System::Windows::Forms::Button());
+			this->label88 = (gcnew System::Windows::Forms::Label());
+			this->label89 = (gcnew System::Windows::Forms::Label());
+			this->label90 = (gcnew System::Windows::Forms::Label());
+			this->Zadanie2 = (gcnew System::Windows::Forms::Panel());
+			this->button31 = (gcnew System::Windows::Forms::Button());
+			this->label91 = (gcnew System::Windows::Forms::Label());
+			this->label92 = (gcnew System::Windows::Forms::Label());
+			this->label93 = (gcnew System::Windows::Forms::Label());
+			this->Zadanie5 = (gcnew System::Windows::Forms::Panel());
+			this->button27 = (gcnew System::Windows::Forms::Button());
+			this->label79 = (gcnew System::Windows::Forms::Label());
+			this->label80 = (gcnew System::Windows::Forms::Label());
+			this->label81 = (gcnew System::Windows::Forms::Label());
+			this->Zadanie1 = (gcnew System::Windows::Forms::Panel());
+			this->button26 = (gcnew System::Windows::Forms::Button());
+			this->label76 = (gcnew System::Windows::Forms::Label());
+			this->label77 = (gcnew System::Windows::Forms::Label());
+			this->label78 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->leftsidebar->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->refresh_panels))->BeginInit();
@@ -469,6 +598,18 @@ private: System::Windows::Forms::PictureBox^  refresh_panels;
 			this->wydarzeniePon2->SuspendLayout();
 			this->wydarzeniePon1->SuspendLayout();
 			this->ListazadanBox->SuspendLayout();
+			this->Zadanie12->SuspendLayout();
+			this->Zadanie11->SuspendLayout();
+			this->Zadanie8->SuspendLayout();
+			this->Zadanie4->SuspendLayout();
+			this->Zadanie7->SuspendLayout();
+			this->Zadanie10->SuspendLayout();
+			this->Zadanie3->SuspendLayout();
+			this->Zadanie9->SuspendLayout();
+			this->Zadanie6->SuspendLayout();
+			this->Zadanie2->SuspendLayout();
+			this->Zadanie5->SuspendLayout();
+			this->Zadanie1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// leftsidebar
@@ -562,6 +703,7 @@ private: System::Windows::Forms::PictureBox^  refresh_panels;
 			this->ImportBazyZadanBtn->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
 			this->ImportBazyZadanBtn->TabIndex = 8;
 			this->ImportBazyZadanBtn->TabStop = false;
+			this->ImportBazyZadanBtn->Click += gcnew System::EventHandler(this, &OkienkoMain::ImportBazyZadanBtn_Click);
 			// 
 			// importujimg
 			// 
@@ -2369,12 +2511,744 @@ private: System::Windows::Forms::PictureBox^  refresh_panels;
 			// ListazadanBox
 			// 
 			this->ListazadanBox->BackColor = System::Drawing::Color::Transparent;
+			this->ListazadanBox->Controls->Add(this->Zadanie12);
+			this->ListazadanBox->Controls->Add(this->Zadanie11);
+			this->ListazadanBox->Controls->Add(this->Zadanie8);
+			this->ListazadanBox->Controls->Add(this->Zadanie4);
+			this->ListazadanBox->Controls->Add(this->Zadanie7);
+			this->ListazadanBox->Controls->Add(this->Zadanie10);
+			this->ListazadanBox->Controls->Add(this->Zadanie3);
+			this->ListazadanBox->Controls->Add(this->Zadanie9);
+			this->ListazadanBox->Controls->Add(this->Zadanie6);
+			this->ListazadanBox->Controls->Add(this->Zadanie2);
+			this->ListazadanBox->Controls->Add(this->Zadanie5);
+			this->ListazadanBox->Controls->Add(this->Zadanie1);
 			this->ListazadanBox->Controls->Add(this->label1);
 			this->ListazadanBox->Location = System::Drawing::Point(244, 33);
 			this->ListazadanBox->Name = L"ListazadanBox";
 			this->ListazadanBox->Size = System::Drawing::Size(1116, 730);
 			this->ListazadanBox->TabIndex = 2;
 			this->ListazadanBox->Visible = false;
+			// 
+			// Zadanie12
+			// 
+			this->Zadanie12->BackColor = System::Drawing::Color::Transparent;
+			this->Zadanie12->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Zadanie12.BackgroundImage")));
+			this->Zadanie12->Controls->Add(this->button35);
+			this->Zadanie12->Controls->Add(this->label103);
+			this->Zadanie12->Controls->Add(this->label104);
+			this->Zadanie12->Controls->Add(this->label105);
+			this->Zadanie12->Location = System::Drawing::Point(709, 557);
+			this->Zadanie12->Name = L"Zadanie12";
+			this->Zadanie12->Size = System::Drawing::Size(209, 112);
+			this->Zadanie12->TabIndex = 11;
+			this->Zadanie12->Visible = false;
+			// 
+			// button35
+			// 
+			this->button35->BackColor = System::Drawing::Color::Red;
+			this->button35->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button35->Location = System::Drawing::Point(166, 68);
+			this->button35->Name = L"button35";
+			this->button35->Size = System::Drawing::Size(22, 23);
+			this->button35->TabIndex = 3;
+			this->button35->UseVisualStyleBackColor = false;
+			// 
+			// label103
+			// 
+			this->label103->AutoSize = true;
+			this->label103->Font = (gcnew System::Drawing::Font(L"Verdana", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label103->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label103->Location = System::Drawing::Point(18, 71);
+			this->label103->Name = L"label103";
+			this->label103->Size = System::Drawing::Size(53, 13);
+			this->label103->TabIndex = 2;
+			this->label103->Text = L"Godzina";
+			// 
+			// label104
+			// 
+			this->label104->AutoSize = true;
+			this->label104->Font = (gcnew System::Drawing::Font(L"Verdana", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label104->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label104->Location = System::Drawing::Point(18, 44);
+			this->label104->Name = L"label104";
+			this->label104->Size = System::Drawing::Size(103, 13);
+			this->label104->TabIndex = 1;
+			this->label104->Text = L"Opis Wydarzenia";
+			// 
+			// label105
+			// 
+			this->label105->AutoSize = true;
+			this->label105->Font = (gcnew System::Drawing::Font(L"Verdana", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label105->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label105->Location = System::Drawing::Point(17, 16);
+			this->label105->Name = L"label105";
+			this->label105->Size = System::Drawing::Size(118, 16);
+			this->label105->TabIndex = 0;
+			this->label105->Text = L"Nazwa Zadania";
+			// 
+			// Zadanie11
+			// 
+			this->Zadanie11->BackColor = System::Drawing::Color::Transparent;
+			this->Zadanie11->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Zadanie11.BackgroundImage")));
+			this->Zadanie11->Controls->Add(this->button32);
+			this->Zadanie11->Controls->Add(this->label94);
+			this->Zadanie11->Controls->Add(this->label95);
+			this->Zadanie11->Controls->Add(this->label96);
+			this->Zadanie11->Location = System::Drawing::Point(710, 401);
+			this->Zadanie11->Name = L"Zadanie11";
+			this->Zadanie11->Size = System::Drawing::Size(209, 112);
+			this->Zadanie11->TabIndex = 11;
+			this->Zadanie11->Visible = false;
+			// 
+			// button32
+			// 
+			this->button32->BackColor = System::Drawing::Color::Red;
+			this->button32->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button32->Location = System::Drawing::Point(166, 68);
+			this->button32->Name = L"button32";
+			this->button32->Size = System::Drawing::Size(22, 23);
+			this->button32->TabIndex = 3;
+			this->button32->UseVisualStyleBackColor = false;
+			// 
+			// label94
+			// 
+			this->label94->AutoSize = true;
+			this->label94->Font = (gcnew System::Drawing::Font(L"Verdana", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label94->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label94->Location = System::Drawing::Point(18, 71);
+			this->label94->Name = L"label94";
+			this->label94->Size = System::Drawing::Size(53, 13);
+			this->label94->TabIndex = 2;
+			this->label94->Text = L"Godzina";
+			// 
+			// label95
+			// 
+			this->label95->AutoSize = true;
+			this->label95->Font = (gcnew System::Drawing::Font(L"Verdana", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label95->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label95->Location = System::Drawing::Point(18, 44);
+			this->label95->Name = L"label95";
+			this->label95->Size = System::Drawing::Size(103, 13);
+			this->label95->TabIndex = 1;
+			this->label95->Text = L"Opis Wydarzenia";
+			// 
+			// label96
+			// 
+			this->label96->AutoSize = true;
+			this->label96->Font = (gcnew System::Drawing::Font(L"Verdana", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label96->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label96->Location = System::Drawing::Point(17, 16);
+			this->label96->Name = L"label96";
+			this->label96->Size = System::Drawing::Size(118, 16);
+			this->label96->TabIndex = 0;
+			this->label96->Text = L"Nazwa Zadania";
+			// 
+			// Zadanie8
+			// 
+			this->Zadanie8->BackColor = System::Drawing::Color::Transparent;
+			this->Zadanie8->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Zadanie8.BackgroundImage")));
+			this->Zadanie8->Controls->Add(this->button36);
+			this->Zadanie8->Controls->Add(this->label106);
+			this->Zadanie8->Controls->Add(this->label107);
+			this->Zadanie8->Controls->Add(this->label108);
+			this->Zadanie8->Location = System::Drawing::Point(445, 557);
+			this->Zadanie8->Name = L"Zadanie8";
+			this->Zadanie8->Size = System::Drawing::Size(209, 112);
+			this->Zadanie8->TabIndex = 10;
+			this->Zadanie8->Visible = false;
+			// 
+			// button36
+			// 
+			this->button36->BackColor = System::Drawing::Color::Red;
+			this->button36->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button36->Location = System::Drawing::Point(166, 68);
+			this->button36->Name = L"button36";
+			this->button36->Size = System::Drawing::Size(22, 23);
+			this->button36->TabIndex = 3;
+			this->button36->UseVisualStyleBackColor = false;
+			// 
+			// label106
+			// 
+			this->label106->AutoSize = true;
+			this->label106->Font = (gcnew System::Drawing::Font(L"Verdana", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label106->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label106->Location = System::Drawing::Point(18, 71);
+			this->label106->Name = L"label106";
+			this->label106->Size = System::Drawing::Size(53, 13);
+			this->label106->TabIndex = 2;
+			this->label106->Text = L"Godzina";
+			// 
+			// label107
+			// 
+			this->label107->AutoSize = true;
+			this->label107->Font = (gcnew System::Drawing::Font(L"Verdana", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label107->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label107->Location = System::Drawing::Point(18, 44);
+			this->label107->Name = L"label107";
+			this->label107->Size = System::Drawing::Size(103, 13);
+			this->label107->TabIndex = 1;
+			this->label107->Text = L"Opis Wydarzenia";
+			// 
+			// label108
+			// 
+			this->label108->AutoSize = true;
+			this->label108->Font = (gcnew System::Drawing::Font(L"Verdana", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label108->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label108->Location = System::Drawing::Point(17, 16);
+			this->label108->Name = L"label108";
+			this->label108->Size = System::Drawing::Size(118, 16);
+			this->label108->TabIndex = 0;
+			this->label108->Text = L"Nazwa Zadania";
+			// 
+			// Zadanie4
+			// 
+			this->Zadanie4->BackColor = System::Drawing::Color::Transparent;
+			this->Zadanie4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Zadanie4.BackgroundImage")));
+			this->Zadanie4->Controls->Add(this->button37);
+			this->Zadanie4->Controls->Add(this->label109);
+			this->Zadanie4->Controls->Add(this->label110);
+			this->Zadanie4->Controls->Add(this->label111);
+			this->Zadanie4->Location = System::Drawing::Point(181, 557);
+			this->Zadanie4->Name = L"Zadanie4";
+			this->Zadanie4->Size = System::Drawing::Size(209, 112);
+			this->Zadanie4->TabIndex = 9;
+			this->Zadanie4->Visible = false;
+			// 
+			// button37
+			// 
+			this->button37->BackColor = System::Drawing::Color::Red;
+			this->button37->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button37->Location = System::Drawing::Point(166, 68);
+			this->button37->Name = L"button37";
+			this->button37->Size = System::Drawing::Size(22, 23);
+			this->button37->TabIndex = 3;
+			this->button37->UseVisualStyleBackColor = false;
+			// 
+			// label109
+			// 
+			this->label109->AutoSize = true;
+			this->label109->Font = (gcnew System::Drawing::Font(L"Verdana", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label109->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label109->Location = System::Drawing::Point(18, 71);
+			this->label109->Name = L"label109";
+			this->label109->Size = System::Drawing::Size(53, 13);
+			this->label109->TabIndex = 2;
+			this->label109->Text = L"Godzina";
+			// 
+			// label110
+			// 
+			this->label110->AutoSize = true;
+			this->label110->Font = (gcnew System::Drawing::Font(L"Verdana", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label110->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label110->Location = System::Drawing::Point(18, 44);
+			this->label110->Name = L"label110";
+			this->label110->Size = System::Drawing::Size(103, 13);
+			this->label110->TabIndex = 1;
+			this->label110->Text = L"Opis Wydarzenia";
+			// 
+			// label111
+			// 
+			this->label111->AutoSize = true;
+			this->label111->Font = (gcnew System::Drawing::Font(L"Verdana", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label111->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label111->Location = System::Drawing::Point(17, 16);
+			this->label111->Name = L"label111";
+			this->label111->Size = System::Drawing::Size(118, 16);
+			this->label111->TabIndex = 0;
+			this->label111->Text = L"Nazwa Zadania";
+			// 
+			// Zadanie7
+			// 
+			this->Zadanie7->BackColor = System::Drawing::Color::Transparent;
+			this->Zadanie7->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Zadanie7.BackgroundImage")));
+			this->Zadanie7->Controls->Add(this->button33);
+			this->Zadanie7->Controls->Add(this->label97);
+			this->Zadanie7->Controls->Add(this->label98);
+			this->Zadanie7->Controls->Add(this->label99);
+			this->Zadanie7->Location = System::Drawing::Point(446, 401);
+			this->Zadanie7->Name = L"Zadanie7";
+			this->Zadanie7->Size = System::Drawing::Size(209, 112);
+			this->Zadanie7->TabIndex = 10;
+			this->Zadanie7->Visible = false;
+			// 
+			// button33
+			// 
+			this->button33->BackColor = System::Drawing::Color::Red;
+			this->button33->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button33->Location = System::Drawing::Point(166, 68);
+			this->button33->Name = L"button33";
+			this->button33->Size = System::Drawing::Size(22, 23);
+			this->button33->TabIndex = 3;
+			this->button33->UseVisualStyleBackColor = false;
+			// 
+			// label97
+			// 
+			this->label97->AutoSize = true;
+			this->label97->Font = (gcnew System::Drawing::Font(L"Verdana", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label97->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label97->Location = System::Drawing::Point(18, 71);
+			this->label97->Name = L"label97";
+			this->label97->Size = System::Drawing::Size(53, 13);
+			this->label97->TabIndex = 2;
+			this->label97->Text = L"Godzina";
+			// 
+			// label98
+			// 
+			this->label98->AutoSize = true;
+			this->label98->Font = (gcnew System::Drawing::Font(L"Verdana", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label98->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label98->Location = System::Drawing::Point(18, 44);
+			this->label98->Name = L"label98";
+			this->label98->Size = System::Drawing::Size(103, 13);
+			this->label98->TabIndex = 1;
+			this->label98->Text = L"Opis Wydarzenia";
+			// 
+			// label99
+			// 
+			this->label99->AutoSize = true;
+			this->label99->Font = (gcnew System::Drawing::Font(L"Verdana", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label99->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label99->Location = System::Drawing::Point(17, 16);
+			this->label99->Name = L"label99";
+			this->label99->Size = System::Drawing::Size(118, 16);
+			this->label99->TabIndex = 0;
+			this->label99->Text = L"Nazwa Zadania";
+			// 
+			// Zadanie10
+			// 
+			this->Zadanie10->BackColor = System::Drawing::Color::Transparent;
+			this->Zadanie10->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Zadanie10.BackgroundImage")));
+			this->Zadanie10->Controls->Add(this->button29);
+			this->Zadanie10->Controls->Add(this->label85);
+			this->Zadanie10->Controls->Add(this->label86);
+			this->Zadanie10->Controls->Add(this->label87);
+			this->Zadanie10->Location = System::Drawing::Point(710, 246);
+			this->Zadanie10->Name = L"Zadanie10";
+			this->Zadanie10->Size = System::Drawing::Size(209, 112);
+			this->Zadanie10->TabIndex = 11;
+			this->Zadanie10->Visible = false;
+			// 
+			// button29
+			// 
+			this->button29->BackColor = System::Drawing::Color::Red;
+			this->button29->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button29->Location = System::Drawing::Point(166, 68);
+			this->button29->Name = L"button29";
+			this->button29->Size = System::Drawing::Size(22, 23);
+			this->button29->TabIndex = 3;
+			this->button29->UseVisualStyleBackColor = false;
+			// 
+			// label85
+			// 
+			this->label85->AutoSize = true;
+			this->label85->Font = (gcnew System::Drawing::Font(L"Verdana", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label85->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label85->Location = System::Drawing::Point(18, 71);
+			this->label85->Name = L"label85";
+			this->label85->Size = System::Drawing::Size(53, 13);
+			this->label85->TabIndex = 2;
+			this->label85->Text = L"Godzina";
+			// 
+			// label86
+			// 
+			this->label86->AutoSize = true;
+			this->label86->Font = (gcnew System::Drawing::Font(L"Verdana", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label86->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label86->Location = System::Drawing::Point(18, 44);
+			this->label86->Name = L"label86";
+			this->label86->Size = System::Drawing::Size(103, 13);
+			this->label86->TabIndex = 1;
+			this->label86->Text = L"Opis Wydarzenia";
+			// 
+			// label87
+			// 
+			this->label87->AutoSize = true;
+			this->label87->Font = (gcnew System::Drawing::Font(L"Verdana", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label87->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label87->Location = System::Drawing::Point(17, 16);
+			this->label87->Name = L"label87";
+			this->label87->Size = System::Drawing::Size(118, 16);
+			this->label87->TabIndex = 0;
+			this->label87->Text = L"Nazwa Zadania";
+			// 
+			// Zadanie3
+			// 
+			this->Zadanie3->BackColor = System::Drawing::Color::Transparent;
+			this->Zadanie3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Zadanie3.BackgroundImage")));
+			this->Zadanie3->Controls->Add(this->button34);
+			this->Zadanie3->Controls->Add(this->label100);
+			this->Zadanie3->Controls->Add(this->label101);
+			this->Zadanie3->Controls->Add(this->label102);
+			this->Zadanie3->Location = System::Drawing::Point(182, 401);
+			this->Zadanie3->Name = L"Zadanie3";
+			this->Zadanie3->Size = System::Drawing::Size(209, 112);
+			this->Zadanie3->TabIndex = 9;
+			this->Zadanie3->Visible = false;
+			// 
+			// button34
+			// 
+			this->button34->BackColor = System::Drawing::Color::Red;
+			this->button34->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button34->Location = System::Drawing::Point(166, 68);
+			this->button34->Name = L"button34";
+			this->button34->Size = System::Drawing::Size(22, 23);
+			this->button34->TabIndex = 3;
+			this->button34->UseVisualStyleBackColor = false;
+			// 
+			// label100
+			// 
+			this->label100->AutoSize = true;
+			this->label100->Font = (gcnew System::Drawing::Font(L"Verdana", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label100->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label100->Location = System::Drawing::Point(18, 71);
+			this->label100->Name = L"label100";
+			this->label100->Size = System::Drawing::Size(53, 13);
+			this->label100->TabIndex = 2;
+			this->label100->Text = L"Godzina";
+			// 
+			// label101
+			// 
+			this->label101->AutoSize = true;
+			this->label101->Font = (gcnew System::Drawing::Font(L"Verdana", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label101->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label101->Location = System::Drawing::Point(18, 44);
+			this->label101->Name = L"label101";
+			this->label101->Size = System::Drawing::Size(103, 13);
+			this->label101->TabIndex = 1;
+			this->label101->Text = L"Opis Wydarzenia";
+			// 
+			// label102
+			// 
+			this->label102->AutoSize = true;
+			this->label102->Font = (gcnew System::Drawing::Font(L"Verdana", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label102->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label102->Location = System::Drawing::Point(17, 16);
+			this->label102->Name = L"label102";
+			this->label102->Size = System::Drawing::Size(118, 16);
+			this->label102->TabIndex = 0;
+			this->label102->Text = L"Nazwa Zadania";
+			// 
+			// Zadanie9
+			// 
+			this->Zadanie9->BackColor = System::Drawing::Color::Transparent;
+			this->Zadanie9->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Zadanie9.BackgroundImage")));
+			this->Zadanie9->Controls->Add(this->button28);
+			this->Zadanie9->Controls->Add(this->label82);
+			this->Zadanie9->Controls->Add(this->label83);
+			this->Zadanie9->Controls->Add(this->label84);
+			this->Zadanie9->Location = System::Drawing::Point(709, 93);
+			this->Zadanie9->Name = L"Zadanie9";
+			this->Zadanie9->Size = System::Drawing::Size(209, 112);
+			this->Zadanie9->TabIndex = 8;
+			this->Zadanie9->Visible = false;
+			// 
+			// button28
+			// 
+			this->button28->BackColor = System::Drawing::Color::Red;
+			this->button28->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button28->Location = System::Drawing::Point(166, 68);
+			this->button28->Name = L"button28";
+			this->button28->Size = System::Drawing::Size(22, 23);
+			this->button28->TabIndex = 3;
+			this->button28->UseVisualStyleBackColor = false;
+			// 
+			// label82
+			// 
+			this->label82->AutoSize = true;
+			this->label82->Font = (gcnew System::Drawing::Font(L"Verdana", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label82->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label82->Location = System::Drawing::Point(18, 71);
+			this->label82->Name = L"label82";
+			this->label82->Size = System::Drawing::Size(53, 13);
+			this->label82->TabIndex = 2;
+			this->label82->Text = L"Godzina";
+			// 
+			// label83
+			// 
+			this->label83->AutoSize = true;
+			this->label83->Font = (gcnew System::Drawing::Font(L"Verdana", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label83->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label83->Location = System::Drawing::Point(18, 44);
+			this->label83->Name = L"label83";
+			this->label83->Size = System::Drawing::Size(103, 13);
+			this->label83->TabIndex = 1;
+			this->label83->Text = L"Opis Wydarzenia";
+			// 
+			// label84
+			// 
+			this->label84->AutoSize = true;
+			this->label84->Font = (gcnew System::Drawing::Font(L"Verdana", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label84->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label84->Location = System::Drawing::Point(17, 16);
+			this->label84->Name = L"label84";
+			this->label84->Size = System::Drawing::Size(118, 16);
+			this->label84->TabIndex = 0;
+			this->label84->Text = L"Nazwa Zadania";
+			// 
+			// Zadanie6
+			// 
+			this->Zadanie6->BackColor = System::Drawing::Color::Transparent;
+			this->Zadanie6->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Zadanie6.BackgroundImage")));
+			this->Zadanie6->Controls->Add(this->button30);
+			this->Zadanie6->Controls->Add(this->label88);
+			this->Zadanie6->Controls->Add(this->label89);
+			this->Zadanie6->Controls->Add(this->label90);
+			this->Zadanie6->Location = System::Drawing::Point(446, 246);
+			this->Zadanie6->Name = L"Zadanie6";
+			this->Zadanie6->Size = System::Drawing::Size(209, 112);
+			this->Zadanie6->TabIndex = 10;
+			this->Zadanie6->Visible = false;
+			// 
+			// button30
+			// 
+			this->button30->BackColor = System::Drawing::Color::Red;
+			this->button30->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button30->Location = System::Drawing::Point(166, 68);
+			this->button30->Name = L"button30";
+			this->button30->Size = System::Drawing::Size(22, 23);
+			this->button30->TabIndex = 3;
+			this->button30->UseVisualStyleBackColor = false;
+			// 
+			// label88
+			// 
+			this->label88->AutoSize = true;
+			this->label88->Font = (gcnew System::Drawing::Font(L"Verdana", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label88->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label88->Location = System::Drawing::Point(18, 71);
+			this->label88->Name = L"label88";
+			this->label88->Size = System::Drawing::Size(53, 13);
+			this->label88->TabIndex = 2;
+			this->label88->Text = L"Godzina";
+			// 
+			// label89
+			// 
+			this->label89->AutoSize = true;
+			this->label89->Font = (gcnew System::Drawing::Font(L"Verdana", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label89->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label89->Location = System::Drawing::Point(18, 44);
+			this->label89->Name = L"label89";
+			this->label89->Size = System::Drawing::Size(103, 13);
+			this->label89->TabIndex = 1;
+			this->label89->Text = L"Opis Wydarzenia";
+			// 
+			// label90
+			// 
+			this->label90->AutoSize = true;
+			this->label90->Font = (gcnew System::Drawing::Font(L"Verdana", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label90->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label90->Location = System::Drawing::Point(17, 16);
+			this->label90->Name = L"label90";
+			this->label90->Size = System::Drawing::Size(146, 16);
+			this->label90->TabIndex = 0;
+			this->label90->Text = L"Nazwa Wydarzenia";
+			// 
+			// Zadanie2
+			// 
+			this->Zadanie2->BackColor = System::Drawing::Color::Transparent;
+			this->Zadanie2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Zadanie2.BackgroundImage")));
+			this->Zadanie2->Controls->Add(this->button31);
+			this->Zadanie2->Controls->Add(this->label91);
+			this->Zadanie2->Controls->Add(this->label92);
+			this->Zadanie2->Controls->Add(this->label93);
+			this->Zadanie2->Location = System::Drawing::Point(182, 246);
+			this->Zadanie2->Name = L"Zadanie2";
+			this->Zadanie2->Size = System::Drawing::Size(209, 112);
+			this->Zadanie2->TabIndex = 9;
+			this->Zadanie2->Visible = false;
+			// 
+			// button31
+			// 
+			this->button31->BackColor = System::Drawing::Color::Red;
+			this->button31->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button31->Location = System::Drawing::Point(166, 68);
+			this->button31->Name = L"button31";
+			this->button31->Size = System::Drawing::Size(22, 23);
+			this->button31->TabIndex = 3;
+			this->button31->UseVisualStyleBackColor = false;
+			// 
+			// label91
+			// 
+			this->label91->AutoSize = true;
+			this->label91->Font = (gcnew System::Drawing::Font(L"Verdana", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label91->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label91->Location = System::Drawing::Point(18, 71);
+			this->label91->Name = L"label91";
+			this->label91->Size = System::Drawing::Size(53, 13);
+			this->label91->TabIndex = 2;
+			this->label91->Text = L"Godzina";
+			// 
+			// label92
+			// 
+			this->label92->AutoSize = true;
+			this->label92->Font = (gcnew System::Drawing::Font(L"Verdana", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label92->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label92->Location = System::Drawing::Point(18, 44);
+			this->label92->Name = L"label92";
+			this->label92->Size = System::Drawing::Size(103, 13);
+			this->label92->TabIndex = 1;
+			this->label92->Text = L"Opis Wydarzenia";
+			// 
+			// label93
+			// 
+			this->label93->AutoSize = true;
+			this->label93->Font = (gcnew System::Drawing::Font(L"Verdana", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label93->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label93->Location = System::Drawing::Point(17, 16);
+			this->label93->Name = L"label93";
+			this->label93->Size = System::Drawing::Size(118, 16);
+			this->label93->TabIndex = 0;
+			this->label93->Text = L"Nazwa Zadania";
+			// 
+			// Zadanie5
+			// 
+			this->Zadanie5->BackColor = System::Drawing::Color::Transparent;
+			this->Zadanie5->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Zadanie5.BackgroundImage")));
+			this->Zadanie5->Controls->Add(this->button27);
+			this->Zadanie5->Controls->Add(this->label79);
+			this->Zadanie5->Controls->Add(this->label80);
+			this->Zadanie5->Controls->Add(this->label81);
+			this->Zadanie5->Location = System::Drawing::Point(445, 93);
+			this->Zadanie5->Name = L"Zadanie5";
+			this->Zadanie5->Size = System::Drawing::Size(209, 112);
+			this->Zadanie5->TabIndex = 7;
+			this->Zadanie5->Visible = false;
+			// 
+			// button27
+			// 
+			this->button27->BackColor = System::Drawing::Color::Red;
+			this->button27->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button27->Location = System::Drawing::Point(166, 68);
+			this->button27->Name = L"button27";
+			this->button27->Size = System::Drawing::Size(22, 23);
+			this->button27->TabIndex = 3;
+			this->button27->UseVisualStyleBackColor = false;
+			// 
+			// label79
+			// 
+			this->label79->AutoSize = true;
+			this->label79->Font = (gcnew System::Drawing::Font(L"Verdana", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label79->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label79->Location = System::Drawing::Point(18, 71);
+			this->label79->Name = L"label79";
+			this->label79->Size = System::Drawing::Size(53, 13);
+			this->label79->TabIndex = 2;
+			this->label79->Text = L"Godzina";
+			// 
+			// label80
+			// 
+			this->label80->AutoSize = true;
+			this->label80->Font = (gcnew System::Drawing::Font(L"Verdana", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label80->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label80->Location = System::Drawing::Point(18, 44);
+			this->label80->Name = L"label80";
+			this->label80->Size = System::Drawing::Size(103, 13);
+			this->label80->TabIndex = 1;
+			this->label80->Text = L"Opis Wydarzenia";
+			// 
+			// label81
+			// 
+			this->label81->AutoSize = true;
+			this->label81->Font = (gcnew System::Drawing::Font(L"Verdana", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label81->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label81->Location = System::Drawing::Point(17, 16);
+			this->label81->Name = L"label81";
+			this->label81->Size = System::Drawing::Size(118, 16);
+			this->label81->TabIndex = 0;
+			this->label81->Text = L"Nazwa Zadania";
+			// 
+			// Zadanie1
+			// 
+			this->Zadanie1->BackColor = System::Drawing::Color::Transparent;
+			this->Zadanie1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Zadanie1.BackgroundImage")));
+			this->Zadanie1->Controls->Add(this->button26);
+			this->Zadanie1->Controls->Add(this->label76);
+			this->Zadanie1->Controls->Add(this->label77);
+			this->Zadanie1->Controls->Add(this->label78);
+			this->Zadanie1->Location = System::Drawing::Point(181, 93);
+			this->Zadanie1->Name = L"Zadanie1";
+			this->Zadanie1->Size = System::Drawing::Size(209, 112);
+			this->Zadanie1->TabIndex = 6;
+			this->Zadanie1->Visible = false;
+			// 
+			// button26
+			// 
+			this->button26->BackColor = System::Drawing::Color::Red;
+			this->button26->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button26->Location = System::Drawing::Point(166, 68);
+			this->button26->Name = L"button26";
+			this->button26->Size = System::Drawing::Size(22, 23);
+			this->button26->TabIndex = 3;
+			this->button26->UseVisualStyleBackColor = false;
+			// 
+			// label76
+			// 
+			this->label76->AutoSize = true;
+			this->label76->Font = (gcnew System::Drawing::Font(L"Verdana", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label76->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label76->Location = System::Drawing::Point(18, 71);
+			this->label76->Name = L"label76";
+			this->label76->Size = System::Drawing::Size(53, 13);
+			this->label76->TabIndex = 2;
+			this->label76->Text = L"Godzina";
+			// 
+			// label77
+			// 
+			this->label77->AutoSize = true;
+			this->label77->Font = (gcnew System::Drawing::Font(L"Verdana", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label77->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label77->Location = System::Drawing::Point(18, 44);
+			this->label77->Name = L"label77";
+			this->label77->Size = System::Drawing::Size(103, 13);
+			this->label77->TabIndex = 1;
+			this->label77->Text = L"Opis Wydarzenia";
+			// 
+			// label78
+			// 
+			this->label78->AutoSize = true;
+			this->label78->Font = (gcnew System::Drawing::Font(L"Verdana", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label78->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label78->Location = System::Drawing::Point(17, 16);
+			this->label78->Name = L"label78";
+			this->label78->Size = System::Drawing::Size(118, 16);
+			this->label78->TabIndex = 0;
+			this->label78->Text = L"Nazwa Zadania";
 			// 
 			// label1
 			// 
@@ -2487,6 +3361,30 @@ private: System::Windows::Forms::PictureBox^  refresh_panels;
 			this->wydarzeniePon1->PerformLayout();
 			this->ListazadanBox->ResumeLayout(false);
 			this->ListazadanBox->PerformLayout();
+			this->Zadanie12->ResumeLayout(false);
+			this->Zadanie12->PerformLayout();
+			this->Zadanie11->ResumeLayout(false);
+			this->Zadanie11->PerformLayout();
+			this->Zadanie8->ResumeLayout(false);
+			this->Zadanie8->PerformLayout();
+			this->Zadanie4->ResumeLayout(false);
+			this->Zadanie4->PerformLayout();
+			this->Zadanie7->ResumeLayout(false);
+			this->Zadanie7->PerformLayout();
+			this->Zadanie10->ResumeLayout(false);
+			this->Zadanie10->PerformLayout();
+			this->Zadanie3->ResumeLayout(false);
+			this->Zadanie3->PerformLayout();
+			this->Zadanie9->ResumeLayout(false);
+			this->Zadanie9->PerformLayout();
+			this->Zadanie6->ResumeLayout(false);
+			this->Zadanie6->PerformLayout();
+			this->Zadanie2->ResumeLayout(false);
+			this->Zadanie2->PerformLayout();
+			this->Zadanie5->ResumeLayout(false);
+			this->Zadanie5->PerformLayout();
+			this->Zadanie1->ResumeLayout(false);
+			this->Zadanie1->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
@@ -2494,6 +3392,9 @@ private: System::Windows::Forms::PictureBox^  refresh_panels;
 	public: System::Void OkienkoMain_Load(System::Object^  sender, System::EventArgs^  e) {
 		ImportbazywydTEMP(); 
 		Aktualizacja_Paneli();
+		
+		ImportbazyzadanTEMP();
+		TworzeniepaneliLista();
 	}
 
 
@@ -2532,6 +3433,8 @@ private: System::Windows::Forms::PictureBox^  refresh_panels;
 
 	//zamknij
 	private: System::Void zamknij_Click(System::Object^  sender, System::EventArgs^  e) {
+		zapisbazyListytemp();
+		zapisbazyWydtemp();
 		Application::Exit();
 	}
 
@@ -2569,6 +3472,8 @@ private: System::Windows::Forms::PictureBox^  refresh_panels;
 	//zakoñczenie programu przyciskiem w leftsidebar
 	private: System::Void wylogujButton_Click(System::Object^  sender, System::EventArgs^  e) {
 		if (MessageBox::Show("Czy aby na pewno chcesz zakoñczyæ program?", "Organise It!", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == Windows::Forms::DialogResult::Yes) {
+			zapisbazyListytemp();
+			zapisbazyWydtemp();
 			Application::Exit();
 		}
 	}
@@ -2585,8 +3490,14 @@ private: System::Windows::Forms::PictureBox^  refresh_panels;
 			private: System::Void newZadanie_Click(System::Object^  sender, System::EventArgs^  e) {
 				plusboximg->Visible = false;   //autoukrycie plusbox
 				czyWidocznyPlusBox = false;    //autoukrycie plusbox
-				NowyEventForm^ eventowa = gcnew NowyEventForm;
-				eventowa->Show();
+				NowyEventForm^ zadaniowa = gcnew NowyEventForm;
+				zadaniowa->czyZadanie = true;
+				zadaniowa->poniedzialekbtn->Enabled = false;
+				zadaniowa->wtorekbtn->Enabled = false;
+				zadaniowa->srodabtn->Enabled = false;
+				zadaniowa->czwartekbtn->Enabled = false;
+				zadaniowa->piatekbtn->Enabled = false;
+				zadaniowa->Show();
 
 			}
 		
@@ -2689,6 +3600,7 @@ private: System::Windows::Forms::PictureBox^  refresh_panels;
 				System::String^ nazwapliku = "EventDB_tmp";
 				String^ wiersz;
 				numerwyd = 0;
+						try{
 						IO::StreamReader^ plik = gcnew IO::StreamReader(nazwapliku, System::Text::Encoding::Default);
 						while ((wiersz = plik->ReadLine()) != nullptr) {
 							Console::Write(wiersz + "\n");
@@ -2730,7 +3642,11 @@ private: System::Windows::Forms::PictureBox^  refresh_panels;
 						}//petla czytaj¹ca plik
 						plik->Close();
 						Console::Write("\n#ORGANISEIT | Zakoñczono wczytywanie pliku z bazy podrêcznej\n");
-
+						}
+						catch(...){
+							MessageBox::Show("B³¹d wczytywania pliku: EventDB_tmp", "Organise It!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+							Application::Exit();
+						}
 			}
 
 			public: System::Void Zapisdopliku() {
@@ -2818,9 +3734,10 @@ private: System::Windows::Forms::PictureBox^  refresh_panels;
 			
 					 
 					 
-		    //testowe towrzenie paneli
+			//export listy do pliku
 			private: System::Void ExportBazyZadanBtn_Click(System::Object^  sender, System::EventArgs^  e) {
-		
+				ZapisdoplikuListazad();
+				zapisbazyListytemp();
 			}
 
 		//widocznoœc paneli Terminarz i lista zadañ
@@ -2830,16 +3747,20 @@ private: System::Windows::Forms::PictureBox^  refresh_panels;
 			if (!czyTerminarzBoxVisible && !czyListazadanBoxVisible) {
 				TerminarzBox->Visible = true;
 				czyTerminarzBoxVisible = true;
+
+
 			}
 			else if (!czyTerminarzBoxVisible && czyListazadanBoxVisible) {
 				TerminarzBox->Visible = true;
 				czyTerminarzBoxVisible = true;
 				czyListazadanBoxVisible = false;
 				ListazadanBox->Visible = false;
+
 			}
 			else {
 				TerminarzBox->Visible = false;
 				czyTerminarzBoxVisible = false;
+
 			}
 		
 		}
@@ -2847,16 +3768,19 @@ private: System::Windows::Forms::PictureBox^  refresh_panels;
 			if (!czyTerminarzBoxVisible && !czyListazadanBoxVisible) {
 				ListazadanBox->Visible = true;
 				czyListazadanBoxVisible = true;
+
 			}
 			else if (czyTerminarzBoxVisible && !czyListazadanBoxVisible) {
 				TerminarzBox->Visible = false;
 				czyTerminarzBoxVisible = false;
 				czyListazadanBoxVisible = true;
 				ListazadanBox->Visible = true;
+
 			}
 			else {
 				ListazadanBox->Visible = false;
 				czyListazadanBoxVisible = false;
+
 			}
 		
 		
@@ -2870,12 +3794,11 @@ private: System::Windows::Forms::PictureBox^  refresh_panels;
 			int	srval = 0;
 			int	czwval = 0;
 			int ptval = 0;
-			
 			for (int i = 0; i < numerwyd; i++)
-			{	
-				
+			{			
 				if (wyd_dzien[i] == "Poniedzialek") {
 					ponval++;
+					
 					switch (ponval) {
 						case 1: {
 							wydarzeniePon1->Visible = true;
@@ -3105,6 +4028,8 @@ private: System::Windows::Forms::PictureBox^  refresh_panels;
 			}
 		
 		}
+
+
 		public: System::Void ZmianaEtykiety(String^ nazwa, System::Windows::Forms::Button^ but) {
 			if (nazwa == "Brak") {
 				but->BackColor = System::Drawing::Color::Transparent;
@@ -3125,12 +4050,301 @@ private: System::Windows::Forms::PictureBox^  refresh_panels;
 				but->BackColor = System::Drawing::Color::Black;
 			}
 		}
+
+
 		private: System::Void refresh_panels_Click(System::Object^  sender, System::EventArgs^  e) {
 			Console::Write("\n#ORGANISEIT | Rozpoczynam aktualizacje z bazy podrêcznej\n");
 			ImportbazywydTEMP();
 			zapisbazyWydtemp();
 			Aktualizacja_Paneli();
+
+			ImportbazyzadanTEMP();
+			zapisbazyListytemp();
+			TworzeniepaneliLista();
 			Console::Write("\n#ORGANISEIT | Zakonczono aktualizacje z bazy podrêcznej\n");
+		}
+
+		//-----------------------------------------------------------------
+		//   LISTA ZADAN!
+		//-----------------------------------------------------------------
+
+		
+			 //wczytywanie z pliku po oknie
+			public: System::Void ImportzplikuLista() {
+				Console::Write("\n#ORGANISEIT | Rozpoczynam wczytywanie bazy listy zadan ze wskazanego pliku\n");
+				numerev = 0;
+				nr_liniiev = 1;
+				IO::Stream^ myStream2;
+				OpenFileDialog^ openFileDialog2 = gcnew OpenFileDialog;
+				String^ wiersz;
+				openFileDialog2->InitialDirectory = "c:\\";
+				openFileDialog2->Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+				openFileDialog2->FilterIndex = 2;
+				openFileDialog2->RestoreDirectory = true;
+				if (openFileDialog2->ShowDialog() == Windows::Forms::DialogResult::OK) {
+
+					if ((myStream2 = openFileDialog2->OpenFile()) != nullptr) {
+						IO::StreamReader^ plik13 = gcnew IO::StreamReader(myStream2, System::Text::Encoding::Default);
+						while ((wiersz = plik13->ReadLine()) != nullptr) {
+							//wiersz = plik->ReadLine();
+							Console::Write(wiersz + "\n");
+
+							switch (nr_liniiev % 4) {
+							case 1: {
+								ev_nazwa[numerev] = wiersz;
+								nr_liniiev++;
+								continue;
+							}
+							case 2: {
+								wyd_opis[numerev] = wiersz;
+								nr_liniiev++;
+								continue;
+							}
+							case 3: {
+								wyd_godzina[numerev] = wiersz;
+								nr_liniiev++;
+								continue;
+							}
+							case 0: {
+								wyd_etykieta[numerev] = wiersz;
+								nr_liniiev++;
+								numerev++;
+								continue;
+							}
+							}//koniec switcha
+						}//petla czytaj¹ca plik
+						plik13->Close();
+					}//if okna otwieraj¹cego plik
+				}
+				Console::Write("\n" + ev_nazwa[0] +
+					"\n" + ev_opis[0] +
+					"\n" + ev_godzina[0] +
+					"\n" + ev_etykieta[0]);
+				Console::Write("\n#ORGANISEIT | Zakoñczono wczytywanie bazy listy zadan ze wskazanego pliku\n");
+			}
+					//wczytywanie z pliku po oknie
+			public: System::Void ImportbazyzadanTEMP() {
+				Console::Write("\n#ORGANISEIT | Rozpoczynam wczytywanie pliku listy zadan z bazy podrêcznej\n");
+
+				System::String^ nazwapliku = "TaskDB_tmp";
+				String^ wiersz;
+				numerev = 0;
+				nr_liniiev = 1;
+				try{
+				IO::StreamReader^ plik14 = gcnew IO::StreamReader(nazwapliku, System::Text::Encoding::Default);
+				while ((wiersz = plik14->ReadLine()) != nullptr) {
+					Console::Write(wiersz + "\n");
+
+					switch (nr_liniiev % 4) {
+					case 1: {
+						ev_nazwa[numerev] = wiersz;
+						nr_liniiev++;
+						continue;
+					}
+					case 2: {
+						ev_opis[numerev] = wiersz;
+						nr_liniiev++;
+						continue;
+					}
+					case 3: {
+						ev_godzina[numerev] = wiersz;
+						nr_liniiev++;
+						continue;
+					}
+					case 0: {
+						ev_etykieta[numerev] = wiersz;
+						nr_liniiev++;
+						numerev++;
+						continue;
+					}
+
+					}//koniec switcha
+					
+				}//petla czytaj¹ca plik
+				plik14->Close();
+				Console::Write("\n" + ev_nazwa[0] +
+					"\n" + ev_opis[0] +
+					"\n" + ev_godzina[0] +
+					"\n" + ev_etykieta[0]);
+				Console::Write("\n#ORGANISEIT | Zakoñczono wczytywanie pliku listy zadan z bazy podrêcznej\n");
+				}
+				catch (...) {
+					MessageBox::Show("B³¹d wczytywania pliku: TaskDB_tmp", "Organise It!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+					Application::Exit();
+				}
+			}
+
+
+	public: System::Void ZapisdoplikuListazad() {
+		Console::Write("\n#ORGANISEIT | Rozpoczynam zapis listy zadan do wskazanego pliku\n");
+		IO::Stream^ myStream;
+		SaveFileDialog^ saveFileDialog2 = gcnew SaveFileDialog;
+		String^ wiersz;
+		saveFileDialog2->InitialDirectory = "c:\\";
+		saveFileDialog2->Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+		saveFileDialog2->FilterIndex = 2;
+		saveFileDialog2->RestoreDirectory = true;
+		if (saveFileDialog2->ShowDialog() == Windows::Forms::DialogResult::OK) {
+
+			if ((myStream = saveFileDialog2->OpenFile()) != nullptr) {
+				IO::StreamWriter^ plik5 = gcnew IO::StreamWriter(myStream);
+				for (int i = 0; i <= numerev; i++) {
+					plik5->WriteLine(ev_nazwa[i]);
+					plik5->WriteLine(ev_opis[i]);
+					plik5->WriteLine(ev_godzina[i]);
+					plik5->WriteLine(ev_etykieta[i]);
+
+				}//petla czytaj¹ca plik
+				plik5->Close();
+
+			}//if okna otwieraj¹cego plik
+			myStream->Close();
+
+		}
+		Console::Write("\n#ORGANISEIT | Zakoñczono zapis listy zadan do wskazanego pliku: " + myStream);
+	}
+
+
+		public: System::Void zapisbazyListytemp() {
+			Console::Write("\n#ORGANISEIT | Rozpoczynam zapis pliku listy zadan do bazy podrêcznej\n");
+			System::String^ nazwapliku = "TaskDB_tmp";
+			IO::StreamWriter^ plik = gcnew IO::StreamWriter(nazwapliku, false);
+			for (int i = 0; i <= numerev - 1; i++) {
+				plik->WriteLine(ev_nazwa[i]);
+				plik->WriteLine(ev_opis[i]);
+				plik->WriteLine(ev_godzina[i]);
+				plik->WriteLine(ev_etykieta[i]);
+			}//petla czytaj¹ca plik
+			plik->Close();
+			Console::Write("\n#ORGANISEIT | Zakoñczono zapis pliku listy zadan do bazy podrêcznej\n");
+		}
+
+		private: System::Void ImportBazyZadanBtn_Click(System::Object^  sender, System::EventArgs^  e) {
+			ImportzplikuLista();
+			zapisbazyListytemp();
+			TworzeniepaneliLista();
+		}
+
+
+		public: System::Void TworzeniepaneliLista() {
+			for  (int i = 0; i < numerev; i++)
+			{
+				switch (i) {
+					case 0:
+					{
+						Zadanie1->Visible = true;
+						label78->Text = ev_nazwa[i];
+						label77->Text = ev_opis[i];
+						label76->Text = ev_godzina[i];
+						ZmianaEtykiety(ev_etykieta[i], button26);
+						break;
+					}
+					case 1:
+					{
+						Zadanie2->Visible = true;
+						label93->Text = ev_nazwa[i];
+						label92->Text = ev_opis[i];
+						label91->Text = ev_godzina[i];
+						ZmianaEtykiety(ev_etykieta[i], button31);
+						break;
+					}
+					case 2:
+					{
+						Zadanie3->Visible = true;
+						label102->Text = ev_nazwa[i];
+						label101->Text = ev_opis[i];
+						label100->Text = ev_godzina[i];
+						ZmianaEtykiety(ev_etykieta[i], button34);
+						break;
+					}
+					case 3:
+					{
+						Zadanie4->Visible = true;
+						label111->Text = ev_nazwa[i];
+						label110->Text = ev_opis[i];
+						label109->Text = ev_godzina[i];
+						ZmianaEtykiety(ev_etykieta[i], button37);
+						break;
+					}
+					case 4:
+					{
+						Zadanie5->Visible = true;
+						label81->Text = ev_nazwa[i];
+						label80->Text = ev_opis[i];
+						label79->Text = ev_godzina[i];
+						ZmianaEtykiety(ev_etykieta[i], button27);
+						break;
+					}
+					case 5:
+					{
+						Zadanie6->Visible = true;
+						label90->Text = ev_nazwa[i];
+						label89->Text = ev_opis[i];
+						label88->Text = ev_godzina[i];
+						ZmianaEtykiety(ev_etykieta[i], button30);
+						break;
+					}
+					case 6:
+					{
+						Zadanie7->Visible = true;
+						label99->Text = ev_nazwa[i];
+						label98->Text = ev_opis[i];
+						label97->Text = ev_godzina[i];
+						ZmianaEtykiety(ev_etykieta[i], button33);
+						break;
+					}
+					case 7:
+					{
+						Zadanie8->Visible = true;
+						label108->Text = ev_nazwa[i];
+						label107->Text = ev_opis[i];
+						label106->Text = ev_godzina[i];
+						ZmianaEtykiety(ev_etykieta[i], button36);
+						break;
+					}
+					case 8:
+					{
+						Zadanie9->Visible = true;
+						label84->Text = ev_nazwa[i];
+						label83->Text = ev_opis[i];
+						label82->Text = ev_godzina[i];
+						ZmianaEtykiety(ev_etykieta[i], button28);
+						break;
+					}
+					case 9:
+					{
+						Zadanie10->Visible = true;
+						label87->Text = ev_nazwa[i];
+						label86->Text = ev_opis[i];
+						label85->Text = ev_godzina[i];
+						ZmianaEtykiety(ev_etykieta[i], button29);
+						break;
+					}
+					case 10:
+					{
+						Zadanie11->Visible = true;
+						label96->Text = ev_nazwa[i];
+						label95->Text = ev_opis[i];
+						label94->Text = ev_godzina[i];
+						ZmianaEtykiety(ev_etykieta[i], button32);
+						break;
+					}
+					case 11:
+					{
+						Zadanie12->Visible = true;
+						label105->Text = ev_nazwa[i];
+						label104->Text = ev_opis[i];
+						label103->Text = ev_godzina[i];
+						ZmianaEtykiety(ev_etykieta[i], button35);
+						break;
+					}
+
+
+
+				}
+
+
+			}
 		}
 };
 }

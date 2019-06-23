@@ -46,6 +46,8 @@ namespace OrganiseIt {
 		bool dragging;
 		Point offset;
 
+	public: bool czyZadanie = false;
+
 
 
 	public:
@@ -369,36 +371,56 @@ namespace OrganiseIt {
 
 			 //przycisk Dodaj
 	public: System::Void dodajBtn_Click(System::Object^  sender, System::EventArgs^  e) {
-		System::String^ nazwapliku = "EventDB_tmp";
-		IO::StreamWriter file2(nazwapliku, true);
-		file2.WriteLine("id_");
-		file2.WriteLine(nazwaEvent->Text);
-		file2.WriteLine(opisEvent->Text);
-		if (poniedzialekbtn->Checked) {
-			file2.WriteLine("Poniedzialek");
+		
+		if (czyZadanie) {
+			System::String^ nazwapliku = "TaskDB_tmp";
+			IO::StreamWriter file11(nazwapliku, true);
+			file11.WriteLine(nazwaEvent->Text);
+			file11.WriteLine(opisEvent->Text);
+
+			if (godzinabtn->Text) {
+				file11.WriteLine(godzinabtn->Text);
+			}
+			if (etykietabtn->Text) {
+				file11.WriteLine(etykietabtn->Text);
+			}
+			file11.Close();
 		}
-		else if (wtorekbtn->Checked) {
-			file2.WriteLine("Wtorek");
-		}
-		else if (srodabtn->Checked) {
-			file2.WriteLine("Sroda");
-		}
-		else if (czwartekbtn->Checked) {
-			file2.WriteLine("Czwartek");
-		}
-		else if (piatekbtn->Checked) {
-			file2.WriteLine("Piatek");
+		else{
+			System::String^ nazwapliku = "EventDB_tmp";
+			IO::StreamWriter file12(nazwapliku, true);
+			file12.WriteLine("id_");
+			file12.WriteLine(nazwaEvent->Text);
+			file12.WriteLine(opisEvent->Text);
+			if (poniedzialekbtn->Checked) {
+				file12.WriteLine("Poniedzialek");
+			}
+			else if (wtorekbtn->Checked) {
+				file12.WriteLine("Wtorek");
+			}
+			else if (srodabtn->Checked) {
+				file12.WriteLine("Sroda");
+			}
+			else if (czwartekbtn->Checked) {
+				file12.WriteLine("Czwartek");
+			}
+			else if (piatekbtn->Checked) {
+				file12.WriteLine("Piatek");
+			}
+	
+			if (godzinabtn->Text) {
+				file12.WriteLine(godzinabtn->Text);
+			}
+			if (etykietabtn->Text) {
+				file12.WriteLine(etykietabtn->Text);
+			}
+	
+			file12.Close();
 		}
 
-		if (godzinabtn->Text) {
-			file2.WriteLine(godzinabtn->Text);
-		}
-		if (etykietabtn->Text) {
-			file2.WriteLine(etykietabtn->Text);
-		}
 
-		file2.Close();
 		this->Close();
+
 	}
 		
 
