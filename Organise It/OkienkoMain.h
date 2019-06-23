@@ -41,226 +41,240 @@ namespace OrganiseIt {
 		array<String^>^ ev_godzina = gcnew array<String^>(40);
 		array<String^>^ ev_etykieta = gcnew array<String^>(40);
 
-
-
-
 		int numerwyd = 0; //numer wszystkich wydarzen
 		int numerev = 0; //numer wszystkich zadan
 		int nr_linii = 1;
-		int nr_liniiev = 1;
+		int nr_liniiev = 1;	
+	
+	private:
+			bool czyWidoczny = true;
+			bool czyWidocznyPlusBox = false;
+			bool czyPrzypiety = false;
+			bool dragging;
+			Point offset;
 
 
 	private: System::Windows::Forms::PictureBox^  importujimg;
-	private: System::Windows::Forms::PictureBox^  listazadan_btn;
-	private: System::Windows::Forms::PictureBox^  terminarz_btn;
-	private: System::Windows::Forms::PictureBox^  oAutorachButton;
-	private: System::Windows::Forms::PictureBox^  ExportBazyZadanBtn;
-	private: System::Windows::Forms::PictureBox^  ExportBazyWydarzenBtn;
-	private: System::Windows::Forms::PictureBox^  exportujimg;
-	private: System::Windows::Forms::Panel^  TerminarzBox;
-	private: System::Windows::Forms::Panel^  PoniedzialekBox;
-	private: System::Windows::Forms::Panel^  WtorekBox;
-	private: System::Windows::Forms::Panel^  PiatekBox;
-
-	private: System::Windows::Forms::Panel^  CzwartekBox;
-	private: System::Windows::Forms::Panel^  SrodaBox;
-	private: System::Windows::Forms::Panel^  ListazadanBox;
-	private: System::Windows::Forms::Label^  label1;
-
-
-
-
-	private: System::Windows::Forms::Panel^  wydarzeniePon1;
-	private: System::Windows::Forms::Label^  label3;
-	private: System::Windows::Forms::Label^  label2;
-	private: System::Windows::Forms::Label^  TytulPon1;
-	private: System::Windows::Forms::Button^  button1;
-	private: System::Windows::Forms::Panel^  wydarzeniePt5;
-	private: System::Windows::Forms::Button^  button21;
-	private: System::Windows::Forms::Label^  label61;
-	private: System::Windows::Forms::Label^  label62;
-	private: System::Windows::Forms::Label^  label63;
-	private: System::Windows::Forms::Panel^  wydarzeniePt4;
-	private: System::Windows::Forms::Button^  button22;
-	private: System::Windows::Forms::Label^  label64;
-	private: System::Windows::Forms::Label^  label65;
-	private: System::Windows::Forms::Label^  label66;
-	private: System::Windows::Forms::Panel^  wydarzeniePt3;
-	private: System::Windows::Forms::Button^  button23;
-	private: System::Windows::Forms::Label^  label67;
-	private: System::Windows::Forms::Label^  label68;
-	private: System::Windows::Forms::Label^  label69;
-	private: System::Windows::Forms::Panel^  wydarzeniePt1;
-	private: System::Windows::Forms::Button^  button25;
-	private: System::Windows::Forms::Label^  label73;
-	private: System::Windows::Forms::Label^  label74;
-	private: System::Windows::Forms::Label^  label75;
-	private: System::Windows::Forms::Panel^  wydarzeniePt2;
-	private: System::Windows::Forms::Button^  button24;
-	private: System::Windows::Forms::Label^  label70;
-	private: System::Windows::Forms::Label^  label71;
-	private: System::Windows::Forms::Label^  label72;
-	private: System::Windows::Forms::Panel^  wydarzenieCzw5;
-	private: System::Windows::Forms::Button^  button16;
-	private: System::Windows::Forms::Label^  label46;
-	private: System::Windows::Forms::Label^  label47;
-	private: System::Windows::Forms::Label^  label48;
-	private: System::Windows::Forms::Panel^  wydarzenieCzw1;
-	private: System::Windows::Forms::Button^  button20;
-	private: System::Windows::Forms::Label^  label58;
-	private: System::Windows::Forms::Label^  label59;
-	private: System::Windows::Forms::Label^  label60;
-	private: System::Windows::Forms::Panel^  wydarzenieCzw4;
-	private: System::Windows::Forms::Button^  button17;
-	private: System::Windows::Forms::Label^  label49;
-	private: System::Windows::Forms::Label^  label50;
-	private: System::Windows::Forms::Label^  label51;
-	private: System::Windows::Forms::Panel^  wydarzenieCzw2;
-	private: System::Windows::Forms::Button^  button19;
-	private: System::Windows::Forms::Label^  label55;
-	private: System::Windows::Forms::Label^  label56;
-	private: System::Windows::Forms::Label^  label57;
-	private: System::Windows::Forms::Panel^  wydarzenieCzw3;
-	private: System::Windows::Forms::Button^  button18;
-	private: System::Windows::Forms::Label^  label52;
-	private: System::Windows::Forms::Label^  label53;
-	private: System::Windows::Forms::Label^  label54;
-	private: System::Windows::Forms::Panel^  wydarzenieSr5;
-	private: System::Windows::Forms::Button^  button11;
-	private: System::Windows::Forms::Label^  label31;
-	private: System::Windows::Forms::Label^  label32;
-	private: System::Windows::Forms::Label^  label33;
-	private: System::Windows::Forms::Panel^  wydarzenieSr1;
-	private: System::Windows::Forms::Button^  button15;
-	private: System::Windows::Forms::Label^  label43;
-	private: System::Windows::Forms::Label^  label44;
-	private: System::Windows::Forms::Label^  label45;
-	private: System::Windows::Forms::Panel^  wydarzenieSr4;
-	private: System::Windows::Forms::Button^  button12;
-	private: System::Windows::Forms::Label^  label34;
-	private: System::Windows::Forms::Label^  label35;
-	private: System::Windows::Forms::Label^  label36;
-	private: System::Windows::Forms::Panel^  wydarzenieSr2;
-	private: System::Windows::Forms::Button^  button14;
-	private: System::Windows::Forms::Label^  label40;
-	private: System::Windows::Forms::Label^  label41;
-	private: System::Windows::Forms::Label^  label42;
-	private: System::Windows::Forms::Panel^  wydarzenieSr3;
-	private: System::Windows::Forms::Button^  button13;
-	private: System::Windows::Forms::Label^  label37;
-	private: System::Windows::Forms::Label^  label38;
-	private: System::Windows::Forms::Label^  label39;
-	private: System::Windows::Forms::Panel^  wydarzenieWt5;
-	private: System::Windows::Forms::Button^  button6;
-	private: System::Windows::Forms::Label^  label16;
-	private: System::Windows::Forms::Label^  label17;
-	private: System::Windows::Forms::Label^  label18;
-	private: System::Windows::Forms::Panel^  wydarzenieWt1;
-	private: System::Windows::Forms::Button^  button10;
-	private: System::Windows::Forms::Label^  label28;
-	private: System::Windows::Forms::Label^  label29;
-	private: System::Windows::Forms::Label^  label30;
-	private: System::Windows::Forms::Panel^  wydarzenieWt4;
-	private: System::Windows::Forms::Button^  button7;
-	private: System::Windows::Forms::Label^  label19;
-	private: System::Windows::Forms::Label^  label20;
-	private: System::Windows::Forms::Label^  label21;
-	private: System::Windows::Forms::Panel^  wydarzenieWt2;
-	private: System::Windows::Forms::Button^  button9;
-	private: System::Windows::Forms::Label^  label25;
-	private: System::Windows::Forms::Label^  label26;
-	private: System::Windows::Forms::Label^  label27;
-	private: System::Windows::Forms::Panel^  wydarzenieWt3;
-	private: System::Windows::Forms::Button^  button8;
-	private: System::Windows::Forms::Label^  label22;
-	private: System::Windows::Forms::Label^  label23;
-	private: System::Windows::Forms::Label^  label24;
-	private: System::Windows::Forms::Panel^  wydarzeniePon5;
-	private: System::Windows::Forms::Button^  button5;
-	private: System::Windows::Forms::Label^  label13;
-	private: System::Windows::Forms::Label^  label14;
-	private: System::Windows::Forms::Label^  label15;
-	private: System::Windows::Forms::Panel^  wydarzeniePon4;
-	private: System::Windows::Forms::Button^  button4;
-	private: System::Windows::Forms::Label^  label10;
-	private: System::Windows::Forms::Label^  label11;
-	private: System::Windows::Forms::Label^  label12;
-	private: System::Windows::Forms::Panel^  wydarzeniePon3;
-	private: System::Windows::Forms::Button^  button3;
-	private: System::Windows::Forms::Label^  label7;
-	private: System::Windows::Forms::Label^  label8;
-	private: System::Windows::Forms::Label^  label9;
-	private: System::Windows::Forms::Panel^  wydarzeniePon2;
-	private: System::Windows::Forms::Button^  button2;
-	private: System::Windows::Forms::Label^  label4;
-	private: System::Windows::Forms::Label^  label5;
-	private: System::Windows::Forms::Label^  label6;
-private: System::Windows::Forms::PictureBox^  refresh_panels;
-private: System::Windows::Forms::Panel^  Zadanie12;
-private: System::Windows::Forms::Button^  button35;
-private: System::Windows::Forms::Label^  label103;
-private: System::Windows::Forms::Label^  label104;
-private: System::Windows::Forms::Label^  label105;
-private: System::Windows::Forms::Panel^  Zadanie11;
-private: System::Windows::Forms::Button^  button32;
-private: System::Windows::Forms::Label^  label94;
-private: System::Windows::Forms::Label^  label95;
-private: System::Windows::Forms::Label^  label96;
-private: System::Windows::Forms::Panel^  Zadanie8;
-private: System::Windows::Forms::Button^  button36;
-private: System::Windows::Forms::Label^  label106;
-private: System::Windows::Forms::Label^  label107;
-private: System::Windows::Forms::Label^  label108;
-private: System::Windows::Forms::Panel^  Zadanie4;
-private: System::Windows::Forms::Button^  button37;
-private: System::Windows::Forms::Label^  label109;
-private: System::Windows::Forms::Label^  label110;
-private: System::Windows::Forms::Label^  label111;
-private: System::Windows::Forms::Panel^  Zadanie7;
-private: System::Windows::Forms::Button^  button33;
-private: System::Windows::Forms::Label^  label97;
-private: System::Windows::Forms::Label^  label98;
-private: System::Windows::Forms::Label^  label99;
-private: System::Windows::Forms::Panel^  Zadanie10;
-private: System::Windows::Forms::Button^  button29;
-private: System::Windows::Forms::Label^  label85;
-private: System::Windows::Forms::Label^  label86;
-private: System::Windows::Forms::Label^  label87;
-private: System::Windows::Forms::Panel^  Zadanie3;
-private: System::Windows::Forms::Button^  button34;
-private: System::Windows::Forms::Label^  label100;
-private: System::Windows::Forms::Label^  label101;
-private: System::Windows::Forms::Label^  label102;
-private: System::Windows::Forms::Panel^  Zadanie9;
-private: System::Windows::Forms::Button^  button28;
-private: System::Windows::Forms::Label^  label82;
-private: System::Windows::Forms::Label^  label83;
-private: System::Windows::Forms::Label^  label84;
-private: System::Windows::Forms::Panel^  Zadanie6;
-private: System::Windows::Forms::Button^  button30;
-private: System::Windows::Forms::Label^  label88;
-private: System::Windows::Forms::Label^  label89;
-private: System::Windows::Forms::Label^  label90;
-private: System::Windows::Forms::Panel^  Zadanie2;
-private: System::Windows::Forms::Button^  button31;
-private: System::Windows::Forms::Label^  label91;
-private: System::Windows::Forms::Label^  label92;
-private: System::Windows::Forms::Label^  label93;
-private: System::Windows::Forms::Panel^  Zadanie5;
-private: System::Windows::Forms::Button^  button27;
-private: System::Windows::Forms::Label^  label79;
-private: System::Windows::Forms::Label^  label80;
-private: System::Windows::Forms::Label^  label81;
-private: System::Windows::Forms::Panel^  Zadanie1;
-private: System::Windows::Forms::Button^  button26;
-private: System::Windows::Forms::Label^  label76;
-private: System::Windows::Forms::Label^  label77;
-private: System::Windows::Forms::Label^  label78;
-
-
-
-
-	private: System::Windows::Forms::PictureBox^  ImportBazyZadanBtn;
+	 System::Windows::Forms::PictureBox^  listazadan_btn;
+	 System::Windows::Forms::PictureBox^  terminarz_btn;
+	 System::Windows::Forms::PictureBox^  oAutorachButton;
+	 System::Windows::Forms::PictureBox^  ExportBazyZadanBtn;
+	 System::Windows::Forms::PictureBox^  ExportBazyWydarzenBtn;
+	 System::Windows::Forms::PictureBox^  exportujimg;
+	 System::Windows::Forms::Panel^  TerminarzBox;
+	 System::Windows::Forms::Panel^  PoniedzialekBox;
+	 System::Windows::Forms::Panel^  WtorekBox;
+	 System::Windows::Forms::Panel^  PiatekBox;
+	 System::Windows::Forms::Panel^  CzwartekBox;
+	 System::Windows::Forms::Panel^  SrodaBox;
+	 System::Windows::Forms::Panel^  ListazadanBox;
+	 System::Windows::Forms::Label^  label1;
+	 System::Windows::Forms::Panel^  wydarzeniePon1;
+	 System::Windows::Forms::Label^  label3;
+	 System::Windows::Forms::Label^  label2;
+	 System::Windows::Forms::Label^  TytulPon1;
+	 System::Windows::Forms::Button^  button1;
+	 System::Windows::Forms::Panel^  wydarzeniePt5;
+	 System::Windows::Forms::Button^  button21;
+	 System::Windows::Forms::Label^  label61;
+	 System::Windows::Forms::Label^  label62;
+	 System::Windows::Forms::Label^  label63;
+	 System::Windows::Forms::Panel^  wydarzeniePt4;
+	 System::Windows::Forms::Button^  button22;
+	 System::Windows::Forms::Label^  label64;
+	 System::Windows::Forms::Label^  label65;
+	 System::Windows::Forms::Label^  label66;
+	 System::Windows::Forms::Panel^  wydarzeniePt3;
+	 System::Windows::Forms::Button^  button23;
+	 System::Windows::Forms::Label^  label67;
+	 System::Windows::Forms::Label^  label68;
+	 System::Windows::Forms::Label^  label69;
+	 System::Windows::Forms::Panel^  wydarzeniePt1;
+	 System::Windows::Forms::Button^  button25;
+	 System::Windows::Forms::Label^  label73;
+	 System::Windows::Forms::Label^  label74;
+	 System::Windows::Forms::Label^  label75;
+	 System::Windows::Forms::Panel^  wydarzeniePt2;
+	 System::Windows::Forms::Button^  button24;
+	 System::Windows::Forms::Label^  label70;
+	 System::Windows::Forms::Label^  label71;
+	 System::Windows::Forms::Label^  label72;
+	 System::Windows::Forms::Panel^  wydarzenieCzw5;
+	 System::Windows::Forms::Button^  button16;
+	 System::Windows::Forms::Label^  label46;
+	 System::Windows::Forms::Label^  label47;
+	 System::Windows::Forms::Label^  label48;
+	 System::Windows::Forms::Panel^  wydarzenieCzw1;
+	 System::Windows::Forms::Button^  button20;
+	 System::Windows::Forms::Label^  label58;
+	 System::Windows::Forms::Label^  label59;
+	 System::Windows::Forms::Label^  label60;
+	 System::Windows::Forms::Panel^  wydarzenieCzw4;
+	 System::Windows::Forms::Button^  button17;
+	 System::Windows::Forms::Label^  label49;
+	 System::Windows::Forms::Label^  label50;
+	 System::Windows::Forms::Label^  label51;
+	 System::Windows::Forms::Panel^  wydarzenieCzw2;
+	 System::Windows::Forms::Button^  button19;
+	 System::Windows::Forms::Label^  label55;
+	 System::Windows::Forms::Label^  label56;
+	 System::Windows::Forms::Label^  label57;
+	 System::Windows::Forms::Panel^  wydarzenieCzw3;
+	 System::Windows::Forms::Button^  button18;
+	 System::Windows::Forms::Label^  label52;
+	 System::Windows::Forms::Label^  label53;
+	 System::Windows::Forms::Label^  label54;
+	 System::Windows::Forms::Panel^  wydarzenieSr5;
+	 System::Windows::Forms::Button^  button11;
+	 System::Windows::Forms::Label^  label31;
+	 System::Windows::Forms::Label^  label32;
+	 System::Windows::Forms::Label^  label33;
+	 System::Windows::Forms::Panel^  wydarzenieSr1;
+	 System::Windows::Forms::Button^  button15;
+	 System::Windows::Forms::Label^  label43;
+	 System::Windows::Forms::Label^  label44;
+	 System::Windows::Forms::Label^  label45;
+	 System::Windows::Forms::Panel^  wydarzenieSr4;
+	 System::Windows::Forms::Button^  button12;
+	 System::Windows::Forms::Label^  label34;
+	 System::Windows::Forms::Label^  label35;
+	 System::Windows::Forms::Label^  label36;
+	 System::Windows::Forms::Panel^  wydarzenieSr2;
+	 System::Windows::Forms::Button^  button14;
+	 System::Windows::Forms::Label^  label40;
+	 System::Windows::Forms::Label^  label41;
+	 System::Windows::Forms::Label^  label42;
+	 System::Windows::Forms::Panel^  wydarzenieSr3;
+	 System::Windows::Forms::Button^  button13;
+	 System::Windows::Forms::Label^  label37;
+	 System::Windows::Forms::Label^  label38;
+	 System::Windows::Forms::Label^  label39;
+	 System::Windows::Forms::Panel^  wydarzenieWt5;
+	 System::Windows::Forms::Button^  button6;
+	 System::Windows::Forms::Label^  label16;
+	 System::Windows::Forms::Label^  label17;
+	 System::Windows::Forms::Label^  label18;
+	 System::Windows::Forms::Panel^  wydarzenieWt1;
+	 System::Windows::Forms::Button^  button10;
+	 System::Windows::Forms::Label^  label28;
+	 System::Windows::Forms::Label^  label29;
+	 System::Windows::Forms::Label^  label30;
+	 System::Windows::Forms::Panel^  wydarzenieWt4;
+	 System::Windows::Forms::Button^  button7;
+	 System::Windows::Forms::Label^  label19;
+	 System::Windows::Forms::Label^  label20;
+	 System::Windows::Forms::Label^  label21;
+	 System::Windows::Forms::Panel^  wydarzenieWt2;
+	 System::Windows::Forms::Button^  button9;
+	 System::Windows::Forms::Label^  label25;
+	 System::Windows::Forms::Label^  label26;
+	 System::Windows::Forms::Label^  label27;
+	 System::Windows::Forms::Panel^  wydarzenieWt3;
+	 System::Windows::Forms::Button^  button8;
+	 System::Windows::Forms::Label^  label22;
+	 System::Windows::Forms::Label^  label23;
+	 System::Windows::Forms::Label^  label24;
+	 System::Windows::Forms::Panel^  wydarzeniePon5;
+	 System::Windows::Forms::Button^  button5;
+	 System::Windows::Forms::Label^  label13;
+	 System::Windows::Forms::Label^  label14;
+	 System::Windows::Forms::Label^  label15;
+	 System::Windows::Forms::Panel^  wydarzeniePon4;
+	 System::Windows::Forms::Button^  button4;
+	 System::Windows::Forms::Label^  label10;
+	 System::Windows::Forms::Label^  label11;
+	 System::Windows::Forms::Label^  label12;
+	 System::Windows::Forms::Panel^  wydarzeniePon3;
+	 System::Windows::Forms::Button^  button3;
+	 System::Windows::Forms::Label^  label7;
+	 System::Windows::Forms::Label^  label8;
+	 System::Windows::Forms::Label^  label9;
+	 System::Windows::Forms::Panel^  wydarzeniePon2;
+	 System::Windows::Forms::Button^  button2;
+	 System::Windows::Forms::Label^  label4;
+	 System::Windows::Forms::Label^  label5;
+	 System::Windows::Forms::Label^  label6;
+	 System::Windows::Forms::PictureBox^  refresh_panels;
+	 System::Windows::Forms::Panel^  Zadanie12;
+	 System::Windows::Forms::Button^  button35;
+	 System::Windows::Forms::Label^  label103;
+	 System::Windows::Forms::Label^  label104;
+	 System::Windows::Forms::Label^  label105;
+	 System::Windows::Forms::Panel^  Zadanie11;
+	 System::Windows::Forms::Button^  button32;
+	 System::Windows::Forms::Label^  label94;
+	 System::Windows::Forms::Label^  label95;
+	 System::Windows::Forms::Label^  label96;
+	 System::Windows::Forms::Panel^  Zadanie8;
+	 System::Windows::Forms::Button^  button36;
+	 System::Windows::Forms::Label^  label106;
+	 System::Windows::Forms::Label^  label107;
+	 System::Windows::Forms::Label^  label108;
+	 System::Windows::Forms::Panel^  Zadanie4;
+	 System::Windows::Forms::Button^  button37;
+	 System::Windows::Forms::Label^  label109;
+	 System::Windows::Forms::Label^  label110;
+	 System::Windows::Forms::Label^  label111;
+	 System::Windows::Forms::Panel^  Zadanie7;
+	 System::Windows::Forms::Button^  button33;
+	 System::Windows::Forms::Label^  label97;
+	 System::Windows::Forms::Label^  label98;
+	 System::Windows::Forms::Label^  label99;
+	 System::Windows::Forms::Panel^  Zadanie10;
+	 System::Windows::Forms::Button^  button29;
+	 System::Windows::Forms::Label^  label85;
+	 System::Windows::Forms::Label^  label86;
+	 System::Windows::Forms::Label^  label87;
+	 System::Windows::Forms::Panel^  Zadanie3;
+	 System::Windows::Forms::Button^  button34;
+	 System::Windows::Forms::Label^  label100;
+	 System::Windows::Forms::Label^  label101;
+	 System::Windows::Forms::Label^  label102;
+	 System::Windows::Forms::Panel^  Zadanie9;
+	 System::Windows::Forms::Button^  button28;
+	 System::Windows::Forms::Label^  label82;
+	 System::Windows::Forms::Label^  label83;
+	 System::Windows::Forms::Label^  label84;
+	 System::Windows::Forms::Panel^  Zadanie6;
+	 System::Windows::Forms::Button^  button30;
+	 System::Windows::Forms::Label^  label88;
+	 System::Windows::Forms::Label^  label89;
+	 System::Windows::Forms::Label^  label90;
+	 System::Windows::Forms::Panel^  Zadanie2;
+	 System::Windows::Forms::Button^  button31;
+	 System::Windows::Forms::Label^  label91;
+	 System::Windows::Forms::Label^  label92;
+	 System::Windows::Forms::Label^  label93;
+	 System::Windows::Forms::Panel^  Zadanie5;
+	 System::Windows::Forms::Button^  button27;
+	 System::Windows::Forms::Label^  label79;
+	 System::Windows::Forms::Label^  label80;
+	 System::Windows::Forms::Label^  label81;
+	 System::Windows::Forms::Panel^  Zadanie1;
+	 System::Windows::Forms::Button^  button26;
+	 System::Windows::Forms::Label^  label76;
+	 System::Windows::Forms::Label^  label77;
+	 System::Windows::Forms::Label^  label78;
+     System::Windows::Forms::Panel^  leftsidebar;
+	 System::Windows::Forms::Panel^  belkabox;
+	 System::Windows::Forms::Panel^  plusboximg;
+	 System::Windows::Forms::PictureBox^  wylogujButton;
+	 System::Windows::Forms::PictureBox^  menuButton;
+	 System::Windows::Forms::PictureBox^  logoButton;
+	 System::Windows::Forms::PictureBox^  belkanapis;
+	 System::Windows::Forms::PictureBox^  plusbuttonimg;
+	 System::Windows::Forms::PictureBox^  minimize;
+	 System::Windows::Forms::PictureBox^  zamknij;
+	 System::Windows::Forms::PictureBox^  maximize;
+	 System::Windows::Forms::Panel^  panel1;
+	 System::Windows::Forms::PictureBox^  newWydarzenie;
+	 System::Windows::Forms::PictureBox^  newZadanie;
+	 System::Windows::Forms::ImageList^  imagelistZadanie;
+	 System::Windows::Forms::ImageList^  imagelistWydarzenie;
+	 System::Windows::Forms::ImageList^  imagelistEtykieta;
+	 System::Windows::Forms::PictureBox^  ImportBazyWydarzenBtn;
+	 System::ComponentModel::IContainer^  components;
+     System::Windows::Forms::PictureBox^  ImportBazyZadanBtn;
 			 
 
 	protected:
@@ -274,36 +288,8 @@ private: System::Windows::Forms::Label^  label78;
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Panel^  leftsidebar;
-	private: System::Windows::Forms::Panel^  belkabox;
-	private: System::Windows::Forms::Panel^  plusboximg;
-	private: System::Windows::Forms::PictureBox^  wylogujButton;
-	private: System::Windows::Forms::PictureBox^  menuButton;
-	private: System::Windows::Forms::PictureBox^  logoButton;
-	private: System::Windows::Forms::PictureBox^  belkanapis;
-	private: System::Windows::Forms::PictureBox^  plusbuttonimg;
-	private: System::Windows::Forms::PictureBox^  minimize;
-	private: System::Windows::Forms::PictureBox^  zamknij;
-	private: System::Windows::Forms::PictureBox^  maximize;
-	private: System::Windows::Forms::Panel^  panel1;
 
-	private: System::Windows::Forms::PictureBox^  newWydarzenie;
-	private: System::Windows::Forms::PictureBox^  newZadanie;
-	private: System::Windows::Forms::ImageList^  imagelistZadanie;
-	private: System::Windows::Forms::ImageList^  imagelistWydarzenie;
-	private: System::Windows::Forms::ImageList^  imagelistEtykieta;
-	private: System::Windows::Forms::PictureBox^  ImportBazyWydarzenBtn;
-
-	private: System::ComponentModel::IContainer^  components;
-	private: 
-
-
-	private:
-	bool czyWidoczny = true;
-	bool czyWidocznyPlusBox = false;
-	bool czyPrzypiety = false;
-	bool dragging;
-	Point offset;
+	 
 
 
 
@@ -318,6 +304,10 @@ private: System::Windows::Forms::Label^  label78;
 		/// Metoda wymagana do obs³ugi projektanta — nie nale¿y modyfikowaæ
 		/// jej zawartoœci w edytorze kodu.
 		/// </summary>
+
+
+		////
+		//Inicjalizacja wszystkich obiektów okna
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
@@ -633,7 +623,6 @@ private: System::Windows::Forms::Label^  label78;
 			this->leftsidebar->Name = L"leftsidebar";
 			this->leftsidebar->Size = System::Drawing::Size(239, 731);
 			this->leftsidebar->TabIndex = 0;
-			this->leftsidebar->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &OkienkoMain::leftsidebar_Paint);
 			// 
 			// refresh_panels
 			// 
@@ -3386,8 +3375,11 @@ private: System::Windows::Forms::Label^  label78;
 			this->Zadanie1->ResumeLayout(false);
 			this->Zadanie1->PerformLayout();
 			this->ResumeLayout(false);
-
 		}
+
+
+
+
 #pragma endregion
 	public: System::Void OkienkoMain_Load(System::Object^  sender, System::EventArgs^  e) {
 		ImportbazywydTEMP(); 
@@ -3398,8 +3390,8 @@ private: System::Windows::Forms::Label^  label78;
 	}
 
 
-	private: System::Void leftsidebar_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
-	}
+
+
 	//pokaz menu dodawania
 	private: System::Void plusbuttonimg_Click(System::Object^  sender, System::EventArgs^  e) {
 		if (czyWidocznyPlusBox) {
@@ -3412,10 +3404,12 @@ private: System::Windows::Forms::Label^  label78;
 		}
 	}
 
+
 	//minimalizuj okno
 	private: System::Void minimize_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->WindowState = FormWindowState::Minimized;
 	}
+
 	//maksymalizuj = przypnij
 	private: System::Void maximize_Click(System::Object^  sender, System::EventArgs^  e) {
 		//nothing
@@ -3469,6 +3463,8 @@ private: System::Windows::Forms::Label^  label78;
 			czyWidoczny = true;
 		}
 	}
+
+
 	//zakoñczenie programu przyciskiem w leftsidebar
 	private: System::Void wylogujButton_Click(System::Object^  sender, System::EventArgs^  e) {
 		if (MessageBox::Show("Czy aby na pewno chcesz zakoñczyæ program?", "Organise It!", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == Windows::Forms::DialogResult::Yes) {
@@ -3478,6 +3474,7 @@ private: System::Windows::Forms::Label^  label78;
 		}
 	}
 	
+
 
 			//noweZadanie
 			private: System::Void newZadanie_MouseHover(System::Object^  sender, System::EventArgs^  e) {
@@ -3704,6 +3701,7 @@ private: System::Windows::Forms::Label^  label78;
 			//dynamicznie tworzone okno oAutorze
 			private: System::Void oAutorachButton_Click(System::Object^  sender, System::EventArgs^  e) {
 				NowyEventForm^ oAutorach = gcnew NowyEventForm;
+				
 				oAutorach->Show();
 				oAutorach->BackgroundImage;
 				oAutorach->dodajBtn->Visible = false;
@@ -3720,6 +3718,9 @@ private: System::Windows::Forms::Label^  label78;
 				oAutorach->godzinabtn->Visible = false;
 				oAutorach->etykietabtn->Visible = false; 
 				oAutorach->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"belkanapis.Image")));
+				oAutorach->label1->Visible = true;
+				oAutorach->label2->Visible = true;
+				oAutorach->label3->Visible = true;
 			}
 
 			//export wydarzen do pliku
@@ -3737,6 +3738,7 @@ private: System::Windows::Forms::Label^  label78;
 		//widocznoœc paneli Terminarz i lista zadañ
 		public: bool czyTerminarzBoxVisible = false;
 				bool czyListazadanBoxVisible = false;
+
 		private: System::Void terminarz_btn_Click(System::Object^  sender, System::EventArgs^  e) {
 			if (!czyTerminarzBoxVisible && !czyListazadanBoxVisible) {
 				TerminarzBox->Visible = true;
@@ -4071,7 +4073,7 @@ private: System::Windows::Forms::Label^  label78;
 					if ((myStream2 = openFileDialog2->OpenFile()) != nullptr) {
 						IO::StreamReader^ plik13 = gcnew IO::StreamReader(myStream2, System::Text::Encoding::Default);
 						while ((wiersz = plik13->ReadLine()) != nullptr) {
-							//wiersz = plik->ReadLine();
+							
 							Console::Write(wiersz + "\n");
 
 							switch (nr_liniiev % 4) {
@@ -4081,17 +4083,17 @@ private: System::Windows::Forms::Label^  label78;
 								continue;
 							}
 							case 2: {
-								wyd_opis[numerev] = wiersz;
+								ev_opis[numerev] = wiersz;
 								nr_liniiev++;
 								continue;
 							}
 							case 3: {
-								wyd_godzina[numerev] = wiersz;
+								ev_godzina[numerev] = wiersz;
 								nr_liniiev++;
 								continue;
 							}
 							case 0: {
-								wyd_etykieta[numerev] = wiersz;
+								ev_etykieta[numerev] = wiersz;
 								nr_liniiev++;
 								numerev++;
 								continue;
@@ -4108,7 +4110,7 @@ private: System::Windows::Forms::Label^  label78;
 				Console::Write("\n#ORGANISEIT | Zakoñczono wczytywanie bazy listy zadan ze wskazanego pliku\n");
 			}
 
-			//wczytywanie z pliku po oknie
+			//wczytywanie z pliku temp
 			public: System::Void ImportbazyzadanTEMP() {
 				Console::Write("\n#ORGANISEIT | Rozpoczynam wczytywanie pliku listy zadan z bazy podrêcznej\n");
 

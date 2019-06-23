@@ -23,6 +23,11 @@ namespace OrganiseIt {
 			//TODO: W tym miejscu dodaj kod konstruktora
 			//
 		}
+	public:
+	 System::Windows::Forms::Label^  label1;
+	 System::Windows::Forms::Label^  label2;
+	 System::Windows::Forms::Label^  label3;
+	public:
 		bool isDodajClicked = true;
 	protected:
 		/// <summary>
@@ -94,6 +99,9 @@ namespace OrganiseIt {
 			this->etykietabtn = (gcnew System::Windows::Forms::ComboBox());
 			this->godzinabtn = (gcnew System::Windows::Forms::ComboBox());
 			this->backgroungEvent = (gcnew System::Windows::Forms::ImageList(this->components));
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->belkabox->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->zamknij))->BeginInit();
@@ -306,6 +314,48 @@ namespace OrganiseIt {
 			this->backgroungEvent->ImageSize = System::Drawing::Size(16, 16);
 			this->backgroungEvent->TransparentColor = System::Drawing::Color::Transparent;
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Transparent;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Verdana", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label1->ForeColor = System::Drawing::SystemColors::Control;
+			this->label1->Location = System::Drawing::Point(73, 153);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(345, 176);
+			this->label1->TabIndex = 12;
+			this->label1->Text = resources->GetString(L"label1.Text");
+			this->label1->Visible = false;
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::Color::Transparent;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Verdana", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label2->ForeColor = System::Drawing::SystemColors::Control;
+			this->label2->Location = System::Drawing::Point(160, 66);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(153, 25);
+			this->label2->TabIndex = 13;
+			this->label2->Text = L"Organise It!";
+			this->label2->Visible = false;
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->BackColor = System::Drawing::Color::Transparent;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label3->ForeColor = System::Drawing::SystemColors::Control;
+			this->label3->Location = System::Drawing::Point(70, 108);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(347, 18);
+			this->label3->TabIndex = 14;
+			this->label3->Text = L"Twój prywatny helper produktywnoœci";
+			this->label3->Visible = false;
+			// 
 			// NowyEventForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -325,6 +375,9 @@ namespace OrganiseIt {
 			this->Controls->Add(this->anulujBtn);
 			this->Controls->Add(this->dodajBtn);
 			this->Controls->Add(this->belkabox);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->label3);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"NowyEventForm";
 			this->Padding = System::Windows::Forms::Padding(2);

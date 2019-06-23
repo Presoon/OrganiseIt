@@ -291,6 +291,19 @@
   <metadata name="backgroungEvent.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Wykonanie programu: 
+                                Kamil Szpak 
+                                Adrian Pietraga
+Design UI: 
+                                Kamil Szpak
+
+
+
+Program stworzony na rzecz projektu 
+semestralnego z programowania.
+Copyright © 2019 Wszelkie prawa zastrzeżone</value>
+  </data>
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAegAAAFxCAYAAAC4OTuHAAAABGdBTUEAALGPC/xhBQAAZc9JREFUeF7t
