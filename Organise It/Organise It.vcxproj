@@ -158,6 +158,10 @@
   <ItemGroup>
     <Text Include="bazaWydarzen.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="EventDB_tmp" />
+    <None Include="TaskDB_tmp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

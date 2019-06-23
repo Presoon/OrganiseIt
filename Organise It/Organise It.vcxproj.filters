@@ -46,4 +46,12 @@
       <Filter>Pliki zasobów</Filter>
     </Text>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="EventDB_tmp">
+      <Filter>Pliki zasobów</Filter>
+    </None>
+    <None Include="TaskDB_tmp">
+      <Filter>Pliki zasobów</Filter>
+    </None>
+  </ItemGroup>
 </Project>

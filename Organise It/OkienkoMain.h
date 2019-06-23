@@ -3478,8 +3478,8 @@ private: System::Windows::Forms::Label^  label78;
 		}
 	}
 	
-	//hover zmiany w plusboxie + nowe okna
-		//noweZadanie
+
+			//noweZadanie
 			private: System::Void newZadanie_MouseHover(System::Object^  sender, System::EventArgs^  e) {
 				newZadanie->Image = imagelistZadanie->Images[0];
 			}
@@ -3574,7 +3574,6 @@ private: System::Windows::Forms::Label^  label78;
 
 						}//petla czytaj¹ca plik
 
-
 					}//if okna otwieraj¹cego plik
 
 					//pêtla debuguj¹ca import z pliku
@@ -3587,13 +3586,11 @@ private: System::Windows::Forms::Label^  label78;
 							wyd_godzina[i] + "\nWYD_ETYKIETA: " +
 							wyd_etykieta[i] + "\n");
 					}
-
-
 				}
 				Console::Write("\n#ORGANISEIT | Zakoñczono wczytywanie bazy ze wskazanego pliku\n");
-				
 			}
-					//wczytywanie z pliku po oknie
+
+			//wczytywanie z pliku po oknie
 			public: System::Void ImportbazywydTEMP() {
 				Console::Write("\n#ORGANISEIT | Rozpoczynam wczytywanie pliku z bazy podrêcznej\n");
 
@@ -3662,7 +3659,7 @@ private: System::Windows::Forms::Label^  label78;
 
 					if ((myStream = saveFileDialog1->OpenFile()) != nullptr) {
 						IO::StreamWriter^ plik = gcnew IO::StreamWriter(myStream);
-						for (int i=0;i<=numerwyd;i++){
+						for (int i=0;i<numerwyd;i++){
 							plik->WriteLine(wyd_id[i]);
 							plik->WriteLine(wyd_nazwa[i]);
 							plik->WriteLine(wyd_opis[i]);
@@ -3681,22 +3678,21 @@ private: System::Windows::Forms::Label^  label78;
 				Console::Write("\n#ORGANISEIT | Zakoñczono zapis do wskazanego pliku: " + myStream);
 			}
 
-
-		public: System::Void zapisbazyWydtemp() {
-			Console::Write("\n#ORGANISEIT | Rozpoczynam zapis pliku do bazy podrêcznej\n");
-			System::String^ nazwapliku = "EventDB_tmp";
-			IO::StreamWriter^ plik = gcnew IO::StreamWriter(nazwapliku, false);
-			for (int i = 0; i <= numerwyd-1; i++) {
-				plik->WriteLine(wyd_id[i]);
-				plik->WriteLine(wyd_nazwa[i]);
-				plik->WriteLine(wyd_opis[i]);
-				plik->WriteLine(wyd_dzien[i]);
-				plik->WriteLine(wyd_godzina[i]);
-				plik->WriteLine(wyd_etykieta[i]);
-			}//petla czytaj¹ca plik
-			plik->Close();
-			Console::Write("\n#ORGANISEIT | Zakoñczono zapis pliku do bazy podrêcznej\n");
-		}
+			public: System::Void zapisbazyWydtemp() {
+				Console::Write("\n#ORGANISEIT | Rozpoczynam zapis pliku do bazy podrêcznej\n");
+				System::String^ nazwapliku = "EventDB_tmp";
+				IO::StreamWriter^ plik = gcnew IO::StreamWriter(nazwapliku, false);
+				for (int i = 0; i <= numerwyd-1; i++) {
+					plik->WriteLine(wyd_id[i]);
+					plik->WriteLine(wyd_nazwa[i]);
+					plik->WriteLine(wyd_opis[i]);
+					plik->WriteLine(wyd_dzien[i]);
+					plik->WriteLine(wyd_godzina[i]);
+					plik->WriteLine(wyd_etykieta[i]);
+				}//petla czytaj¹ca plik
+				plik->Close();
+				Console::Write("\n#ORGANISEIT | Zakoñczono zapis pliku do bazy podrêcznej\n");
+			}
 
 
 			//import bazy danych
@@ -3730,9 +3726,7 @@ private: System::Windows::Forms::Label^  label78;
 			private: System::Void ExportBazyWydarzenBtn_Click(System::Object^  sender, System::EventArgs^  e) {
 				Zapisdopliku();
 				zapisbazyWydtemp();
-			}
-			
-					 
+			}	 
 					 
 			//export listy do pliku
 			private: System::Void ExportBazyZadanBtn_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -3747,20 +3741,16 @@ private: System::Windows::Forms::Label^  label78;
 			if (!czyTerminarzBoxVisible && !czyListazadanBoxVisible) {
 				TerminarzBox->Visible = true;
 				czyTerminarzBoxVisible = true;
-
-
 			}
 			else if (!czyTerminarzBoxVisible && czyListazadanBoxVisible) {
 				TerminarzBox->Visible = true;
 				czyTerminarzBoxVisible = true;
 				czyListazadanBoxVisible = false;
 				ListazadanBox->Visible = false;
-
 			}
 			else {
 				TerminarzBox->Visible = false;
 				czyTerminarzBoxVisible = false;
-
 			}
 		
 		}
@@ -3768,22 +3758,17 @@ private: System::Windows::Forms::Label^  label78;
 			if (!czyTerminarzBoxVisible && !czyListazadanBoxVisible) {
 				ListazadanBox->Visible = true;
 				czyListazadanBoxVisible = true;
-
 			}
 			else if (czyTerminarzBoxVisible && !czyListazadanBoxVisible) {
 				TerminarzBox->Visible = false;
 				czyTerminarzBoxVisible = false;
 				czyListazadanBoxVisible = true;
 				ListazadanBox->Visible = true;
-
 			}
 			else {
 				ListazadanBox->Visible = false;
 				czyListazadanBoxVisible = false;
-
-			}
-		
-		
+			}	
 		}
 
 
@@ -4069,7 +4054,7 @@ private: System::Windows::Forms::Label^  label78;
 		//-----------------------------------------------------------------
 
 		
-			 //wczytywanie z pliku po oknie
+			//wczytywanie z pliku po oknie
 			public: System::Void ImportzplikuLista() {
 				Console::Write("\n#ORGANISEIT | Rozpoczynam wczytywanie bazy listy zadan ze wskazanego pliku\n");
 				numerev = 0;
@@ -4122,7 +4107,8 @@ private: System::Windows::Forms::Label^  label78;
 					"\n" + ev_etykieta[0]);
 				Console::Write("\n#ORGANISEIT | Zakoñczono wczytywanie bazy listy zadan ze wskazanego pliku\n");
 			}
-					//wczytywanie z pliku po oknie
+
+			//wczytywanie z pliku po oknie
 			public: System::Void ImportbazyzadanTEMP() {
 				Console::Write("\n#ORGANISEIT | Rozpoczynam wczytywanie pliku listy zadan z bazy podrêcznej\n");
 
@@ -4130,50 +4116,49 @@ private: System::Windows::Forms::Label^  label78;
 				String^ wiersz;
 				numerev = 0;
 				nr_liniiev = 1;
-				try{
-				IO::StreamReader^ plik14 = gcnew IO::StreamReader(nazwapliku, System::Text::Encoding::Default);
-				while ((wiersz = plik14->ReadLine()) != nullptr) {
-					Console::Write(wiersz + "\n");
+				try {
+					IO::StreamReader^ plik14 = gcnew IO::StreamReader(nazwapliku, System::Text::Encoding::Default);
+					while ((wiersz = plik14->ReadLine()) != nullptr) {
+						Console::Write(wiersz + "\n");
 
-					switch (nr_liniiev % 4) {
-					case 1: {
-						ev_nazwa[numerev] = wiersz;
-						nr_liniiev++;
-						continue;
-					}
-					case 2: {
-						ev_opis[numerev] = wiersz;
-						nr_liniiev++;
-						continue;
-					}
-					case 3: {
-						ev_godzina[numerev] = wiersz;
-						nr_liniiev++;
-						continue;
-					}
-					case 0: {
-						ev_etykieta[numerev] = wiersz;
-						nr_liniiev++;
-						numerev++;
-						continue;
-					}
+						switch (nr_liniiev % 4) {
+						case 1: {
+							ev_nazwa[numerev] = wiersz;
+							nr_liniiev++;
+							continue;
+						}
+						case 2: {
+							ev_opis[numerev] = wiersz;
+							nr_liniiev++;
+							continue;
+						}
+						case 3: {
+							ev_godzina[numerev] = wiersz;
+							nr_liniiev++;
+							continue;
+						}
+						case 0: {
+							ev_etykieta[numerev] = wiersz;
+							nr_liniiev++;
+							numerev++;
+							continue;
+						}
 
-					}//koniec switcha
-					
-				}//petla czytaj¹ca plik
-				plik14->Close();
-				Console::Write("\n" + ev_nazwa[0] +
-					"\n" + ev_opis[0] +
-					"\n" + ev_godzina[0] +
-					"\n" + ev_etykieta[0]);
-				Console::Write("\n#ORGANISEIT | Zakoñczono wczytywanie pliku listy zadan z bazy podrêcznej\n");
+						}//koniec switcha
+
+					}//petla czytaj¹ca plik
+					plik14->Close();
+					Console::Write("\n" + ev_nazwa[0] +
+						"\n" + ev_opis[0] +
+						"\n" + ev_godzina[0] +
+						"\n" + ev_etykieta[0]);
+					Console::Write("\n#ORGANISEIT | Zakoñczono wczytywanie pliku listy zadan z bazy podrêcznej\n");
 				}
 				catch (...) {
 					MessageBox::Show("B³¹d wczytywania pliku: TaskDB_tmp", "Organise It!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 					Application::Exit();
 				}
 			}
-
 
 	public: System::Void ZapisdoplikuListazad() {
 		Console::Write("\n#ORGANISEIT | Rozpoczynam zapis listy zadan do wskazanego pliku\n");
@@ -4188,7 +4173,7 @@ private: System::Windows::Forms::Label^  label78;
 
 			if ((myStream = saveFileDialog2->OpenFile()) != nullptr) {
 				IO::StreamWriter^ plik5 = gcnew IO::StreamWriter(myStream);
-				for (int i = 0; i <= numerev; i++) {
+				for (int i = 0; i < numerev; i++) {
 					plik5->WriteLine(ev_nazwa[i]);
 					plik5->WriteLine(ev_opis[i]);
 					plik5->WriteLine(ev_godzina[i]);
@@ -4203,7 +4188,6 @@ private: System::Windows::Forms::Label^  label78;
 		}
 		Console::Write("\n#ORGANISEIT | Zakoñczono zapis listy zadan do wskazanego pliku: " + myStream);
 	}
-
 
 		public: System::Void zapisbazyListytemp() {
 			Console::Write("\n#ORGANISEIT | Rozpoczynam zapis pliku listy zadan do bazy podrêcznej\n");
@@ -4224,7 +4208,6 @@ private: System::Windows::Forms::Label^  label78;
 			zapisbazyListytemp();
 			TworzeniepaneliLista();
 		}
-
 
 		public: System::Void TworzeniepaneliLista() {
 			for  (int i = 0; i < numerev; i++)
@@ -4338,12 +4321,7 @@ private: System::Windows::Forms::Label^  label78;
 						ZmianaEtykiety(ev_etykieta[i], button35);
 						break;
 					}
-
-
-
 				}
-
-
 			}
 		}
 };
