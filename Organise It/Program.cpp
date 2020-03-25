@@ -15,12 +15,14 @@ int main(array<System::String ^> ^args) {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
 	
-	//utworzenie obiektu Okna g³ownego
+	//utworzenie obiektu Okna gï¿½ownego
 	OkienkoMain^ okienkomain = gcnew OkienkoMain;
-	//wyœwietlenie okna
+	//wyï¿½wietlenie okna
 	okienkomain->Show();
 	
 	
 	Application::Run();
 	return 0;
 }
+
+// WIELKIE SIECIOWE POZDRO DLA KAMILA SZPAKA
